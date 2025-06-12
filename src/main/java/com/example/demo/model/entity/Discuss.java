@@ -51,7 +51,10 @@ public class Discuss {
 	
 	@Column(name = "created_time")
 	private LocalDateTime createdTime = LocalDateTime.now();
-	
+
+	@Column(name = "public")
+	private Boolean isPublic; // true = 公開, false = 私人
+
 	@ManyToOne(fetch = FetchType.LAZY) // 多對一預設為 Eager
 	@JoinColumn(name = "user_id")
 	private User user;

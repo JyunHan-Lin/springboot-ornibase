@@ -11,14 +11,14 @@
 	</head>
 	<body class="view fontstyle">
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu.jspf" %>	
+		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
 		<div class="blur-overlay">
 			<!-- body content -->
 			<div style="padding: 15px">
 				<fieldset class="user">
 					${ message }
 					<%=exception %><p>
-					<a href="/bbd">回到首頁</a>
+					<a href="/ornibase">回到首頁</a>
 				</fieldset>	
 			</div>		
 		</div>

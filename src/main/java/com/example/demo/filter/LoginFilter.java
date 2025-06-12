@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebFilter(urlPatterns = {"/bbd/*"}) // 需要登入才能訪問的路徑
+@WebFilter(urlPatterns = {"/ornibase/*"}) // 需要登入才能訪問的路徑
 public class LoginFilter extends HttpFilter {
 
 	@Override

@@ -12,7 +12,7 @@
 	</head>
 	<body class="fontstyle">
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu.jspf" %>
+		<%@ include file="/WEB-INF/view/menu-login.jspf" %>
 		
 		<form method="POST" action="/bbd/codeedit">
  			<fieldset class="discussion-form">

@@ -15,9 +15,9 @@
 	</head>
 	<body>
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu.jspf" %>								
+		<%@ include file="/WEB-INF/view/menu-login.jspf" %>								
 		
-		<sp:form class="fontstyle" method="post" modelAttribute="discussDTO" action="/bbd/discuss/update/${ discussDTO.discussId }" >
+		<sp:form class="fontstyle" method="post" modelAttribute="discussDTO" action="/ornibase/discuss/update/${ discussDTO.discussId }" >
 		  <fieldset class="discussion-form">
 			<input type="hidden" name="_method" value="PUT" />
 		    <legend class="title">編輯討論串</legend>

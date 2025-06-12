@@ -1,0 +1,14 @@
+<%@ page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<nav class="navbar fontstyle">
+	<div class="nav-container">
+		<div class="logo"><a href="/preview"><img src="/images/logo.png" height="30"></a></div>
+		<ul class="nav-list">
+			<li><a href="/ornibase/doc/discuss">建立記錄本</a></li> 
+			<li><a href="/ornibase/doc/list">檢視記錄本</a></li>
+			<li><a href="/login">註冊/登入</a></li>
+		</ul>
+	</div>
+</nav>

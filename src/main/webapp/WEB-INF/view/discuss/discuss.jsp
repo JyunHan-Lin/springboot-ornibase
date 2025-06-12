@@ -15,7 +15,7 @@
 	</head>
 	<body class="fontstyle">
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu.jspf" %>	
+		<%@ include file="/WEB-INF/view/menu-login.jspf" %>	
 		<!-- 外層容器 -->
 		<div class="page-container">
 			<!-- 左側區域：標題、影片、留白 -->
@@ -24,8 +24,8 @@
 			    <div class="header-row">
 			    	<h2 class="title-text">${discussDTO.title}</h2>
 		    	  	<div class="btn-group">
-		        		<a href="/bbd/discuss/update/${ discussDTO.discussId }" class="btn btn-danger">編輯</a>
-						<form method="post" action="/bbd/discuss/delete/${ discussDTO.discussId }">
+		        		<a href="/ornibase/discuss/update/${ discussDTO.discussId }" class="btn btn-danger">編輯</a>
+						<form method="post" action="/ornibase/discuss/delete/${ discussDTO.discussId }">
 							<input type="hidden" name="_method" value="DELETE" />
 							<button type="submit" class="btn btn-danger" >刪除</button>
 						</form>	

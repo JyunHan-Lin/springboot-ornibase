@@ -12,7 +12,7 @@
 	</head>
 	<body class="fontstyle" >
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu.jspf" %>	
+		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
 									
 		<div class="container">
 			<div class="left-section-register"></div>

@@ -53,7 +53,7 @@ public class LoginController {
 	session.setAttribute("userCert", userCert);
 	session.setAttribute("userId", userCert.getUserId());
 
-	return "redirect:/bbd"; // 重導到首頁
+	return "redirect:/ornibase"; // 重導到首頁
 
 	}
 

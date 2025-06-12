@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -14,17 +13,17 @@
 	<body class="fontstyle">
 	
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu-login.jspf" %>
-										
+		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
+									
 		<!-- 搜尋欄 -->
 		<div class="search-container">
-	 		<form class="search-form" method="get" action="/ornibase/discuss/search">
+	 		<form class="search-form" method="get" action="/bbd/discuss/search">
 	    		<input type="text" name="keyword" placeholder="輸入關鍵字搜尋討論串..." class="search-input"/>
 	    		<button type="submit" class="search-button">搜尋</button>
 			</form>
 		</div>
 		
-		<!-- 列表 -->
+		<!-- 公開記錄本列表 -->
 			
 	</body>
 </html>

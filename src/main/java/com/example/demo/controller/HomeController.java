@@ -13,7 +13,7 @@ import com.example.demo.service.UserService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/bbd")
+@RequestMapping("/ornibase")
 public class HomeController {
 
 	@Autowired
@@ -24,6 +24,7 @@ public class HomeController {
 	    UserCert userCert = (UserCert) session.getAttribute("userCert");
 	    Integer userId = userCert.getUserId();
 	    model.addAttribute("discussList", discussService.getDiscussByUserId(userId));
+	    // 改成看到大家的記錄本###
 		return "main";
 	}
 	

@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,13 +13,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.model.dto.BehaviorDTO;
 import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.dto.UserCert;
-import com.example.demo.model.entity.Discuss;
-import com.example.demo.service.BehaviorService;
 import com.example.demo.service.DiscussService;
 
 import jakarta.servlet.http.HttpSession;
@@ -29,11 +23,20 @@ import jakarta.validation.Valid;
 
 
 @Controller
-@RequestMapping("/bbd/discuss")
+@RequestMapping("/ornibase/discuss")
 public class DiscussController {
 	
 	@Autowired
 	private DiscussService discussService;
+	
+	// 檢視記錄本
+	@GetMapping
+	public String mainPage(Model model, String youtubeVideoId, HttpSession session) {
+	    UserCert userCert = (UserCert) session.getAttribute("userCert");
+	    Integer userId = userCert.getUserId();
+	    model.addAttribute("discussList", discussService.getDiscussByUserId(userId));
+		return "discuss/discuss-list";
+	}
 	
 	// 建立討論串的頁面
 	@GetMapping("/new")
@@ -50,7 +53,7 @@ public class DiscussController {
 	    discussDTO.setUserId(userCert.getUserId());
 		
 		DiscussDTO savedDiscuss = discussService.createDiscuss(discussDTO);
-	    return "redirect:/bbd/discuss/" + savedDiscuss.getDiscussId();
+	    return "redirect:/ornibase/discuss/" + savedDiscuss.getDiscussId();
 	}
 	
 	// 編輯討論串(標題、描述、網址: 點選到裡面再編輯) 
@@ -68,7 +71,7 @@ public class DiscussController {
 	    Integer userId = userCert.getUserId();
 		// 進行修改
 		discussService.updateDiscuss(discussId, userId, discussDTO);
-		return "redirect:/bbd/discuss/" + discussId;
+		return "redirect:/ornibase/discuss/" + discussId;
 	}
 
 	
@@ -78,7 +81,7 @@ public class DiscussController {
 	    UserCert userCert = (UserCert) session.getAttribute("userCert");
 	    Integer userId = userCert.getUserId();
 		discussService.deleteDiscuss(discussId, userId, discussDTO);
-		return "redirect:/bbd"; // 重導到首頁
+		return "redirect:/ornibase"; // 重導到首頁
 	}
 	
 }

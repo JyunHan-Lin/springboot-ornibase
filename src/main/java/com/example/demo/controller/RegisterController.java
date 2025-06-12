@@ -40,7 +40,7 @@ public class RegisterController {
 	    userService.addUser(username, password, email, false, "user");
 
 	    // 寄送 email 驗證信 (使用 emailService 中的 sendEmail 方法)
-	    String emailConfirmLink = "http://localhost:8085/email/confirm?username=" + username;
+	    String emailConfirmLink = "http://localhost:8084/email/confirm?username=" + username;
 	    emailService.sendEmail(email, emailConfirmLink);
 
 	    // 顯示結果

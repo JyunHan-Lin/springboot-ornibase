@@ -11,7 +11,7 @@
 	</head>
 	<body class="view fontstyle">
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu.jspf" %>	
+		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
 		<div class="blur-overlay">
 			<fieldset class="user">
 			<!-- content -->

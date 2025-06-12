@@ -12,7 +12,7 @@
 	</head>
 	<body class="fontstyle">
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu.jspf" %>
+		<%@ include file="/WEB-INF/view/menu-login.jspf" %>
 			
 		<!-- 列表 -->
 		<%@ include file="/WEB-INF/view/discuss/discuss-form.jspf" %>	
