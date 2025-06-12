@@ -1,0 +1,8 @@
+.charts {
+	display: flex;
+	justify-content: center;   /* 水平置中所有圖表 */
+	align-items: flex-start;   /* 垂直對齊（上對齊） */
+    gap: 10px;                 /* 三個圖表之間的間距 */
+	margin: 5px auto;          /* 外距與整體置中 */
+	
+}

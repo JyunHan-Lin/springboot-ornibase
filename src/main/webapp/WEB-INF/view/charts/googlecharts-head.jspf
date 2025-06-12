@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- Spring Form 表單標籤、c: forEach, if | fn: function -->
+<%@ taglib prefix="c" uri="jakarta.tags.core" %> 
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+
+<!-- 從 Google 的 CDN 載入 Google Charts 套件, 引入 Google Charts-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+   
+

@@ -1,0 +1,88 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<div class="charts">
+	<div id="piechartA" style="width: 390px; height: 270px"></div>
+	<div id="timeline" style="width: 390px; height: 270px"></div>
+	<div id="barchart" style="width: 390px; height: 270px"></div>
+</div>
+  	<script type="text/javascript">
+     // 載入套件
+     google.charts.load('current', {'packages':['corechart', 'timeline']});
+
+     // 資料載完後呼叫
+     google.charts.setOnLoadCallback(function() {
+    		drawChart();
+     		drawTimeline();
+     		drawBarChart();    	 
+     });
+
+     // 圖表 1
+     function drawChart() {
+    	    const data = google.visualization.arrayToDataTable([
+    	      ['行為', '持續分鐘'],
+    	      <c:forEach var="entry" items="${actionDuration}" varStatus="loop">
+    	        ['${fn:escapeXml(entry.key)}', ${entry.value}]
+    	      <c:if test="${!loop.last}">,</c:if>
+    	      </c:forEach>
+    	    ]);
+
+		    console.log("Pie Chart Data =", data.toJSON()); // 除錯
+    	    
+		    const options = {
+    	      title: '幼鳥A 今日行為比例',
+    	      pieSliceText: 'percentage',
+    	      chartArea: { width: '90%', height: '80%' }
+    	    };
+
+		    const chart = new google.visualization.PieChart(document.getElementById('piechartA'));
+    	    chart.draw(data, options);
+    	  }
+
+     // 圖表 2
+     function drawTimeline() {
+    	 	const container = document.getElementById('timeline');
+    	 	const chart = new google.visualization.Timeline(container);
+    	 	const dataTable = new google.visualization.DataTable();
+
+    	    dataTable.addColumn({ type: 'string', id: '對象行為' });
+    	    dataTable.addColumn({ type: 'string', id: 'label' });
+    	    dataTable.addColumn({ type: 'date', id: '開始' });
+    	    dataTable.addColumn({ type: 'date', id: '結束' });
+
+    	    dataTable.addRows([
+    	      <c:forEach var="row" items="${timelineData}" varStatus="status">
+    	        ['${fn:escapeXml(row[0])}', '', new Date(0, 0, 0, ${row[2].hour}, ${row[2].minute}), 
+    	        				  			    new Date(0, 0, 0, ${row[3].hour}, ${row[3].minute})]
+    	      <c:if test="${!status.last}">,</c:if>
+    	      </c:forEach>
+    	    ]);
+
+    	    const options = {
+    	    	    timeline: { showRowLabels: true },
+    	    	    avoidOverlappingGridLines: false
+    	    	  };
+    	    
+    	    chart.draw(dataTable);
+    	  }
+     
+     // 圖表 3
+     function drawBarChart() {
+    	 	const data = google.visualization.arrayToDataTable([['食物種類', '次數'],
+      		<c:forEach var="entry" items="${foodCount}" varStatus="status">
+      		['${fn:escapeXml(entry.key)}', ${entry.value}]
+      		<c:if test="${!status.last}">,</c:if>
+      		</c:forEach>
+    		]);
+    	      
+    	 	const options = {
+      		title: '幼鳥A 一週食物種類統計',
+      		chartArea: {width: '50%'},
+      		hAxis: {title: '次數', minValue: 0},
+      		vAxis: {title: '食物種類'}
+    		};
+
+    	 	const chart = new google.visualization.BarChart(document.getElementById('barchart'));
+    		chart.draw(data, options);
+  		  }   
+   </script>
+	

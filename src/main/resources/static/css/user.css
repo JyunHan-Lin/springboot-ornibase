@@ -1,0 +1,119 @@
+.container{
+	display: flex;
+	height: 100vh;
+	background: #404040;
+}
+
+/* 左半邊 (登入頁面) */
+.left-section-login {
+	flex: 3;  /* 左邊佔 50% */
+  	background: url('/images/login.jpg') no-repeat center center;
+  	background-size: cover;
+}
+
+/* 左半邊 (註冊頁面) */
+.left-section-register {
+	flex: 3;  /* 左邊佔 50% */
+  	background: url('/images/register.jpg') no-repeat center center;
+  	background-size: cover;
+}
+
+.right-section {
+	flex: 2;
+    position: relative; /* 或 absolute，視需求而定 */
+    backdrop-filter: blur(8px); /* 模糊程度 */
+    padding: 2rem; 
+	overflow: hidden;
+    background-color: gray;
+  	background-image: 
+    	repeating-linear-gradient(45deg, gray, #f0f0f0 1px, transparent 1px, transparent 10px),
+    	repeating-linear-gradient(-45deg, gray, #f0f0f0 1px, transparent 1px, transparent 10px);
+
+}
+
+.content-wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	z-index: 2;
+}
+
+.index{
+	background: rgb(128, 128, 128);  /* 黑色 50% 透明 */
+	width:300px;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.user{
+	background:black;
+	color: white;
+	width: 300px;               /* 控制表單寬度 */
+  	margin: 1px auto;          /* 垂直 50px、水平置中 */
+  	padding: 15px;              /* 內距 */
+  	border: 1px solid #ccc;     /* 淺灰邊框 */
+  	border-radius: 8px;         /* 圓角 */
+}
+
+form.user input,
+form.user button {
+    display: block;
+  	width: 100%;
+  	margin-bottom: 10px;
+  	padding: 8px;
+  	font-size: 14px;
+  	box-sizing: border-box;
+}
+
+.h1, .h2{
+	color:white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 文字陰影 */
+}
+
+.h1{
+	font-size: 50px;
+}
+
+.h2{
+	color:white;
+	font-size:25px;
+}
+
+.button-group {
+	display: flex;
+  	gap: 5px;                /* 元素之間的間距 */
+  	margin-bottom: 5px;      /* 與其他欄位分開 */
+}
+
+.button-group input {
+  flex: 1;
+  height: 40px;       /* 設定高度，與圖片一致 */
+  padding: 8px;
+  font-size: 14px;
+}
+
+.button-group input {
+  	flex: 1;                  /* 輸入框填滿可用空間 */
+}
+
+.button-group img {
+  	height: 39px;             /* 控制驗證碼圖片大小，可依需求調整 */
+  	cursor: pointer;          /* 滑鼠變小手（用來刷新驗證碼） */
+}
+
+.button-group button {
+  	flex: 1;                  /* 輸入框填滿可用空間 */
+}
+
+a {
+  color: #f6f6f6;
+  text-decoration: none; /* 取消底線 */
+}
+
+a:hover {
+  color: rgb(2, 149, 2);
+  text-decoration: underline; /* 滑過時加底線 */
+}

@@ -1,0 +1,36 @@
+.behavior-form {
+ width: 1200px;
+ margin: 60px auto; /* 水平置中，並往下推一點 */
+ padding: 20px;
+ border: 2px solid #ccc;
+ position: relative;
+ background-color: #f9f9f9;
+}
+
+.behavior-form th,
+.behavior-form td {
+ padding: 8px 12px;
+ text-align: center;
+}
+
+.title{
+	font-size:20px;
+}
+
+/* 按鈕樣式 */
+.btn {
+ padding: 6px 12px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ font-size: 14px;
+ text-decoration: none;
+ display: inline-block;
+}
+
+/* 編輯、刪除按鈕 */
+.btn-danger {
+ background-color: #e74c3c;
+ color: white;
+ margin-left: 5px;
+}

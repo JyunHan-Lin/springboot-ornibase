@@ -1,0 +1,51 @@
+.discussion-form {
+ width: 400px;
+ margin: 60px auto; /* 水平置中，並往下推一點 */
+ padding: 20px;
+ border: 2px solid #ccc;
+ position: relative;
+ background-color: #f9f9f9;
+}
+
+.discussion-form input,
+.discussion-form textarea {
+ width: 100%;
+ padding: 8px;
+ margin-top: 5px;
+ margin-bottom: 10px;
+ box-sizing: border-box;
+ font-size: 14px;
+}
+
+.discussion-form textarea {
+ height: 100px; /* 讓描述輸入框大一點 */
+ resize: vertical;
+}
+
+.discussion-form button {
+ padding: 10px 20px;   /* 上下10px、左右20px */
+ font-size: 14px;      /* 字體大小 */
+ border-radius: 5px;   /* 圓角 */
+ background-color: rgb(2, 149, 2);
+ color: white;
+ border: none;
+ cursor: pointer;
+ text-align:right;
+ transition: background-color 0.3s ease;
+}
+
+.discussion-form button:hover {
+ background-color: rgba(0, 85, 0);
+}
+
+.h2 {
+	font-size: 20px;
+    font-weight: bold;
+}
+.title{
+	font-size: 18px;
+}
+
+.button-wrapper{
+ text-align:right;
+}

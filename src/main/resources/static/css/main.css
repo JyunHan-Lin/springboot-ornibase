@@ -1,0 +1,114 @@
+.video-list-container {
+  width: 1200px;
+  margin: 0 auto;
+  background: white;
+}
+
+.video-list {	
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.video-card {
+  width: 17%;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.video-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.video-description {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.video-title a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.video-title a:hover {
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+.h2{
+	font-size:20px;
+    font-weight: bold;
+}
+
+/* 搜尋欄容器置中並加點間距 */
+.search-container {
+  width: 600px;
+  margin: 40px auto 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 搜尋表單使用 flex 排版 */
+.search-form {
+  display: flex;
+  align-items: center;
+  border: 2px solid gray;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+/* 輸入框樣式 */
+.search-input {
+  flex: 1;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  outline: none;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* placeholder 字體顏色 */
+.search-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* 按鈕樣式 */
+.search-button {
+  background-color: rgb(2, 149, 2);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0 30px 30px 0;
+}
+
+/* 按鈕 hover 效果 */
+.search-button:hover {
+  background-color: rgba(0, 85, 0);
+}
+
+
+

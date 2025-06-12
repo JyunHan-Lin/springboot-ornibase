@@ -1,0 +1,68 @@
+.fontstyle{
+  	font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    background-color: white;
+  	background-image: 
+    	repeating-linear-gradient(45deg, 	#F0F0F0, #f0f0f0 1px, transparent 1px, transparent 10px),
+    	repeating-linear-gradient(-45deg,	#F0F0F0, #f0f0f0 1px, transparent 1px, transparent 10px);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background: linear-gradient(to right, white, rgb(2, 149, 2));  /* 漸層背景 */
+  padding: 5px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 4px 12px;
+  position: relative;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+/* 漸層底亮起 + 底線 */
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+}
+
+.nav-list li a:hover {
+  background-color: rgba(0, 140, 0);
+  color: white; /* 保持白字 */
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+  left: 0;
+}

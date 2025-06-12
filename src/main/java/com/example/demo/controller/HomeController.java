@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.dto.UserCert;
 import com.example.demo.service.DiscussService;
+import com.example.demo.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/preview")
+@RequestMapping("/bbd")
 public class HomeController {
 
 	@Autowired
@@ -25,4 +26,12 @@ public class HomeController {
 	    model.addAttribute("discussList", discussService.getDiscussByUserId(userId));
 		return "main";
 	}
+	
+	// 登出
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/login"; 
+	}
+	
 }

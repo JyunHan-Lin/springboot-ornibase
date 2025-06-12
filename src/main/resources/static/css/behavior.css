@@ -1,0 +1,129 @@
+/* 右側表單區 */
+.right-section {
+	width: 34%;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 5px;
+	height: 505px;
+	background: white;
+}
+
+/* 編輯行為表單區 */
+.center-edit {
+	width: 400px;
+	margin: 50px auto;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 5px;
+	height: 520px;
+	background: white;
+}
+
+/* 表單區標題 */
+.form-title {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/* 輸入欄位統一樣式 */
+.right-section input, .right-section select, .right-section textarea {
+	width: 100%;
+	padding: 6px;
+	margin-top: 4px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+/* 備註欄 */
+.right-section textarea {
+	resize: vertical;
+}
+
+.title {
+	font-size: 20px;
+}
+
+.form-inline {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.form-inline label {
+	white-space: nowrap;
+}
+
+.form-inline input[type="date"], .form-inline input[type="text"] {
+	width: 160px;
+}
+
+.date {
+	width: 150px;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+.time-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 5px;
+}
+
+.time-row label {
+	white-space: nowrap; /* 避免文字換行 */
+}
+
+.time-row input[type="time"] {
+	width: 130px;
+}
+
+.form-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 10px;
+	flex-wrap: wrap;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+input[type="text"] {
+	padding: 4px 8px;
+	font-size: 14px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.button-group {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.button-group button, .button-group .button-link {
+	padding: 10px 20px;
+	font-size: 14px;
+	border-radius: 5px;
+	background-color: rgb(2, 149, 2);
+	color: white;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	flex: 1;
+	transition: background-color 0.3s ease;
+}
+
+.button-group button:hover, .button-group .button-link:hover {
+	background-color: rgba(0, 85, 0);
+}
