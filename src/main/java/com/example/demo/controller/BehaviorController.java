@@ -25,7 +25,7 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping("/bbd/discuss/behavior")
+@RequestMapping("/ornibase/discuss/behavior")
 public class BehaviorController {
 	
 	@Autowired
@@ -36,7 +36,7 @@ public class BehaviorController {
 	public String save(@PathVariable Integer discussId, BehaviorDTO behaviorDTO, HttpSession session) {
 	    Integer userId = (Integer) session.getAttribute("userId");
 		behaviorService.saveBehavior(discussId, userId, behaviorDTO);
-		return "redirect:/bbd/discuss/" + discussId;
+		return "redirect:/ornibase/discuss/" + discussId;
 	}
 	
 	// 顯示行為清單
@@ -65,14 +65,14 @@ public class BehaviorController {
 	public String updateBehavior(@PathVariable Integer behaviorId, @PathVariable Integer discussId, @Valid BehaviorDTO behaviorDTO, DiscussDTO discussDTO, BindingResult bindingResult) {
 		// 進行修改
 		behaviorService.updateBehavior(behaviorId, behaviorDTO);
-		return "redirect:/bbd/discuss/behavior/" + discussId + "/list";
+		return "redirect:/ornibase/discuss/behavior/" + discussId + "/list";
 	}
 	
 	// 刪除
 	@DeleteMapping("/{discussId}/delete/{behaviorId}")
 	public String deleteBehavior(@PathVariable Integer behaviorId, @PathVariable Integer discussId, BehaviorDTO behaviorDTO, DiscussDTO discussDTO) {
 		behaviorService.deleteBehavior(behaviorId);
-		return "redirect:/bbd/discuss/behavior/" + discussId + "/list"; 
+		return "redirect:/ornibase/discuss/behavior/" + discussId + "/list"; 
 	}
 		
 	

@@ -17,7 +17,7 @@ import jakarta.servlet.http.HttpSession;
 public class PreviewController {
 	
 	@GetMapping
-	public String mainPage() {
+	public String previewPage() {
 		// 看得到大家建立的記錄本，但是沒辦法新增行為 ###待補
 		return "preview";
 	}

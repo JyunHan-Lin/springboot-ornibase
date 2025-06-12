@@ -29,23 +29,23 @@ public class DiscussController {
 	@Autowired
 	private DiscussService discussService;
 	
-	// 檢視記錄本
-	@GetMapping
-	public String mainPage(Model model, String youtubeVideoId, HttpSession session) {
+	// 檢視筆記本
+	@GetMapping("/list")
+	public String mainPage(Model model, HttpSession session) {
 	    UserCert userCert = (UserCert) session.getAttribute("userCert");
 	    Integer userId = userCert.getUserId();
 	    model.addAttribute("discussList", discussService.getDiscussByUserId(userId));
 		return "discuss/discuss-list";
 	}
 	
-	// 建立討論串的頁面
+	// 建立筆記本的頁面
 	@GetMapping("/new")
 	public String createDiscuss(Model model) {
 		model.addAttribute("discussDTO", new DiscussDTO());
 		return "discuss/discuss-new";
 	}
 	
-	// 建立討論串
+	// 建立筆記本
 	@PostMapping("/new")
 	public String saveDiscuss(@ModelAttribute DiscussDTO discussDTO, HttpSession session) {
 		UserCert userCert = (UserCert) session.getAttribute("userCert");
@@ -56,7 +56,7 @@ public class DiscussController {
 	    return "redirect:/ornibase/discuss/" + savedDiscuss.getDiscussId();
 	}
 	
-	// 編輯討論串(標題、描述、網址: 點選到裡面再編輯) 
+	// 編輯筆記本(標題、描述、網址: 點選到裡面再編輯) 
 	@GetMapping("/update/{discussId}")
 	public String showEditDiscuss(@PathVariable Integer discussId, Model model) {
 	    DiscussDTO discussDTO = discussService.getDiscussById(discussId)
@@ -75,7 +75,7 @@ public class DiscussController {
 	}
 
 	
-	// 刪除討論串
+	// 刪除筆記本
 	@DeleteMapping("/delete/{discussId}")
 	public String deleteRoom(@PathVariable Integer discussId,  DiscussDTO discussDTO, HttpSession session) {
 	    UserCert userCert = (UserCert) session.getAttribute("userCert");

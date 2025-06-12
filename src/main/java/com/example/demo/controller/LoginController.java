@@ -31,7 +31,7 @@ public class LoginController {
 			                 @RequestParam String password, 
 			                 @RequestParam String authcode,
 			                 Model model, HttpSession session) {
-	// 比對驗證碼, 後面 + "" 是為了避免空值 (驗證碼加上時間?###)	
+	// 比對驗證碼, 後面 + "" 是為了避免空值 (驗證碼加上時間?)	
     String sessionAuthCode = (String) session.getAttribute("authcode") + "";
 	
 	// 取得憑證

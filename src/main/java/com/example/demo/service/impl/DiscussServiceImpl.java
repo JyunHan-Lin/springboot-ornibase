@@ -94,8 +94,8 @@ public class DiscussServiceImpl implements DiscussService{
 	}
 
 	@Override
-	public void updateDiscuss(Integer discussId, Integer userId, String title, String description, String youtubeVideoId, LocalDateTime createdTime) {
-		DiscussDTO discussDTO = new DiscussDTO(discussId, title, description, youtubeVideoId, createdTime, userId);
+	public void updateDiscuss(Integer discussId, String title, String description, String tag, String youtubeVideoId, Boolean isPublic, LocalDateTime createdTime, Integer userId) {
+		DiscussDTO discussDTO = new DiscussDTO(discussId, title, description, tag, youtubeVideoId, isPublic, createdTime, userId);
 		updateDiscuss(discussId, userId, discussDTO);		
 	}
 

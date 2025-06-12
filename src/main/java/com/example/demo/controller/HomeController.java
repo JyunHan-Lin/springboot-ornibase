@@ -21,9 +21,6 @@ public class HomeController {
 	
 	@GetMapping
 	public String mainPage(Model model, String youtubeVideoId, HttpSession session) {
-	    UserCert userCert = (UserCert) session.getAttribute("userCert");
-	    Integer userId = userCert.getUserId();
-	    model.addAttribute("discussList", discussService.getDiscussByUserId(userId));
 	    // 改成看到大家的記錄本###
 		return "main";
 	}

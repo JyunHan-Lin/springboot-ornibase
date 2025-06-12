@@ -22,8 +22,12 @@ public class DiscussDTO {
 	
 	private String description;
 	
+	private String tag;
+
 	private String youtubeVideoId;
-	
+
+	private Boolean isPublic; // true = 公開, false = 私人
+
 	private LocalDateTime createdTime = LocalDateTime.now();
 
 	private Integer userId;

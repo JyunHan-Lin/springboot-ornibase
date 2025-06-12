@@ -17,7 +17,7 @@
 			<!-- content -->
 			<div>
 				<h2 class="h2">${resultMessage}</h2>
-				<a href="/bbd">回到首頁</a>
+				<a href="/ornibase">回到首頁</a>
 			</div>
 			</fieldset>
 		</div>

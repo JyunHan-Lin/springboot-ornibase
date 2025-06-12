@@ -20,17 +20,31 @@
 		<sp:form class="fontstyle" method="post" modelAttribute="discussDTO" action="/ornibase/discuss/update/${ discussDTO.discussId }" >
 		  <fieldset class="discussion-form">
 			<input type="hidden" name="_method" value="PUT" />
-		    <legend class="title">編輯討論串</legend>
-		    	標題: <sp:input type="text" path="title" placeholder="請輸入標題"/><p />
-		    	<p/>
-		    	描述: <sp:input type="text" path="description" placeholder="請描述內容" /><p />
-		    	<p/>
-		    	Youtube連結: <sp:input type="text" path="youtubeVideoId" placeholder="請輸入連結" /><p />
-		    	<p/>
-		    	<div class="button-wrapper">
+		    <legend class="title">編輯筆記本</legend>
+				標題: <sp:input type="text" path="title" placeholder="請輸入標題" required="required" />
+	    		描述: <sp:input type="text" path="description" placeholder="請描述內容" required="required" />
+	    	
+	    		<select name="tag">
+					<option value="">請選擇標籤</option>
+					<option value="猛禽">猛禽</option>
+					<option value="燕">燕</option>
+					<option value="雀">雀</option>
+					<option value="鵲">鵲</option>
+					<option value="海鷗">海鷗</option>
+					<option value="蜂鳥">蜂鳥</option>
+	
+				</select>
+	    	
+	    		Youtube連結: <sp:input type="text" path="youtubeVideoId" placeholder="請輸入連結中... v= 後面 11 位數" />
+	    		
+	    		<div class="button-wrapper">
+	    	
+	    			是否公開：<input type="checkbox" name="isPublic"><br>
+	    	
 					<button type="reset">重置</button>
-			    	<button type="submit" class="">建立</button>
+			    	<button type="submit">建立</button>
 		    	</div>
+
 		  </fieldset>
 		</sp:form>
 	</body>

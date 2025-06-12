@@ -21,7 +21,7 @@
 			<div class="form-title">行為紀錄</div>
 			<p>
 				<sp:form method="post" modelAttribute="behaviorDTO"
-					action="${pageContext.request.contextPath}/bbd/discuss/behavior/${discussDTO.discussId}">
+					action="ornibase/discuss/behavior/${discussDTO.discussId}">
 					<div class="form-inline">
 						<label for="date">日期：</label> <input class="date" type="date"
 							name="date" />
@@ -69,7 +69,7 @@
 					</div>
 				</sp:form>
 				<div class="button-group">
-					<a class="button-link" href="${pageContext.request.contextPath}/bbd/discuss/behavior/${discussDTO.discussId}/list">查看紀錄清單</a>
+					<a class="button-link" href="/ornibase/discuss/behavior/${discussDTO.discussId}/list">查看紀錄清單</a>
 				</div>
 			</div>
 			<script>

@@ -14,11 +14,11 @@
 		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
 		<div class="blur-overlay">
 			<fieldset class="user">
-			<!-- content -->
-			<div>
-				<h2 class="h2">註冊成功!</h2>	
-				<a href="/login">點我登入</a>
-			</div>
+				<!-- content -->
+				<div>
+					<h2 class="h2">註冊成功!</h2>	
+					<a href="/login">點我登入</a>
+				</div>
 			</fieldset>
 		</div>
 	</body>

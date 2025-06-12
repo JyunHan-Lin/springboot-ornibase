@@ -1,6 +1,7 @@
 package com.example.demo.model.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -10,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -20,12 +22,12 @@ import lombok.NoArgsConstructor;
 /**
 Entity name: Discuss
 Table name: discuss
-+------------+--------+-------------+------------------+--------------+
-| discuss_id | title  | description | youtube_video_id | created_time | 
-+------------+--------+-------------+------------------+--------------+
-|     1      |  ..    |   ........  |   .............  |  ..........  |
-|     2      |  ...   |   ........  |   .............  |  ..........  |
-+------------+--------+-------------+------------------+--------------+
++------------+--------+-------------+--------+---------------------+--------------+
+| discuss_id | title  | description |	tag	 |  youtube_video_id   | created_time | 
++------------+--------+-------------+--------+---------------------+--------------+
+|     1      |  ..    |   ........  |   ...  |      ...........    |  ..........  |
+|     2      |  ...   |   ........  |   ...  |      ...........    |  ..........  |
++------------+--------+-------------+--------+---------------------+--------------+
 */
 
 @Entity
@@ -46,14 +48,17 @@ public class Discuss {
 	@Column(name = "description", nullable = false, length = 300)
 	private String description;
 	
+	@Column(name = "tag", nullable = false, length = 50)
+	private String tag;
+	
 	@Column(name = "youtube_video_id",nullable = false, length = 50)
 	private String youtubeVideoId;
 	
+	@Column(name = "public")	// 是否公開
+	private Boolean isPublic; // true = 公開, false = 私人
+
 	@Column(name = "created_time")
 	private LocalDateTime createdTime = LocalDateTime.now();
-
-	@Column(name = "public")
-	private Boolean isPublic; // true = 公開, false = 私人
 
 	@ManyToOne(fetch = FetchType.LAZY) // 多對一預設為 Eager
 	@JoinColumn(name = "user_id")
@@ -61,4 +66,7 @@ public class Discuss {
 	
 	@OneToMany(mappedBy = "discuss")
 	private List<Behavior> behaviors;
+	
+	@ManyToMany
+	private List<User> membersList = new ArrayList<User>();
 }

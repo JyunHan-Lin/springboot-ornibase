@@ -4,11 +4,11 @@
     
 <nav class="navbar fontstyle">
 	<div class="nav-container">
-		<div class="logo"><a href="/bbd"><img src="/images/logo.png" height="30"></a></div>
+		<div class="logo"><a href="/ornibase"><img src="/images/logo.png" height="30"></a></div>
 		<ul class="nav-list">
-			<li><a href="/ornibase/discuss">建立記錄本</a></li>
-			<li><a href="/ornibase/discuss/list">檢視記錄本</a></li>
-			<li>${userName}</li>			 
+			<li><a href="/ornibase/discuss/new">建立筆記本</a></li>
+			<li><a href="/ornibase/discuss/list">檢視筆記本</a></li>
+			<li>userName</li>			 
 			<li><a href="/ornibase/member">會員資料變更</a></li>
 			<li><a href="/ornibase/logout">登出</a></li>
 		</ul>

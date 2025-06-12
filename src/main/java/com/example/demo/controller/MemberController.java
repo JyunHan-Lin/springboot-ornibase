@@ -14,8 +14,8 @@ import com.example.demo.service.UserService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/bbd/codeedit")
-public class ChangeCodeController {
+@RequestMapping("/ornibase/member")
+public class MemberController {
 	
 	@Autowired
 	private UserService userService;
@@ -49,6 +49,6 @@ public class ChangeCodeController {
             redirectAttributes.addFlashAttribute("errorMessage", "密碼變更失敗，請確認原密碼與新密碼是否符合。");
         }
 
-        return "redirect:/bbd/codeedit";
+        return "redirect:/ornibase/member";
     }
 }

@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="/css/user.css">
 		<title>OrniBase</title>
 		<link rel="icon" type="image/png" href="/images/icon.png">
+		<script src="/js/register.js"></script>
 	</head>
 	<body class="fontstyle" >
 		<!-- menu bar include -->
@@ -24,8 +25,9 @@
 							<fieldset class="index">
 								<legend class="h2">&nbsp;會員註冊&nbsp;</legend>
 									<form class="user" method="POST" action="/register">
-										<input type="text" name="username" placeholder="請輸入帳號" required/><p>
-										<input type="password" name="password" placeholder="請輸入密碼" required/><p>
+										<input type="text" name="username" placeholder="請輸入4位數以上帳號" required/><p>
+										<input type="password" name="password" placeholder="請輸入6位數以上密碼" required/><p>
+										<input type="password" name="confirmPassword" placeholder="請再輸入一次密碼" required/><p>
 										<input type="email" name="email" placeholder="請輸入電子郵件" required/><p>
 										<%--
 										<button type="submit">寄送驗證碼</button>

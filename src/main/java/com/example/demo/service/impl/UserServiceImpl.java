@@ -21,17 +21,21 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-//	@Autowired
-//	private UserMapper userMapper;  --> 搜尋功能?
+	@Autowired
+	private UserMapper userMapper;
 
 	// 註冊
 	// 參數待改 ?
 	@Override
-	public void addUser(String username, String password, String email, Boolean active, String role){
+	public boolean addUser(String username, String password, String confirmPassword, String email, Boolean active, String role){
 	    // 判斷使用者是否已存在
 	    if (userRepository.existsByUsername(username)) {
 	    	throw new UserAlreadyExistException("使用者註冊過了");
 	    }
+	    if (!password.equals(confirmPassword)) {
+	    	throw new PasswordInvalidException("密碼輸入錯誤");
+	    }
+	    
 	    // 加鹽
 		String salt = HashUtil.getSalt();
 		// 加鹽加密
@@ -41,6 +45,7 @@ public class UserServiceImpl implements UserService {
 		// 儲存到資料庫
 		userRepository.save(user);
 		System.out.println("使用者註冊成功");
+		return true;
 		
 	}
 	

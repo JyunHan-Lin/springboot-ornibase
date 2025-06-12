@@ -17,7 +17,7 @@
 									
 		<!-- 搜尋欄 -->
 		<div class="search-container">
-	 		<form class="search-form" method="get" action="/bbd/discuss/search">
+	 		<form class="search-form" method="get" action="/ornibase/discuss/search">
 	    		<input type="text" name="keyword" placeholder="輸入關鍵字搜尋討論串..." class="search-input"/>
 	    		<button type="submit" class="search-button">搜尋</button>
 			</form>
