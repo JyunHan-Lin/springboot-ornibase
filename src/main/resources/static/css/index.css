@@ -1,0 +1,52 @@
+.fontstyle{
+  	font-family: "Noto Sans", sans-serif;
+  	font-optical-sizing: auto;
+  	font-style: normal;
+  	font-variation-settings:"wdth" 100;
+}
+
+.view{
+	background: black;
+	background-image:url('/images/index.jpg');
+	background-size: 100% auto;       /* 讓背景圖覆蓋整個容器 */
+  	background-position: top;  /* 圖片置中對齊 */
+  	background-repeat: no-repeat; /* 不重複平鋪 */
+  	height: 100vh;                /* 高度設為螢幕視窗高度 */
+	height: 200px;
+  	line-height: 30px;  /* 行高設成跟高度一樣 */
+  	text-align: center;  /* 水平置中 */
+}
+
+.index{
+	background: rgba(0, 0, 0, 0.5);  /* 黑色 50% 透明 */
+	width:400px;
+	position: fixed;
+	top: 400px;
+	left: 400px;
+	margin: 0;	
+}
+
+.h1, .h2{
+	color:white;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 文字陰影 */
+}
+
+.h2{
+	color:white;
+	font-size:20px;
+}
+
+.h3{
+	color:white;
+	font-size:18px;
+}
+
+a {
+  color: #f6f6f6;
+}
+
+a:hover {
+  color: rgb(2, 149, 2);
+  text-decoration: underline; /* 滑過時加底線 */
+}
+
