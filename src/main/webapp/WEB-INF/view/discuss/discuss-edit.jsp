@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu-login.jspf" %>								
+		<%@ include file="/WEB-INF/view/menu-mini.jspf" %>								
 		
 		<sp:form class="fontstyle" method="post" modelAttribute="discussDTO" action="/ornibase/discuss/update/${ discussDTO.discussId }" >
 		  <fieldset class="discussion-form">

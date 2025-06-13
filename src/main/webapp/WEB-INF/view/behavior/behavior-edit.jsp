@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu-login.jspf"%>
+		<%@ include file="/WEB-INF/view/menu-mini.jspf"%>
 	
 		<div class="right-section fontstyle">
 			<div class="form-title">行為紀錄</div>

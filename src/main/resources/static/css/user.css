@@ -1,34 +1,10 @@
 .container{
-	display: flex;
 	height: 100vh;
-	background: #404040;
-}
-
-/* 左半邊 (登入頁面) */
-.left-section-login {
-	flex: 3;  /* 左邊佔 50% */
-  	background: url('/images/login.jpg') no-repeat center center;
-  	background-size: cover;
-}
-
-/* 左半邊 (註冊頁面) */
-.left-section-register {
-	flex: 3;  /* 左邊佔 50% */
-  	background: url('/images/register.jpg') no-repeat center center;
-  	background-size: cover;
-}
-
-.right-section {
-	flex: 2;
-    position: relative; /* 或 absolute，視需求而定 */
-    backdrop-filter: blur(8px); /* 模糊程度 */
-    padding: 2rem; 
-	overflow: hidden;
+  	margin: 60px auto 0 auto;
     background-color: gray;
   	background-image: 
-    	repeating-linear-gradient(45deg, gray, #f0f0f0 1px, transparent 1px, transparent 10px),
-    	repeating-linear-gradient(-45deg, gray, #f0f0f0 1px, transparent 1px, transparent 10px);
-
+    	repeating-linear-gradient(45deg, gray, black 1px, transparent 1px, transparent 2px),
+    	repeating-linear-gradient(-45deg, gray, black 1px, transparent 1px, transparent 2px);
 }
 
 .content-wrapper {
@@ -75,6 +51,9 @@ form.user button {
 
 .h1{
 	font-size: 50px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-top: 80px;
+    margin-bottom: 10px;
 }
 
 .h2{
@@ -114,6 +93,5 @@ a {
 }
 
 a:hover {
-  color: rgb(2, 149, 2);
-  text-decoration: underline; /* 滑過時加底線 */
+  color: rgb(199, 61, 14);
 }

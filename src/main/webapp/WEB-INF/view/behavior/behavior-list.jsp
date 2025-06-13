@@ -21,7 +21,7 @@
 	</head>
 	<body class="fontstyle">
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu-login.jspf" %>	
+		<%@ include file="/WEB-INF/view/menu-mini.jspf" %>	
 		
 		<div>
 			<fieldset  class="behavior-form">

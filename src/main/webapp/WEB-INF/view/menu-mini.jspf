@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
     
 <nav class="navbar fontstyle">
-	<div class="nav-container">
+	<div class="nav-container-mini">
 		<div class="nav-logo-links">
 			<div class="logo">
 				<a href="/ornibase"><img src="/images/logo.png" height="40"></a>

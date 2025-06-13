@@ -1,9 +1,4 @@
-.fontstyle{
-  	font-family: "Noto Sans", sans-serif;
-  	font-optical-sizing: auto;
-  	font-style: normal;
-  	font-variation-settings:"wdth" 100;
-}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
 .view{
 	background: black;
@@ -18,10 +13,10 @@
 }
 
 .index{
-	background: rgba(0, 0, 0, 0.5);  /* 黑色 50% 透明 */
+	background: rgba(0, 0, 0, 0.8);  /* 黑色 50% 透明 */
 	width:400px;
 	position: fixed;
-	top: 400px;
+	top: 200px;
 	left: 400px;
 	margin: 0;	
 }
@@ -29,16 +24,23 @@
 .h1, .h2{
 	color:white;
 	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 文字陰影 */
+	font-family: "Noto Sans", sans-serif;
+}
+
+.h1 {
+	  font-family: 'Dancing Script', cursive;
+  font-style: normal; /* Dancing Script 本身是草寫風格，不需 italic */
+	
 }
 
 .h2{
-	color:white;
 	font-size:20px;
 }
 
 .h3{
-	color:white;
+	color: rgb(241, 241, 241);
 	font-size:18px;
+	font-family: "Noto Sans", sans-serif;
 }
 
 a {
@@ -46,7 +48,7 @@ a {
 }
 
 a:hover {
-  color: rgb(2, 149, 2);
+  color: rgb(199, 61, 14);
   text-decoration: underline; /* 滑過時加底線 */
 }
 

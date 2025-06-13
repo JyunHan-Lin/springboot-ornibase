@@ -1,3 +1,51 @@
+.main-content {
+  padding: 10px;
+}
+
+.image-area img {
+  display: block;
+  background-image:url('/images/index.jpg');
+  background-size: 100% auto;       /* 讓背景圖覆蓋整個容器 */
+  width: 100vw;
+  height: 350px;
+}
+
+.tag-area {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tag {
+  padding: 6px 12px;
+  background-color: #eee;
+  border-radius: 20px; /* 橢圓形 */
+  font-size: 14px;
+}
+
+.latest-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 標題在左邊 */
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;  
+  margin-top: 10px;
+}
+
+.latest-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0; /* 移除 h2 預設 margin 讓對齊更漂亮 */
+}
+
+.latest-header hr {
+  width: 60px;
+  border: 1px solid #ccc;
+  margin: 5px 10px 20px;
+}
+
 .video-list-container {
   width: 1200px;
   margin: 0 auto;
@@ -59,8 +107,8 @@
 /* 搜尋欄容器置中並加點間距 */
 .search-container {
   width: 600px;
-  margin: 40px auto 0 auto;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
   border-radius: 10px;
 }
 
@@ -94,7 +142,7 @@
 
 /* 按鈕樣式 */
 .search-button {
-  background-color: rgb(2, 149, 2);
+  background-color: rgb(199, 61, 14);
   border: none;
   color: white;
   padding: 8px 20px;
@@ -107,8 +155,13 @@
 
 /* 按鈕 hover 效果 */
 .search-button:hover {
-  background-color: rgba(0, 85, 0);
+  background-color: white;
+  color: rgb(199, 61, 14);
 }
 
+.video-section {
+	margin: 0;
+	padding: 10px;
+}
 
 

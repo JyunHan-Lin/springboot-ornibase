@@ -15,7 +15,7 @@
 	</head>
 	<body class="fontstyle">
 		<!-- menu bar include -->
-		<%@ include file="/WEB-INF/view/menu-login.jspf" %>	
+		<%@ include file="/WEB-INF/view/menu-mini.jspf" %>	
 		<!-- 外層容器 -->
 		<div class="page-container">
 			<!-- 左側區域：標題、影片、留白 -->

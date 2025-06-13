@@ -1,68 +1,158 @@
-.fontstyle{
-  	font-family: "Noto Sans", sans-serif;
+.fontstyle {
+	font-family: "Noto Sans", sans-serif;
 }
 
 body {
-    background-color: white;
-  	background-image: 
-    	repeating-linear-gradient(45deg, 	#F0F0F0, #f0f0f0 1px, transparent 1px, transparent 10px),
-    	repeating-linear-gradient(-45deg,	#F0F0F0, #f0f0f0 1px, transparent 1px, transparent 10px);
+	background-color: white;
+	background-image: 
+		repeating-linear-gradient(45deg, #F0F0F0, #f0f0f0 1px, transparent 1px, transparent 2px),
+		repeating-linear-gradient(-45deg, #F0F0F0, #f0f0f0 1px, transparent 1px, transparent 2px);
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-
-  background: linear-gradient(to right, white, rgb(2, 149, 2));  /* 漸層背景 */
-  padding: 5px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background: linear-gradient(to right, white, rgb(199, 61, 14));
+	/* 漸層背景 */
+	padding: 10px 0;
+	font-weight: bold;
 }
 
 .nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+.nav-container-mini {
+	width: 1500px;     /* 固定寬度 */
+	margin: 0 auto;    /* 水平置中 */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.nav-logo-links {
+	display: flex;
+	align-items: center;
+	gap: 10px; /* logo 與連結間距 */
 }
 
 .nav-list {
-  list-style: none;
-  display: flex;
-  gap: 5px;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	display: flex;
+	gap: 5px;
+	margin: 0;
+	padding: 0;
 }
 
 .nav-list li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 4px 12px;
-  position: relative;
-  transition: color 0.3s, background-color 0.3s;
+	color: white;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 4px 12px;
+	position: relative;
+	transition: 0.3s;
 }
 
-/* 漸層底亮起 + 底線 */
+/* 底線效果 */
 .nav-list li a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background-color: white;
-}
-
-.nav-list li a:hover {
-  background-color: rgba(0, 140, 0);
-  color: white; /* 保持白字 */
+	color: red;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 1px;
+	background-color: rgb(199, 61, 14);
+	transition: width 0.3s, left 0.3s;
 }
 
 .nav-list li a:hover::after {
-  width: 100%;
-  left: 0;
+	width: 100%;
+	left: 0;
 }
+
+.emphasis:hover {
+	color: rgb(199, 61, 14);
+}
+.nav-right {
+	margin-left: auto;
+}
+
+.nav-right a {
+	display: inline-block;
+	border: 2px solid white;
+	border-radius: 20px; /* 橢圓效果 */
+	padding: 6px 16px;
+	color: rgb(199, 61, 14);
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-right a:hover {
+	background-color: white;
+	color: rgb(199, 61, 14);
+	text-shadow: none !important; /* 阻止繼承的陰影 */
+}
+
+/* 讓 nav-right a 的 hover 沒有底線效果 */
+.nav-right a::after {
+	display: none; /* 不產生底線 */
+}
+
+/* 登入後導覽列 */
+.nav-user {
+	position: relative;
+	color: white;
+	cursor: pointer;
+}
+
+.user-name {
+	padding: 6px 12px;
+	border-radius: 4px;
+	transition: background-color 0.3s;
+}
+
+.user-name:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-menu {
+	position: absolute;
+	right: 0;
+	top: 100%;
+	background: rgb(199, 61, 14);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: none;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+	min-width: 160px;
+	overflow: hidden;
+	border-radius: 2px;
+}
+
+.user-menu li a {
+	display: block;
+	padding: 8px 12px;
+	color: white;
+	text-decoration: none;
+	transition: background-color 0.2s, color 0.2s;
+}
+
+.user-menu li a:hover {
+	background-color: white;
+	color: rgb(199, 61, 14);
+}
+
+.nav-user:hover .user-menu {
+	display: block;
+}
+
+
