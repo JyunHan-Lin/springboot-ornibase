@@ -10,7 +10,7 @@
 			</div>
 			<ul class="nav-list">
 				<li><a href="/ornibase/discuss/new" class="emphasis">建立筆記本</a></li>
-				<li><a href="/ornibase/discuss/list" class="emphasis">檢視筆記本</a></li>
+				<li><a href="/ornibase/discuss/list" class="emphasis">書架</a></li>
 			</ul>
 		</div>
 		<div class="nav-user">

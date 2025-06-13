@@ -47,14 +47,14 @@
 }
 
 .video-list-container {
-  width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 10px auto;
   background: white;
 }
 
 .video-list {	
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -159,9 +159,5 @@
   color: rgb(199, 61, 14);
 }
 
-.video-section {
-	margin: 0;
-	padding: 10px;
-}
 
 
