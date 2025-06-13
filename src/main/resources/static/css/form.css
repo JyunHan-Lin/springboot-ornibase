@@ -1,6 +1,6 @@
 .discussion-form {
   width: 400px;
-  margin: 100px auto; 
+  margin: 90px auto; 
   padding: 20px;
   border: 2px solid #ccc;
   position: relative;
@@ -28,8 +28,21 @@
   resize: vertical;
 }
 
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
 .checkbox-group {
-  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  width: auto;
+  margin-right: 5px;
 }
 
 .discussion-form button {
@@ -52,7 +65,23 @@
   font-weight: bold;
 }
 
+.button-wrapper button {
+  margin-left: 5px; /* 按鈕間隔 */
+}
+
 .button-wrapper {
   text-align: right;
 }
+
+.alert {
+  font-size: 15px;
+  color: red;
+  margin-left: 3px;
+}
+
+.alert-note {
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
 

@@ -1,0 +1,104 @@
+.main-content {
+  padding: 10px;
+}
+
+.image-area img {
+  display: block;
+  background-image:url('/images/index.jpg');
+  background-size: 100% auto;       /* 讓背景圖覆蓋整個容器 */
+  width: 100vw;
+  height: 350px;
+}
+
+.tag-area {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tag {
+  padding: 6px 12px;
+  background-color: #eee;
+  border-radius: 20px; /* 橢圓形 */
+  font-size: 14px;
+}
+
+.latest-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 標題在左邊 */
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;  
+  margin-top: 10px;
+}
+
+.latest-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0; /* 移除 h2 預設 margin 讓對齊更漂亮 */
+}
+
+.latest-header hr {
+  width: 60px;
+  border: 1px solid #ccc;
+  margin: 5px 10px 20px;
+}
+.video-list-container {
+  width: 100%;
+  margin: 10px auto;
+  background: white;
+}
+
+.video-list {	
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.video-card {
+  width: 17%;
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.video-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.video-description {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
+
+.video-title a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.video-title a:hover {
+  color: #0077cc;
+  text-decoration: underline;
+}
+
+.h2{
+	font-size:20px;
+    font-weight: bold;
+}

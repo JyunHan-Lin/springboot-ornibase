@@ -22,7 +22,9 @@
 			<div class="left-section">
 			    <!-- 標題與按鈕列 -->
 			    <div class="header-row">
+			    <div>username</div>
 			    	<h2 class="title-text">${discussDTO.title}</h2>
+			    	<div>tag</div>
 		    	  	<div class="btn-group">
 		        		<a href="/ornibase/discuss/update/${ discussDTO.discussId }" class="btn btn-danger">編輯</a>
 						<form method="post" action="/ornibase/discuss/delete/${ discussDTO.discussId }">
@@ -34,7 +36,7 @@
 		
 			    <!-- 描述 -->
 			    <p class="description-text">${discussDTO.description}</p>
-		
+				<div>createtime</div>
 		    	<!-- YouTube 嵌入影片 -->
 		    	<iframe class="video-frame" src="https://www.youtube.com/embed/${discussDTO.youtubeVideoId}"
 		    			frameborder="0" allowfullscreen></iframe>

@@ -18,9 +18,9 @@
 		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
 		
 		<!-- 導覽列下方內容 -->
-		  <div class="image-area">
-		    <img src="/images/index.jpg" alt="展示照片">
-		  </div>
+		<div class="image-area">
+		  <img src="/images/index.jpg" alt="展示照片">
+		</div>
 		
 		<div class="main-content">
 		  <div class="latest-header">
