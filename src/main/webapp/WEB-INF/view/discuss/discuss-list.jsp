@@ -18,13 +18,11 @@
 		<%@ include file="/WEB-INF/view/menu-login.jspf" %>
 		
 		<!-- 導覽列下方內容 -->
-		<div class="image-area">
-		  <img src="/images/index.jpg" alt="展示照片">
-		</div>
+		<div class="image-area"></div>
 										
 		<div class="main-content">
 		  <div class="latest-header">
-			<h2>個人書架</h2>
+			<span class="latest">個人書架</span>
 		  </div>	
 		  
 			<!-- 列表 -->
@@ -38,7 +36,6 @@
 						         ${discussDTO.title}
 						      </a>
 						    </div>
-						    <div class="video-description">${ discussDTO.description }</div>
 						 </div>
 					 </c:forEach>
 						

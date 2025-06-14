@@ -25,7 +25,7 @@
 		
 		<div>
 			<fieldset  class="behavior-form">
-				<legend class="title">已建立的行為紀錄</legend>
+				<legend class="title">行為紀錄</legend>
 				<table>
 					<thead>
 						<tr>

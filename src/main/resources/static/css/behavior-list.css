@@ -1,6 +1,6 @@
 .behavior-form {
- width: 1200px;
- margin: 60px auto; /* 水平置中，並往下推一點 */
+ width: 1500px;
+ margin: 90px auto; /* 水平置中，並往下推一點 */
  padding: 20px;
  border: 2px solid #ccc;
  position: relative;
@@ -33,4 +33,42 @@
  background-color: #e74c3c;
  color: white;
  margin-left: 5px;
+}
+
+/* 表頭背景色 + 字體顏色 */
+table.dataTable thead th {
+  background-color: rgb(199, 61, 14);
+  color: white;
+  text-align: center;
+}
+
+/* 列 hover 顏色 */
+table.dataTable tbody tr:hover {
+  background-color: #fdd;  /* 淡紅色，或改成你想要的色碼 */
+}
+
+/* 偶數列底色 */
+table.dataTable tbody tr:nth-child(even) {
+  background-color: #c0c0c0;
+}
+
+/* 分頁按鈕顏色 */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  background: #c0c0c0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: 0 2px;
+  color: #333 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+  background: #c73d0e;
+  color: white !important;
+}
+
+/* 全表格欄位置中 */
+table.dataTable th,
+table.dataTable td {
+  text-align: left;
 }

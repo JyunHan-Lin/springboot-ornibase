@@ -33,6 +33,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .checkbox-group {
@@ -50,6 +51,7 @@
   font-size: 14px;
   border-radius: 5px;
   background-color: rgb(199, 61, 14);
+  border: 1px solid rgb(199, 61, 14);
   color: white;
   border: none;
   cursor: pointer;
@@ -58,7 +60,10 @@
 
 .discussion-form button:hover {
   background-color: white;
-  color: rgb(199, 61, 14);}
+  color: rgb(199, 61, 14);
+  border: 1px solid rgb(199, 61, 14);
+}
+  
 
 .h2 {
   font-size: 20px;

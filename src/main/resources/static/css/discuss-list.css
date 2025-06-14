@@ -2,12 +2,14 @@
   padding: 10px;
 }
 
-.image-area img {
+.image-area {
   display: block;
-  background-image:url('/images/index.jpg');
-  background-size: 100% auto;       /* 讓背景圖覆蓋整個容器 */
+  background-color: gray;
+  background-image: 
+  	repeating-linear-gradient(45deg, black, black 1px, transparent 1px, transparent 2px),
+  	repeating-linear-gradient(-45deg, black, black 1px, transparent 1px, transparent 2px);
   width: 100vw;
-  height: 350px;
+  height: 200px;
 }
 
 .tag-area {
@@ -102,3 +104,14 @@
 	font-size:20px;
     font-weight: bold;
 }
+
+.latest {
+  display: inline-block; /* 確保可以正確形成橢圓形 */
+  background-color: rgb(199, 61, 14);
+  color: white;
+  padding: 10px 10px; 
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+

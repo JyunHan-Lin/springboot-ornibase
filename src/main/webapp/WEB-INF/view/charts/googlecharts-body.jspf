@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div class="charts">
-	<div id="piechartA" style="width: 390px; height: 270px"></div>
-	<div id="timeline" style="width: 390px; height: 270px"></div>
-	<div id="barchart" style="width: 390px; height: 270px"></div>
+	<div id="piechartA" style="width: 370px; height: 250px"></div>
+	<div id="timeline" style="width: 370px; height: 250px"></div>
+	<div id="barchart" style="width: 370px; height: 250px"></div>
 </div>
   	<script type="text/javascript">
      // 載入套件

@@ -18,13 +18,11 @@
 		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
 		
 		<!-- 導覽列下方內容 -->
-		<div class="image-area">
-		  <img src="/images/index.jpg" alt="展示照片">
-		</div>
+		<div class="image-area"></div>
 		
 		<div class="main-content">
 		  <div class="latest-header">
-			<h2>最新上架</h2>
+			<span class="latest">最新上架</span>
 			<div class="search-container">
 			  <form class="search-form" method="get" action="/ornibase/discuss/search">
 			    <input type="text" name="keyword" placeholder="輸入關鍵字搜尋討論串..." class="search-input"/>
