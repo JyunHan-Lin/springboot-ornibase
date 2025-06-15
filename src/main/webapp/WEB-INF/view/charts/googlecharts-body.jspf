@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div class="charts">
-	<div id="piechartA" style="width: 370px; height: 250px"></div>
-	<div id="timeline" style="width: 370px; height: 250px"></div>
-	<div id="barchart" style="width: 370px; height: 250px"></div>
-</div>
-  	<script type="text/javascript">
+<!-- Spring Form 表單標籤、c: forEach, if | fn: function -->
+<%@ taglib prefix="c" uri="jakarta.tags.core" %> 
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
+<script type="text/javascript">
      // 載入套件
      google.charts.load('current', {'packages':['corechart', 'timeline']});
 
@@ -15,21 +13,32 @@
      		drawTimeline();
      		drawBarChart();    	 
      });
+     
+     // Ajax
+     google.charts.setOnLoadCallback(loadChartData);
 
+     document.getElementById('subjectSelect').addEventListener('change', loadChartData);
+
+     function loadChartData() {
+       const subject = document.getElementById('subjectSelect').value;
+       const discussId = /* 這裡建議用 JSTL 注入一個變數 */;
+
+       fetch(`/ornibase/discuss/${discussId}/chartData?subject=${subject}`)
+         .then(response => response.json())
+         .then(dataMap => {
+           const dataArray = [['行為', '持續分鐘']];
+           for (const [key, value] of Object.entries(dataMap)) {
+             dataArray.push([key, value]);
+           }
+           drawChart(dataArray, subject);
+         });
+       
      // 圖表 1
      function drawChart() {
-    	    const data = google.visualization.arrayToDataTable([
-    	      ['行為', '持續分鐘'],
-    	      <c:forEach var="entry" items="${actionDuration}" varStatus="loop">
-    	        ['${fn:escapeXml(entry.key)}', ${entry.value}]
-    	      <c:if test="${!loop.last}">,</c:if>
-    	      </c:forEach>
-    	    ]);
-
-		    console.log("Pie Chart Data =", data.toJSON()); // 除錯
+    	    const data = google.visualization.arrayToDataTable(dataArray);
     	    
 		    const options = {
-    	      title: '幼鳥A 今日行為比例',
+    	      title: '${selectedSubject} ${selectedDate} 行為比例',
     	      pieSliceText: 'percentage',
     	      chartArea: { width: '90%', height: '80%' }
     	    };

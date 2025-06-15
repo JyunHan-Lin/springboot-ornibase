@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -13,6 +15,9 @@
 		<link rel="icon" type="image/png" href="/images/icon.png">
 		<%@ include file="/WEB-INF/view/charts/googlecharts-head.jspf" %>	
 		<script src="/js/time.js"></script>
+		<!-- 從 Google 的 CDN 載入 Google Charts 套件, 引入 Google Charts-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		
 	</head>
 <body class="fontstyle">
 	<!-- menu bar include -->
@@ -53,7 +58,19 @@
 
 			<!-- 圖表區 -->
 			<div class="placeholder-box">
-				<%@ include file="/WEB-INF/view/charts/googlecharts-body.jspf"%>
+				<!-- menu bar include -->
+				<%@ include file="/WEB-INF/view/charts/google-charts-body.jspf"%>
+				<select id="subjectSelect">
+				  <option value="幼鳥A" selected>幼鳥A</option>
+				  <option value="幼鳥B">幼鳥B</option>
+				  <option value="成鳥A">成鳥A</option>
+				  <option value="成鳥B">成鳥B</option>
+				</select>
+				<div class="charts">
+					<div id="piechartA" style="width: 370px; height: 250px"></div>
+					<div id="timeline" style="width: 370px; height: 250px"></div>
+					<div id="barchart" style="width: 370px; height: 250px"></div>
+				</div>
 			</div>
 		</div>
 		<!-- 右側區域：行為紀錄表單 -->

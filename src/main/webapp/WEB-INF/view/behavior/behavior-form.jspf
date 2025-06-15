@@ -31,13 +31,25 @@
 	          <option value="成鳥A">成鳥A</option>
 	          <option value="成鳥B">成鳥B</option>
 	          <option value="幼鳥A">幼鳥A</option>
+	          <option value="幼鳥B">幼鳥B</option>
+	          <option value="幼鳥C">幼鳥C</option>
+	          <option value="幼鳥D">幼鳥D</option>
+	          <option value="幼鳥E">幼鳥E</option>
+	          <option value="鄰居">鄰居</option>
 	        </select>
 	      </div>
 	      <div class="form-row">
 	        <select name="action">
 	          <option value="">請選擇行為</option>
 	          <option value="飛行">飛行</option>
-	          <option value="進食">進食</option>
+   	          <option value="進食">餵食</option>
+	          <option value="進食">獨自進食</option>
+	          <option value="睡覺">睡覺</option>
+	          <option value="排遺">排遺</option>
+	          <option value="活動">活動</option>
+	          <option value="送餐">送餐</option>
+	          <option value="開傘">開傘</option>
+	          <option value="警戒">警戒</option>
 	          <option value="其他">其他</option>
 	        </select>
 	      </div>
@@ -53,6 +65,11 @@
 	          <option value="魚類">魚類</option>
 	          <option value="爬蟲類">爬蟲類</option>
 	          <option value="兩生類">兩生類</option>
+	          <option value="昆蟲">昆蟲</option>
+	          <option value="節肢動物">節肢動物</option>
+	          <option value="軟體動物">軟體動物</option>
+	          <option value="果實">果實</option>
+	          <option value="種子">種子</option>
 	        </select>
 	      </div>
 	      
