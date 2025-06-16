@@ -1,20 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<title>OrniBase</title>
+		<link rel="icon" type="image/png" href="/images/icon.png">
 		<link rel="stylesheet" href="/css/basic.css">
 		<link rel="stylesheet" href="/css/common.css">
 		<link rel="stylesheet" href="/css/discuss.css">
 		<link rel="stylesheet" href="/css/behavior.css">
 		<link rel="stylesheet" href="/css/charts.css">
-		<title>OrniBase</title>
-		<link rel="icon" type="image/png" href="/images/icon.png">
-		<%@ include file="/WEB-INF/view/charts/googlecharts-head.jspf" %>	
-		<script src="/js/time.js"></script>
 		<!-- 從 Google 的 CDN 載入 Google Charts 套件, 引入 Google Charts-->
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		
@@ -59,17 +55,46 @@
 			<!-- 圖表區 -->
 			<div class="placeholder-box">
 				<!-- menu bar include -->
-				<%@ include file="/WEB-INF/view/charts/google-charts-body.jspf"%>
-				<select id="subjectSelect">
-				  <option value="幼鳥A" selected>幼鳥A</option>
-				  <option value="幼鳥B">幼鳥B</option>
-				  <option value="成鳥A">成鳥A</option>
-				  <option value="成鳥B">成鳥B</option>
-				</select>
+				<%@ include file="/WEB-INF/view/charts/googlecharts-body.jspf"%>
 				<div class="charts">
-					<div id="piechartA" style="width: 370px; height: 250px"></div>
-					<div id="timeline" style="width: 370px; height: 250px"></div>
-					<div id="barchart" style="width: 370px; height: 250px"></div>
+					<div>
+						<select id="subjectSelect">
+						  <option value="幼鳥A" selected>幼鳥A</option>
+				          <option value="成鳥A">成鳥A</option>
+				          <option value="成鳥B">成鳥B</option>
+				          <option value="幼鳥B">幼鳥B</option>
+				          <option value="幼鳥C">幼鳥C</option>
+				          <option value="幼鳥D">幼鳥D</option>
+				          <option value="幼鳥E">幼鳥E</option>
+				          <option value="鄰居">鄰居</option>
+						</select>
+						<div id="piechart" style="width: 370px; height: 210px"></div>
+					</div>
+				
+		
+					<div>
+					  <input type="date" id="dateSelector">					  
+					  <div id="timeline_div" style="width: 370px; height: 210px"></div>
+					</div>
+					<div>
+					  <select id="subjectBarSelector">
+					  	  <option value="幼鳥A" selected>幼鳥A</option>
+				          <option value="成鳥A">成鳥A</option>
+				          <option value="成鳥B">成鳥B</option>
+				          <option value="幼鳥B">幼鳥B</option>
+				          <option value="幼鳥C">幼鳥C</option>
+				          <option value="幼鳥D">幼鳥D</option>
+				          <option value="幼鳥E">幼鳥E</option>
+				          <option value="鄰居">鄰居</option>
+					  </select>
+					  <div id="bar_chart_div" style="width: 370px; height: 210px"></div>
+					</div>
+					<div>
+					  <input type="date" id="foodFromDate">
+					  <div id="food_chart_div" style="width: 370px; height: 210px">
+					</div>
+				
+					
 				</div>
 			</div>
 		</div>

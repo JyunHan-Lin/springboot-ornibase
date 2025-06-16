@@ -16,4 +16,5 @@ public interface BehaviorService {
 	public void updateBehavior(Integer behaviorId, BehaviorDTO behaviorDTO);
 	public void updateBehavior(Integer behaviorId, LocalDate date, LocalTime startTime, LocalTime endTime, String subject, String action, String food, Float temperature, String note);
 	public void deleteBehavior(Integer behaviorId);
+	List<Map<String, Object>> getTimelineData(LocalDate date);
 }

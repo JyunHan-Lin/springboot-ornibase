@@ -115,5 +115,22 @@ public class BehaviorServiceImpl implements BehaviorService{
 		}
 		behaviorRepository.deleteById(behaviorId);
 	}
+	
+	// 圖表1
+	@Override
+	public List<Map<String, Object>> getTimelineData(LocalDate date) {
+	    List<Behavior> behaviors = behaviorRepository.findByDate(date);
+	    return behaviors.stream().map(b -> {
+	        Map<String, Object> row = new HashMap<>();
+	        row.put("subject", b.getSubject());
+	        row.put("action", b.getAction());
+	        row.put("start", LocalDateTime.of(date, b.getStartTime()));
+	        row.put("end", LocalDateTime.of(date, b.getEndTime()));
+	        return row;
+	    }).toList();
+	}
+	
+
+
 }
 

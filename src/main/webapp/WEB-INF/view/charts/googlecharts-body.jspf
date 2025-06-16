@@ -3,95 +3,47 @@
 <!-- Spring Form 表單標籤、c: forEach, if | fn: function -->
 <%@ taglib prefix="c" uri="jakarta.tags.core" %> 
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
-<script type="text/javascript">
-     // 載入套件
-     google.charts.load('current', {'packages':['corechart', 'timeline']});
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+const timeLine = ${timelineDataJson};
+</script>
 
-     // 資料載完後呼叫
-     google.charts.setOnLoadCallback(function() {
-    		drawChart();
-     		drawTimeline();
-     		drawBarChart();    	 
-     });
-     
-     // Ajax
-     google.charts.setOnLoadCallback(loadChartData);
+<script>
+google.charts.load('current', {'packages':['corechart', 'timeline', 'bar']});
+google.charts.setOnLoadCallback(drawCharts);
 
-     document.getElementById('subjectSelect').addEventListener('change', loadChartData);
+function drawCharts() {
+    drawTimeline(${timelineDataJson});
 
-     function loadChartData() {
-       const subject = document.getElementById('subjectSelect').value;
-       const discussId = /* 這裡建議用 JSTL 注入一個變數 */;
+}
 
-       fetch(`/ornibase/discuss/${discussId}/chartData?subject=${subject}`)
-         .then(response => response.json())
-         .then(dataMap => {
-           const dataArray = [['行為', '持續分鐘']];
-           for (const [key, value] of Object.entries(dataMap)) {
-             dataArray.push([key, value]);
-           }
-           drawChart(dataArray, subject);
-         });
-       
-     // 圖表 1
-     function drawChart() {
-    	    const data = google.visualization.arrayToDataTable(dataArray);
-    	    
-		    const options = {
-    	      title: '${selectedSubject} ${selectedDate} 行為比例',
-    	      pieSliceText: 'percentage',
-    	      chartArea: { width: '90%', height: '80%' }
-    	    };
+function drawTimeline(dataJson) {
+    let container = document.getElementById('timeline_div');
+    let chart = new google.visualization.Timeline(container);
+    let dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Subject' });
+    dataTable.addColumn({ type: 'string', id: 'Action' });
+    dataTable.addColumn({ type: 'datetime', id: 'Start' });
+    dataTable.addColumn({ type: 'datetime', id: 'End' });
 
-		    const chart = new google.visualization.PieChart(document.getElementById('piechartA'));
-    	    chart.draw(data, options);
-    	  }
+    dataJson.forEach(d => {
+        dataTable.addRow([d.subject, d.action, new Date(d.start), new Date(d.end)]);
+    });
 
-     // 圖表 2
-     function drawTimeline() {
-    	 	const container = document.getElementById('timeline');
-    	 	const chart = new google.visualization.Timeline(container);
-    	 	const dataTable = new google.visualization.DataTable();
+    chart.draw(dataTable);
+}
 
-    	    dataTable.addColumn({ type: 'string', id: '對象行為' });
-    	    dataTable.addColumn({ type: 'string', id: 'label' });
-    	    dataTable.addColumn({ type: 'date', id: '開始' });
-    	    dataTable.addColumn({ type: 'date', id: '結束' });
+window.addEventListener('DOMContentLoaded', function() {
+    let selectEl = document.getElementById('subjectSelect');
+    if (selectEl) {
+        selectEl.addEventListener('change', function() {
+            // TODO: 可以根據選擇重新載入資料，或這裡暫時先重畫圖表用 pieData
+            drawPieChart(pieData);
+        });
+    }
+});
 
-    	    dataTable.addRows([
-    	      <c:forEach var="row" items="${timelineData}" varStatus="status">
-    	        ['${fn:escapeXml(row[0])}', '', new Date(0, 0, 0, ${row[2].hour}, ${row[2].minute}), 
-    	        				  			    new Date(0, 0, 0, ${row[3].hour}, ${row[3].minute})]
-    	      <c:if test="${!status.last}">,</c:if>
-    	      </c:forEach>
-    	    ]);
 
-    	    const options = {
-    	    	    timeline: { showRowLabels: true },
-    	    	    avoidOverlappingGridLines: false
-    	    	  };
-    	    
-    	    chart.draw(dataTable);
-    	  }
-     
-     // 圖表 3
-     function drawBarChart() {
-    	 	const data = google.visualization.arrayToDataTable([['食物種類', '次數'],
-      		<c:forEach var="entry" items="${foodCount}" varStatus="status">
-      		['${fn:escapeXml(entry.key)}', ${entry.value}]
-      		<c:if test="${!status.last}">,</c:if>
-      		</c:forEach>
-    		]);
-    	      
-    	 	const options = {
-      		title: '幼鳥A 一週食物種類統計',
-      		chartArea: {width: '50%'},
-      		hAxis: {title: '次數', minValue: 0},
-      		vAxis: {title: '食物種類'}
-    		};
+</script>
 
-    	 	const chart = new google.visualization.BarChart(document.getElementById('barchart'));
-    		chart.draw(data, options);
-  		  }   
-   </script>
 	
