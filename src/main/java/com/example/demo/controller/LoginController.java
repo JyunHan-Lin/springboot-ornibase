@@ -52,6 +52,7 @@ public class LoginController {
 	// 將憑證放到 session
 	session.setAttribute("userCert", userCert);
 	session.setAttribute("userId", userCert.getUserId());
+	session.setAttribute("userName", username);
 
 	return "redirect:/ornibase"; // 重導到首頁
 

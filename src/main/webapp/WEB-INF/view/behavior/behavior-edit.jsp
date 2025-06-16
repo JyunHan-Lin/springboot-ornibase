@@ -58,14 +58,15 @@
 			        <select name="action">
 			          <option value="">請選擇行為</option>
 			          <option value="飛行">飛行</option>
-			          <option value="進食">餵食</option>
+		   	          <option value="進食">餵食</option>
 			          <option value="進食">獨自進食</option>
 			          <option value="睡覺">睡覺</option>
 			          <option value="排遺">排遺</option>
-			          <option value="活動">活動</option>
+			          <option value="進巢">進巢</option>
+			          <option value="出巢">出巢</option>
 			          <option value="送餐">送餐</option>
 			          <option value="開傘">開傘</option>
-	          		  <option value="警戒">警戒</option>
+			          <option value="警戒">警戒</option>
 			          <option value="其他">其他</option>
 			        </select>
 			      </div>

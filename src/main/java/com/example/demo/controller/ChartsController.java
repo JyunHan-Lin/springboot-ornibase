@@ -6,6 +6,7 @@ import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,7 @@ import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.dto.UserCert;
 import com.example.demo.service.BehaviorService;
 import com.example.demo.service.DiscussService;
+import com.example.demo.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.servlet.http.HttpSession;
@@ -39,6 +41,8 @@ public class ChartsController {
 	@Autowired
 	private BehaviorService behaviorService;
 	
+
+	
 	// 建立後的頁面
 		@GetMapping("/{discussId}")
 		public String viewReport(@PathVariable Integer discussId, 
@@ -51,35 +55,32 @@ public class ChartsController {
 		    									  .orElseThrow(() -> new DiscussException("DiscussDTO not found"));
 		    // 取出登入者
 		    UserCert userCert = (UserCert) session.getAttribute("userCert");
-		    Integer userId = userCert != null ? userCert.getUserId() : null; // 預設 userId (測試環境)
+		    Integer privilegeLevel = 1;
 		    
-		    // 安全驗證：只允許建立者瀏覽
-		    if (!userId.equals(discussDTO.getUserId())) {
-		    	throw new DiscussEditException("並非討論串建立者無法檢視討論串");
+		    if (discussDTO.getIsPublic()) {
+		        // 公開討論串，訪客能閱覽，不設額外檢查
+		        if (userCert != null) {
+		            Integer userId = userCert.getUserId();
+		            if (userId.equals(discussDTO.getUserId())) {
+		                privilegeLevel = 3; // 建立者
+		            } else if (discussService.hasUserFavorited(userId, discussId)) {
+		                privilegeLevel = 2; // 已收藏
+		            }
+		        }
+		    } else {
+		        // 私人討論串
+		        if (userCert != null && userCert.getUserId().equals(discussDTO.getUserId())) {
+		            privilegeLevel = 3; // 建立者可看
+		        } else {
+		            throw new RuntimeException("無權限檢視該討論串");
+		        }
 		    }
-		    
+
 		    model.addAttribute("discussDTO", discussDTO);
+		    model.addAttribute("privilegeLevel", privilegeLevel);
+		    model.addAttribute("creatorName", discussDTO.getCreatorName()); // 加這行
+		    return "discuss/discuss-view";
 
-		    // 行為資料
-		    List<BehaviorDTO> behaviors = behaviorService.getBehaviorsByDiscussAndUser(discussId, userId);
-
-
-		    model.addAttribute("timelineDataJson", toJson(behaviorService.getTimelineData(date)));
-		    return "discuss/discuss";
 		}
-		
-		private String toJson(Object obj) {
-		    try {
-		        return new ObjectMapper().writeValueAsString(obj);
-		    } catch (Exception e) {
-		        return "{}";
-		    }
-		}
-		@PostMapping("/{discussId}/timeline")
-		@ResponseBody
-		public List<Map<String, Object>> getTimelineData(@PathVariable Integer discussId, @RequestParam LocalDate date) {
-		    return behaviorService.getTimelineData(date);
-		}
-
 }
 

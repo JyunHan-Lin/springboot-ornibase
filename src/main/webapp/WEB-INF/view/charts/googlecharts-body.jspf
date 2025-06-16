@@ -5,43 +5,14 @@
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-const timeLine = ${timelineDataJson};
+	const timeLine = ${timelineDataJson};
 </script>
 
 <script>
-google.charts.load('current', {'packages':['corechart', 'timeline', 'bar']});
-google.charts.setOnLoadCallback(drawCharts);
+	google.charts.load('current', {'packages':['corechart', 'timeline', 'bar']});
+	google.charts.setOnLoadCallback(drawCharts);
 
-function drawCharts() {
-    drawTimeline(${timelineDataJson});
 
-}
-
-function drawTimeline(dataJson) {
-    let container = document.getElementById('timeline_div');
-    let chart = new google.visualization.Timeline(container);
-    let dataTable = new google.visualization.DataTable();
-    dataTable.addColumn({ type: 'string', id: 'Subject' });
-    dataTable.addColumn({ type: 'string', id: 'Action' });
-    dataTable.addColumn({ type: 'datetime', id: 'Start' });
-    dataTable.addColumn({ type: 'datetime', id: 'End' });
-
-    dataJson.forEach(d => {
-        dataTable.addRow([d.subject, d.action, new Date(d.start), new Date(d.end)]);
-    });
-
-    chart.draw(dataTable);
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-    let selectEl = document.getElementById('subjectSelect');
-    if (selectEl) {
-        selectEl.addEventListener('change', function() {
-            // TODO: 可以根據選擇重新載入資料，或這裡暫時先重畫圖表用 pieData
-            drawPieChart(pieData);
-        });
-    }
-});
 
 
 </script>

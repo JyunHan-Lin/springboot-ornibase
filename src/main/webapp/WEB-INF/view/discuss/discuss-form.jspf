@@ -31,7 +31,8 @@
 		
 		<div class="button-row">
 			<div class="checkbox-group">
-				<label><input type="checkbox" name="isPublic">是否公開</label>
+				<!-- 預設為false -->
+				<label><input type="hidden" name="isPublic" value="false"><input type="checkbox" name="isPublic">是否公開</label>
 			</div>
 	
 			<div class="button-wrapper">

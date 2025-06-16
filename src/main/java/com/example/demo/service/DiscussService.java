@@ -13,6 +13,9 @@ public interface DiscussService {
 	public Optional<DiscussDTO> getDiscussById(Integer discussId);
 	public List<DiscussDTO> getDiscussByUserId(Integer id);
 	public void updateDiscuss(Integer discussId, Integer userId, DiscussDTO discussDTO);
-	public void updateDiscuss(Integer discussId, String title, String description, String tag, String youtubeVideoId, Boolean isPublic, LocalDateTime createdTime, Integer userId);
+	public void updateDiscuss(Integer discussId, String title, String description, String tag, String youtubeVideoId, Boolean isPublic, LocalDateTime createdTime, Integer userId, String creatorName);
 	public void deleteDiscuss(Integer discussId, Integer userId, DiscussDTO discussDTO);
+	boolean hasUserFavorited(Integer userId, Integer discussId);
+	void addFavorite(Integer userId, Integer discussId);
+
 }

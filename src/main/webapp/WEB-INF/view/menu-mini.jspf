@@ -13,14 +13,19 @@
 				<li><a href="/ornibase/discuss/list" class="emphasis">書架</a></li>
 			</ul>
 		</div>
+		<% String userName = (String) session.getAttribute("userName");
+		   String firstLetter = "";
+		   if (userName != null && userName.length() > 0) {
+			   firstLetter = userName.substring(0, 1).toUpperCase();
+		   } %>
 		<div class="nav-user">
-			<div class="user-name">
-				<%= (String) session.getAttribute("userName") %> ▼
-			</div>
-			<ul class="user-menu">
-				<li><a href="/ornibase/member">會員資料變更</a></li>
-				<li><a href="/ornibase/logout">登出</a></li>
-			</ul>
+				<div class="user-circle">
+				  <%= firstLetter %>
+				</div>
+				<ul class="user-menu">
+					<li><a href="/ornibase/member">會員資料變更</a></li>
+					<li><a href="/ornibase/logout">登出</a></li>
+				</ul>
 		</div>
 	</div>
 </nav>

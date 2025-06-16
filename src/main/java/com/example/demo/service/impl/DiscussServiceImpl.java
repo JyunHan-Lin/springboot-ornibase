@@ -57,7 +57,14 @@ public class DiscussServiceImpl implements DiscussService{
 	// 用討論串 ID 查詢單筆討論串 (討論串因為只顯示使用者自己的, 編輯及刪除就不考慮user)
 	public Optional<DiscussDTO> getDiscussById(Integer discussId) {
 	    return discussRepository.findById(discussId)
-	                            .map(discussMapper::toDTO);
+					            .map(discuss -> {
+					                DiscussDTO dto = discussMapper.toDTO(discuss);
+					                // 用 userId 去 userRepository 查
+					                User user = userRepository.findById(discuss.getUser().getUserId())
+					                                          .orElseThrow(() -> new UserNotFoundException("找不到使用者"));
+					                dto.setCreatorName(user.getUsername());
+					                return dto;
+					            });	
 	}
 	
 	// 用使用者 ID 查詢該使用者的所有討論串 (只顯示使用者自己建立的討論串, 用在首頁清單上)
@@ -94,8 +101,8 @@ public class DiscussServiceImpl implements DiscussService{
 	}
 
 	@Override
-	public void updateDiscuss(Integer discussId, String title, String description, String tag, String youtubeVideoId, Boolean isPublic, LocalDateTime createdTime, Integer userId) {
-		DiscussDTO discussDTO = new DiscussDTO(discussId, title, description, tag, youtubeVideoId, isPublic, createdTime, userId);
+	public void updateDiscuss(Integer discussId, String title, String description, String tag, String youtubeVideoId, Boolean isPublic, LocalDateTime createdTime, Integer userId, String creatorName) {
+		DiscussDTO discussDTO = new DiscussDTO(discussId, title, description, tag, youtubeVideoId, isPublic, createdTime, userId, creatorName);
 		updateDiscuss(discussId, userId, discussDTO);		
 	}
 
@@ -115,4 +122,28 @@ public class DiscussServiceImpl implements DiscussService{
 		}
 		discussRepository.deleteById(discussId);
 	}
+
+	@Override
+	public boolean hasUserFavorited(Integer userId, Integer discussId) {
+	    // 假設 Discuss 有 membersList，簡化判斷 (真實專案建議獨立 Favorite 表)
+	    Optional<Discuss> discuss = discussRepository.findById(discussId);
+	    if (discuss.isPresent()) {
+	        return discuss.get().getMembersList().stream()
+	                .anyMatch(user -> user.getUserId().equals(userId));
+	    }
+	    return false;
+	}
+
+	@Override
+	public void addFavorite(Integer userId, Integer discussId) {
+	    Discuss discuss = discussRepository.findById(discussId)
+	            .orElseThrow(() -> new DiscussNotFoundException("討論串不存在"));
+	    User user = userRepository.findById(userId)
+	            .orElseThrow(() -> new UserNotFoundException("使用者不存在"));
+	    if (!discuss.getMembersList().contains(user)) {
+	        discuss.getMembersList().add(user);
+	        discussRepository.save(discuss);
+	    }
+	}
+
 }

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+    
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,12 +27,39 @@
 			<!-- 標題與按鈕列 -->
 			<div class="header-row">
 				<div class="header-top-left">
-					<span class="username">username</span> 
-					<h2 class="title-text">${discussDTO.title}</h2>
-					<span class="tag-label">tag</span>
-					<span class="tag-label">私人</span>
-				</div>
+					<div class="user-circle" title="建立者：${creatorName}">
+					  ${creatorName.substring(0,1).toUpperCase()}
+					</div>
 				
+					<h2 class="title-text">${discussDTO.title}</h2>
+					<span class="tag-label">${discussDTO.tag}</span>
+					<span class="tag-label">${discussDTO.isPublic ? '公開' : '私人'}</span>
+				</div>
+				<c:choose>
+				  <c:when test="${privilegeLevel == 3}">
+				    <!-- 建立者：顯示編輯、刪除、送出行為 -->
+				    <a href="/ornibase/discuss/update/${discussDTO.discussId}" class="btn btn-danger">編輯</a>
+				    <form method="post" action="/ornibase/discuss/delete/${discussDTO.discussId}">
+				      <input type="hidden" name="_method" value="DELETE" />
+				      <button type="submit" class="btn btn-danger">刪除</button>
+				    </form>
+				    <%@ include file="/WEB-INF/view/behavior/behavior-form.jspf" %>
+				  </c:when>
+				  <c:when test="${privilegeLevel == 2}">
+				    <!-- 非建立者，但已收藏：可送出行為 -->
+				    <%@ include file="/WEB-INF/view/behavior/behavior-form.jspf" %>
+				  </c:when>
+				  <c:otherwise>
+				    <!-- 權限 1：只能閱覽 -->
+				    <p>若想紀錄行為，請先收藏此討論串。</p>
+				    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}">
+				      <button type="submit" class="btn btn-primary">收藏</button>
+				    </form>
+				  </c:otherwise>
+				</c:choose>
+	
+	
+				<!-- 
 				<div class="btn-group">
 					<a href="/ornibase/discuss/update/${discussDTO.discussId}"
 						class="btn btn-danger">編輯</a>
@@ -40,11 +69,12 @@
 						<button type="submit" class="btn btn-danger">刪除</button>
 					</form>
 				</div>				
+				 -->
 			</div>
 
 			<div class="header-bottom">
 				<p class="description-text">${discussDTO.description}</p>
-				<span class="createtime">建立時間：createtime</span>
+				<span class="createtime">建立時間：${discussDTO.formattedCreatedTime}</span>
 			</div>
 
 			<!-- YouTube 嵌入影片 -->
@@ -57,43 +87,6 @@
 				<!-- menu bar include -->
 				<%@ include file="/WEB-INF/view/charts/googlecharts-body.jspf"%>
 				<div class="charts">
-					<div>
-						<select id="subjectSelect">
-						  <option value="幼鳥A" selected>幼鳥A</option>
-				          <option value="成鳥A">成鳥A</option>
-				          <option value="成鳥B">成鳥B</option>
-				          <option value="幼鳥B">幼鳥B</option>
-				          <option value="幼鳥C">幼鳥C</option>
-				          <option value="幼鳥D">幼鳥D</option>
-				          <option value="幼鳥E">幼鳥E</option>
-				          <option value="鄰居">鄰居</option>
-						</select>
-						<div id="piechart" style="width: 370px; height: 210px"></div>
-					</div>
-				
-		
-					<div>
-					  <input type="date" id="dateSelector">					  
-					  <div id="timeline_div" style="width: 370px; height: 210px"></div>
-					</div>
-					<div>
-					  <select id="subjectBarSelector">
-					  	  <option value="幼鳥A" selected>幼鳥A</option>
-				          <option value="成鳥A">成鳥A</option>
-				          <option value="成鳥B">成鳥B</option>
-				          <option value="幼鳥B">幼鳥B</option>
-				          <option value="幼鳥C">幼鳥C</option>
-				          <option value="幼鳥D">幼鳥D</option>
-				          <option value="幼鳥E">幼鳥E</option>
-				          <option value="鄰居">鄰居</option>
-					  </select>
-					  <div id="bar_chart_div" style="width: 370px; height: 210px"></div>
-					</div>
-					<div>
-					  <input type="date" id="foodFromDate">
-					  <div id="food_chart_div" style="width: 370px; height: 210px">
-					</div>
-				
 					
 				</div>
 			</div>

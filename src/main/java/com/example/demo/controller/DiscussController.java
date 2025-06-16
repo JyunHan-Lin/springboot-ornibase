@@ -84,4 +84,15 @@ public class DiscussController {
 		return "redirect:/ornibase"; // 重導到首頁
 	}
 	
+	@PostMapping("/favorite/{discussId}")
+	public String favoriteDiscuss(@PathVariable Integer discussId, HttpSession session) {
+	    UserCert userCert = (UserCert) session.getAttribute("userCert");
+	    if (userCert == null) {
+	        throw new RuntimeException("請先登入以收藏");
+	    }
+	    discussService.addFavorite(userCert.getUserId(), discussId);
+	    return "redirect:/ornibase/discuss/" + discussId;
+	}
+
+	
 }
