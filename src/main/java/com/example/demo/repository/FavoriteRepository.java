@@ -1,0 +1,16 @@
+package com.example.demo.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.entity.Favorite;
+
+@Repository
+public interface FavoriteRepository extends JpaRepository<Favorite, Integer>{
+
+	boolean existsByUser_UserIdAndDiscuss_DiscussId(Integer userId, Integer discuss_id);
+	
+	List<Favorite> findByUser_UserId(Integer userId);
+}

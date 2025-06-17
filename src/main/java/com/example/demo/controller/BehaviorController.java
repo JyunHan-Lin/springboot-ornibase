@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.exception.BehaviorNotFoundException;
+import com.example.demo.exception.DiscussException;
 import com.example.demo.model.dto.BehaviorDTO;
 import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.dto.UserCert;
@@ -46,7 +48,8 @@ public class BehaviorController {
 
 	    Integer userId = userCert.getUserId(); // 從登入的憑證中取得 userId
 	    
-	    List<BehaviorDTO> behaviorList = behaviorService.getBehaviorsByDiscussAndUser(discussId, userId);
+	    List<BehaviorDTO> behaviorList = behaviorService.getBehaviorByDiscussId(discussId);
+	    
 	    model.addAttribute("behaviorList", behaviorList);
 	    return "behavior/behavior-list";
 	}

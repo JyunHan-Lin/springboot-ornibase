@@ -5,12 +5,12 @@
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-	const timeLine = ${timelineDataJson};
+//	const timeLine = ${timelineDataJson};
 </script>
 
 <script>
-	google.charts.load('current', {'packages':['corechart', 'timeline', 'bar']});
-	google.charts.setOnLoadCallback(drawCharts);
+//	google.charts.load('current', {'packages':['corechart', 'timeline', 'bar']});
+//	google.charts.setOnLoadCallback(drawCharts);
 
 
 

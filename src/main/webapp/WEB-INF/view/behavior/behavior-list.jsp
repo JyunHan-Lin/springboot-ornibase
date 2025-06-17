@@ -22,13 +22,13 @@
 	<body class="fontstyle">
 		<!-- menu bar include -->
 		<%@ include file="/WEB-INF/view/menu-mini.jspf" %>	
-		
 		<div>
 			<fieldset  class="behavior-form">
 				<legend class="title">行為紀錄</legend>
 				<table>
 					<thead>
 						<tr>
+							<th>記錄者</th>
 							<th>行為日期</th>
 							<th>開始時間</th>
 							<th>結束時間</th>
@@ -45,6 +45,7 @@
 					<tbody>
 						<c:forEach var="behaviorDTO" items="${behaviorList}">
 							<tr>
+								<td>${ behaviorDTO.creatorName}</td>
 								<td>${ behaviorDTO.date }</td>
 								<td>${ behaviorDTO.startTime }</td>
 								<td>${ behaviorDTO.endTime }</td>
@@ -81,6 +82,5 @@
 		    });
 		  });
 		</script>
-		
 	</body>
 </html>

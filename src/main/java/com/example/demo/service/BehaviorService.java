@@ -11,10 +11,11 @@ import com.example.demo.model.dto.BehaviorDTO;
 public interface BehaviorService {
 	public void saveBehavior(Integer discussId, Integer userId, BehaviorDTO behaviorDTO);
 //	public List<BehaviorDTO> getAllBehavior();
-	public List<BehaviorDTO> getBehaviorsByDiscussAndUser(Integer discussId, Integer userId);
+//	public List<BehaviorDTO> getBehaviorsByDiscussAndUser(Integer discussId, Integer userId);
+	public List<BehaviorDTO> getBehaviorByDiscussId(Integer discussId);
 	public Optional<BehaviorDTO> getBehaviorById(Integer behaviorId);
 	public void updateBehavior(Integer behaviorId, BehaviorDTO behaviorDTO);
-	public void updateBehavior(Integer behaviorId, LocalDate date, LocalTime startTime, LocalTime endTime, String subject, String action, String food, Float temperature, String note);
+	public void updateBehavior(Integer behaviorId, LocalDate date, LocalTime startTime, LocalTime endTime, String subject, String action, String food, Float temperature, String note, String creatorName);
 	public void deleteBehavior(Integer behaviorId);
 	List<Map<String, Object>> getTimelineData(LocalDate date);
 }

@@ -20,8 +20,9 @@ public class HomeController {
 	private DiscussService discussService;
 	
 	@GetMapping
-	public String mainPage(Model model, String youtubeVideoId, HttpSession session) {
-	    // 改成看到大家的記錄本###
+	public String mainPage(Model model) {
+		// 看得到大家建立的記錄本
+		model.addAttribute("discussList", discussService.getPublicDiscussList());
 		return "main";
 	}
 	

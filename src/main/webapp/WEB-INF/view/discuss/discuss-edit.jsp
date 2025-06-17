@@ -18,6 +18,7 @@
 		<%@ include file="/WEB-INF/view/menu-mini.jspf" %>								
 		
 		<sp:form class="fontstyle" method="post" modelAttribute="discussDTO" action="/ornibase/discuss/update/${ discussDTO.discussId }" >
+        <input type="hidden" name="_method" value="PUT" />
 			<fieldset class="discussion-form">
 				<legend class="h2">編輯筆記本</legend>
 				<div class="alert alert-note">* 表示必填欄位</div><p>
@@ -44,7 +45,10 @@
 				
 				<div class="button-row">
 					<div class="checkbox-group">
-						<label><input type="checkbox" name="isPublic">是否公開</label>
+						<label>
+							<input type="checkbox" name="isPublic" value="true" checked>是否公開
+							<input type="hidden" name="isPublic" value="false">
+						</label>					
 					</div>
 			
 					<div class="button-wrapper">

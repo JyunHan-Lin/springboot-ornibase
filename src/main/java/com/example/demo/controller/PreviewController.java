@@ -16,9 +16,13 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/preview")
 public class PreviewController {
 	
+	@Autowired
+	private DiscussService discussService;
+	
 	@GetMapping
-	public String previewPage() {
-		// 看得到大家建立的記錄本，但是沒辦法新增行為 ###待補
+	public String previewPage(Model model) {
+		// 看得到大家建立的記錄本
+		model.addAttribute("discussList", discussService.getPublicDiscussList());
 		return "preview";
 	}
 	

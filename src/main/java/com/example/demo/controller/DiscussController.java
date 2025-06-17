@@ -31,11 +31,13 @@ public class DiscussController {
 	
 	// 檢視筆記本
 	@GetMapping("/list")
-	public String mainPage(Model model, HttpSession session) {
+	public String myDiscussList(Model model, HttpSession session) {
 	    UserCert userCert = (UserCert) session.getAttribute("userCert");
 	    Integer userId = userCert.getUserId();
-	    model.addAttribute("discussList", discussService.getDiscussByUserId(userId));
-		return "discuss/discuss-list";
+	    
+	    model.addAttribute("myDiscussList", discussService.getMyPrivateDiscuss(userId));
+	    model.addAttribute("favoriteDiscussList", discussService.getMyFavoritePublicDiscuss(userId));
+	    return "discuss/discuss-list";
 	}
 	
 	// 建立筆記本的頁面
@@ -51,7 +53,8 @@ public class DiscussController {
 		UserCert userCert = (UserCert) session.getAttribute("userCert");
 		// 將 userId 放入 DTO
 	    discussDTO.setUserId(userCert.getUserId());
-		
+	    System.out.println("收到 DiscussDTO.isPublic = " + discussDTO.getIsPublic());
+
 		DiscussDTO savedDiscuss = discussService.createDiscuss(discussDTO);
 	    return "redirect:/ornibase/discuss/" + savedDiscuss.getDiscussId();
 	}
@@ -81,7 +84,7 @@ public class DiscussController {
 	    UserCert userCert = (UserCert) session.getAttribute("userCert");
 	    Integer userId = userCert.getUserId();
 		discussService.deleteDiscuss(discussId, userId, discussDTO);
-		return "redirect:/ornibase"; // 重導到首頁
+		return "redirect:/ornibase/discuss/list"; // 重導到個人書架
 	}
 	
 	@PostMapping("/favorite/{discussId}")

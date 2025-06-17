@@ -64,22 +64,28 @@ public class ChartsController {
 		            if (userId.equals(discussDTO.getUserId())) {
 		                privilegeLevel = 3; // 建立者
 		            } else if (discussService.hasUserFavorited(userId, discussId)) {
-		                privilegeLevel = 2; // 已收藏
+		                privilegeLevel = 2; // 非建立者已收藏
 		            }
 		        }
 		    } else {
 		        // 私人討論串
 		        if (userCert != null && userCert.getUserId().equals(discussDTO.getUserId())) {
-		            privilegeLevel = 3; // 建立者可看
+		            privilegeLevel = 3; // 建立者
 		        } else {
 		            throw new RuntimeException("無權限檢視該討論串");
 		        }
 		    }
 
+		    // 只要是建立者或收藏者，都可以看到行為清單
+		    List<BehaviorDTO> behaviorList = null;
+		    if (privilegeLevel >= 2) {
+		        behaviorList = behaviorService.getBehaviorByDiscussId(discussId);
+		    }
+		    
 		    model.addAttribute("discussDTO", discussDTO);
 		    model.addAttribute("privilegeLevel", privilegeLevel);
-		    model.addAttribute("creatorName", discussDTO.getCreatorName()); // 加這行
-		    return "discuss/discuss-view";
+		    model.addAttribute("creatorName", discussDTO.getCreatorName()); 
+		    return "discuss/discuss";
 
 		}
 }

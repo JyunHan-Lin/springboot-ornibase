@@ -24,7 +24,8 @@ public class BehaviorDTO {
     private String note;
 	private LocalDateTime createdTime = LocalDateTime.now();
 	private Integer discussId;
-	
+	private String creatorName;  // 用來顯示建立者名字
+
 	// 自訂日期格式 (年/月/日/分)
 	public String getFormattedCreatedTime() {
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");

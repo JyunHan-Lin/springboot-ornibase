@@ -13,8 +13,10 @@ import com.example.demo.exception.UserNotFoundException;
 import com.example.demo.mapper.DiscussMapper;
 import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.entity.Discuss;
+import com.example.demo.model.entity.Favorite;
 import com.example.demo.model.entity.User;
 import com.example.demo.repository.DiscussRepository;
+import com.example.demo.repository.FavoriteRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.DiscussService;
 
@@ -28,19 +30,25 @@ public class DiscussServiceImpl implements DiscussService{
 	private UserRepository userRepository;
 	
 	@Autowired
+	private FavoriteRepository favoriteRepository;
+	
+	@Autowired
 	private DiscussMapper discussMapper;
 	
 	// 建立討論串
 	@Override
 	public DiscussDTO createDiscuss(DiscussDTO discussDTO) {
-	    Discuss discuss = discussMapper.toEntity(discussDTO); // 將 DTO 轉成 Entity
+		System.out.println("收到的 isPublic = " + discussDTO.getIsPublic());
+
+		Discuss discuss = discussMapper.toEntity(discussDTO); // 將 DTO 轉成 Entity
 
 	    if (discussDTO.getUserId() != null) {
 	        User user = userRepository.findById(discussDTO.getUserId())
 	                                  .orElseThrow(() -> new UserNotFoundException("找不到使用者"));
 	        discuss.setUser(user);  // user 名下建立討論串
 	    }
-	    
+	    System.out.println("存入的 isPublic = " + discuss.getIsPublic());
+
 	    Discuss savedDiscuss = discussRepository.save(discuss); // 存進 DB
 	    return discussMapper.toDTO(savedDiscuss); // 存完再轉成 DTO 回傳
 	}
@@ -81,21 +89,21 @@ public class DiscussServiceImpl implements DiscussService{
 	@Override
 	public void updateDiscuss(Integer discussId, Integer userId, DiscussDTO discussDTO) {
 		// 判斷該討論串是否已存在?
-		Optional<Discuss> optDiscuss = discussRepository.findById(discussId);
-		if (optDiscuss.isEmpty()) {
-			throw new DiscussNotFoundException("修改失敗: 討論串" + discussId + "不存在");
-		}
-		// 判斷是否是討論串建立者
-		if (!userId.equals(discussDTO.getUserId())) {
+		Discuss original = discussRepository.findByDiscussIdWithUser(discussId)
+		.orElseThrow(() -> new DiscussNotFoundException("修改失敗: 討論串" + discussId + "不存在"));
+		
+		// 比對建立者
+		if (!userId.equals(original.getUser().getUserId())) {
 			throw new DiscussCreateException("修改失敗: " + userId + "不是建立者");
 		}
 		
-	    Discuss original = optDiscuss.get(); // 原本的 Discuss 實體
 
 	    // 更新可編輯欄位（不要動 user）
 	    original.setTitle(discussDTO.getTitle());
 	    original.setDescription(discussDTO.getDescription());
 	    original.setYoutubeVideoId(discussDTO.getYoutubeVideoId());
+	    original.setTag(discussDTO.getTag());
+	    original.setIsPublic(discussDTO.getIsPublic());
 
 	    discussRepository.saveAndFlush(original);
 	}
@@ -110,40 +118,63 @@ public class DiscussServiceImpl implements DiscussService{
 	// 刪除討論串
 	@Override
 	public void deleteDiscuss(Integer discussId, Integer userId, DiscussDTO discussDTO) {
-		Optional<Discuss> optDiscuss = discussRepository.findById(discussId);
-
 		// 判斷該討論串是否已存在?
-		if (optDiscuss.isEmpty()) {
-			throw new DiscussNotFoundException("刪除失敗: 討論串" + discussId + "不存在");
+		Discuss original = discussRepository.findByDiscussIdWithUser(discussId)
+		.orElseThrow(() -> new DiscussNotFoundException("修改失敗: 討論串" + discussId + "不存在"));
+		
+		// 比對建立者
+		if (!userId.equals(original.getUser().getUserId())) {
+			throw new DiscussCreateException("修改失敗: " + userId + "不是建立者");
 		}
-		// 判斷是否是討論串建立者
-		if (!userId.equals(discussDTO.getUserId())) {
-			throw new DiscussCreateException("刪除失敗: " + userId + "不是建立者");
-		}
+		
 		discussRepository.deleteById(discussId);
 	}
 
 	@Override
 	public boolean hasUserFavorited(Integer userId, Integer discussId) {
-	    // 假設 Discuss 有 membersList，簡化判斷 (真實專案建議獨立 Favorite 表)
-	    Optional<Discuss> discuss = discussRepository.findById(discussId);
-	    if (discuss.isPresent()) {
-	        return discuss.get().getMembersList().stream()
-	                .anyMatch(user -> user.getUserId().equals(userId));
-	    }
-	    return false;
+	    return favoriteRepository.existsByUser_UserIdAndDiscuss_DiscussId(userId, discussId);
 	}
 
 	@Override
 	public void addFavorite(Integer userId, Integer discussId) {
-	    Discuss discuss = discussRepository.findById(discussId)
-	            .orElseThrow(() -> new DiscussNotFoundException("討論串不存在"));
-	    User user = userRepository.findById(userId)
-	            .orElseThrow(() -> new UserNotFoundException("使用者不存在"));
-	    if (!discuss.getMembersList().contains(user)) {
-	        discuss.getMembersList().add(user);
-	        discussRepository.save(discuss);
-	    }
+		if (!hasUserFavorited(userId, discussId)) {
+			Discuss discuss = discussRepository.findById(discussId)
+					.orElseThrow(() -> new DiscussNotFoundException("討論串不存在"));
+			User user = userRepository.findById(userId)
+					.orElseThrow(() -> new UserNotFoundException("使用者不存在"));
+			Favorite favorite = new Favorite();
+			favorite.setUser(user);
+			favorite.setDiscuss(discuss);
+			favoriteRepository.save(favorite);
+		}
+    }
+
+	@Override
+	public List<DiscussDTO> getPublicDiscussList() {
+		return discussRepository.findByIsPublicTrue()
+								.stream()
+								.map(discussMapper::toDTO)
+								.toList();
 	}
 
+	@Override
+	public List<DiscussDTO> getMyPrivateDiscuss(Integer userId) {
+		return discussRepository.findByUser_UserId(userId)
+								.stream()
+								.map(discussMapper::toDTO)
+								.toList();
+	}
+
+	@Override
+	public List<DiscussDTO> getMyFavoritePublicDiscuss(Integer userId) {
+		return favoriteRepository.findByUser_UserId(userId)
+								 .stream()
+								 .map(fav -> fav.getDiscuss())
+								 .filter(discuss -> discuss.getIsPublic())
+								 .map(discussMapper::toDTO)
+								 .toList();
+	}
+	
 }
+
+

@@ -26,6 +26,7 @@
 		<div class="left-section">
 			<!-- 標題與按鈕列 -->
 			<div class="header-row">
+			
 				<div class="header-top-left">
 					<div class="user-circle" title="建立者：${creatorName}">
 					  ${creatorName.substring(0,1).toUpperCase()}
@@ -35,41 +36,33 @@
 					<span class="tag-label">${discussDTO.tag}</span>
 					<span class="tag-label">${discussDTO.isPublic ? '公開' : '私人'}</span>
 				</div>
-				<c:choose>
-				  <c:when test="${privilegeLevel == 3}">
-				    <!-- 建立者：顯示編輯、刪除、送出行為 -->
-				    <a href="/ornibase/discuss/update/${discussDTO.discussId}" class="btn btn-danger">編輯</a>
-				    <form method="post" action="/ornibase/discuss/delete/${discussDTO.discussId}">
-				      <input type="hidden" name="_method" value="DELETE" />
-				      <button type="submit" class="btn btn-danger">刪除</button>
-				    </form>
-				    <%@ include file="/WEB-INF/view/behavior/behavior-form.jspf" %>
-				  </c:when>
-				  <c:when test="${privilegeLevel == 2}">
-				    <!-- 非建立者，但已收藏：可送出行為 -->
-				    <%@ include file="/WEB-INF/view/behavior/behavior-form.jspf" %>
-				  </c:when>
-				  <c:otherwise>
-				    <!-- 權限 1：只能閱覽 -->
-				    <p>若想紀錄行為，請先收藏此討論串。</p>
-				    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}">
-				      <button type="submit" class="btn btn-primary">收藏</button>
-				    </form>
-				  </c:otherwise>
-				</c:choose>
-	
-	
-				<!-- 
+				
 				<div class="btn-group">
-					<a href="/ornibase/discuss/update/${discussDTO.discussId}"
-						class="btn btn-danger">編輯</a>
-					<form method="post"
-						action="/ornibase/discuss/delete/${discussDTO.discussId}">
-						<input type="hidden" name="_method" value="DELETE" />
-						<button type="submit" class="btn btn-danger">刪除</button>
-					</form>
-				</div>				
-				 -->
+				
+					<c:choose>
+					  <c:when test="${privilegeLevel == 3}">
+					    <!-- 建立者 -->
+					    <a href="/ornibase/discuss/update/${discussDTO.discussId}" class="btn btn-danger">編輯</a>
+					    <form method="post" action="/ornibase/discuss/delete/${discussDTO.discussId}">
+					      <input type="hidden" name="_method" value="DELETE" />
+					      <button type="submit" class="btn btn-danger">刪除</button>
+					    </form>
+					  </c:when>
+					  
+					  <c:when test="${privilegeLevel == 2}">
+					    <!-- 非建立者，但已收藏：可送出行為 -->
+					  </c:when>
+					  
+					  <c:otherwise>
+					    <!-- 權限 1：只能閱覽 -->
+					    <p>若想紀錄行為，請先收藏此討論串。</p>
+					    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}">
+					      <button type="submit" class="btn btn-danger">收藏</button>
+					    </form>
+					  </c:otherwise>
+					</c:choose>
+				</div>
+
 			</div>
 
 			<div class="header-bottom">
@@ -93,7 +86,9 @@
 		</div>
 		<!-- 右側區域：行為紀錄表單 -->
 		<!-- Behavior -->
-		<%@ include file="/WEB-INF/view/behavior/behavior-form.jspf"%>
+		<c:if test="${privilegeLevel >=2 }">
+			<%@ include file="/WEB-INF/view/behavior/behavior-form.jspf"%>
+		</c:if>
 	</div>
 </body>
 </html>

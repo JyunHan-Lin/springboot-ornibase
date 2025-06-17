@@ -34,29 +34,24 @@
 		  <!-- 列表 -->
 		  <div class="video-list-container">
 				<div class="video-list">
-					<c:forEach var="discussDTO" items="${discussList}">
-						 <div class="video-card">
-					    	<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
-					  		<div class="video-title">
-					      		<a href="/ornibase/discuss/${discussDTO.discussId}">
-					        	 ${discussDTO.title}
-					      		</a>
-					    	</div>
-					    	<div class="video-description">${ discussDTO.description }</div>
-					 	</div>
-				 	</c:forEach>
-					
 				 	<c:choose>			  	
 					 	<c:when test="${not empty discussList}">
-					    	<c:forEach var="discussDTO" items="${discussList}">
-					    	<!-- 卡片區 -->
-					    	</c:forEach>
+							<c:forEach var="discussDTO" items="${discussList}">
+								 <div class="video-card">
+							    	<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
+					  				<div class="video-title">
+					      				<a href="/ornibase/discuss/${discussDTO.discussId}">
+					        	 			${discussDTO.title}
+					      				</a>
+					    			</div>
+					    		</div>
+						 	</c:forEach>
 					 	</c:when>
 					 	<c:otherwise>
 							<p style="color: gray;">目前尚無筆記本，請先建立一個。</p>
 					 	</c:otherwise>
 			    	</c:choose>
-				</div>
+			 	</div>
 	   		</div>	
 		</div>
 	</body>

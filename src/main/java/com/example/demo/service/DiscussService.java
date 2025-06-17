@@ -17,5 +17,10 @@ public interface DiscussService {
 	public void deleteDiscuss(Integer discussId, Integer userId, DiscussDTO discussDTO);
 	boolean hasUserFavorited(Integer userId, Integer discussId);
 	void addFavorite(Integer userId, Integer discussId);
-
+	// 取得所有公開討論串
+	List<DiscussDTO> getPublicDiscussList();
+	// 取得未公開(私人)討論串
+	List<DiscussDTO> getMyPrivateDiscuss(Integer userId);
+	// 取得收藏的公開討論串
+	List<DiscussDTO> getMyFavoritePublicDiscuss(Integer userId);
 }

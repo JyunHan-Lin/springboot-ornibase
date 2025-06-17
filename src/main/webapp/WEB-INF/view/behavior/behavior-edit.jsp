@@ -12,19 +12,17 @@
 		<link rel="stylesheet" href="/css/behavior.css">
 		<title>OrniBase</title>
 		<link rel="icon" type="image/png" href="/images/icon.png">
-		<script src="/js/time.js"></script>
 	</head>
-	<body>
+	<body class="fontstyle">
 		<!-- menu bar include -->
 		<%@ include file="/WEB-INF/view/menu-mini.jspf"%>
 	
 		<div class="edit-wrapper">
-
 		  <!-- 行為紀錄區 -->
 		  <fieldset class="form-box">
 		    <h2 class="h2">行為紀錄編輯</h2>
-		    <sp:form method="post" modelAttribute="behaviorDTO" action="/ornibase/discuss/behavior/${discussDTO.discussId}">
-		      
+		    <sp:form method="post" modelAttribute="behaviorDTO" action="/ornibase/discuss/behavior/${behaviorDTO.discussId}/edit/${behaviorDTO.behaviorId}">
+            <input type="hidden" name="_method" value="PUT" />  
 		      <span class="alert">* 必填欄位</span>
 		      <fieldset class="alert-section">
 			      <div class="form-row-inline">

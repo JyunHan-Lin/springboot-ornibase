@@ -64,12 +64,24 @@ public class BehaviorServiceImpl implements BehaviorService{
     }
     
 	// 查詢userId、disscussId 建立的行為(只看得到自己建立的行為)
+//	@Override
+//	public List<BehaviorDTO> getBehaviorsByDiscussAndUser(Integer discussId, Integer userId) {
+//        return behaviorRepository.findByDiscussIdAndUserId(discussId, userId)
+//                                 .stream()
+//                        		 .map(behaviorMapper::toDTO)
+//        	            		 .toList();
+//    }
+	// 查詢userId、disscussId 建立的行為(只看得到自己建立的行為)
 	@Override
-	public List<BehaviorDTO> getBehaviorsByDiscussAndUser(Integer discussId, Integer userId) {
-        return behaviorRepository.findByDiscussIdAndUserId(discussId, userId)
+	public List<BehaviorDTO> getBehaviorByDiscussId(Integer discussId) {
+        return behaviorRepository.findByDiscuss_DiscussIdFetchUser(discussId)
                                  .stream()
-                        		 .map(behaviorMapper::toDTO)
-        	            		 .toList();
+                                 .map(b -> {
+                                     BehaviorDTO dto = behaviorMapper.toDTO(b);
+                                     dto.setCreatorName(b.getUser() != null ? b.getUser().getUsername() : null);
+                                     return dto;
+                                 })
+                                 .toList();
     }
 	
 	// 用行為 ID 查詢單筆討論串
@@ -96,13 +108,14 @@ public class BehaviorServiceImpl implements BehaviorService{
 	    original.setAction(behaviorDTO.getAction());
 	    original.setTemperature(behaviorDTO.getTemperature());	    
 	    original.setNote(behaviorDTO.getNote());
-
+	    
 	    behaviorRepository.saveAndFlush(original);
 	}
 
 	@Override
-	public void updateBehavior(Integer behaviorId, LocalDate date, LocalTime startTime, LocalTime endTime, String subject, String action, String food, Float temperature, String note) {
-		BehaviorDTO behaviorDTO = new BehaviorDTO(behaviorId, date, startTime, endTime, subject, action, food, temperature, note, null, null);
+	public void updateBehavior(Integer behaviorId, LocalDate date, LocalTime startTime, LocalTime endTime,
+			String subject, String action, String food, Float temperature, String note, String creatorName) {
+		BehaviorDTO behaviorDTO = new BehaviorDTO(behaviorId, date, startTime, endTime, subject, action, food, temperature, note, null, null, creatorName);
 		updateBehavior(behaviorId, behaviorDTO);		
 	}
 

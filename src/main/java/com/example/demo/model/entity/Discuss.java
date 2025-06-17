@@ -54,7 +54,7 @@ public class Discuss {
 	@Column(name = "youtube_video_id",nullable = false, length = 50)
 	private String youtubeVideoId;
 	
-	@Column(name = "public")	// 是否公開
+	@Column(name = "is_public")	// 是否公開
 	private Boolean isPublic; // true = 公開, false = 私人
 
 	@Column(name = "created_time")
@@ -66,7 +66,4 @@ public class Discuss {
 	
 	@OneToMany(mappedBy = "discuss")
 	private List<Behavior> behaviors;
-	
-	@ManyToMany
-	private List<User> membersList = new ArrayList<User>();
 }
