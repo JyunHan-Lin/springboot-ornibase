@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="sp" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 
 <div class="right-wrapper">
 
@@ -94,8 +96,35 @@
   <!-- 留言板區 -->
   <fieldset class="form-box">
     <h2 class="h2">留言板</h2>
-    <!-- 留言功能未實作，留空 -->
-    <p style="color: #888;">留言功能尚未開放</p>
-  </fieldset>
+		<div class="comment-list">
+		  <c:forEach var="comment" items="${comments}">
+		    <div class="comment-row">
+		      <div class="comment-left">
+		        <div class="comment-avatar">
+		          ${comment.userNameFirstChar}
+		        </div>
+		        <div class="comment-content">
+		          ${comment.content}
+		        </div>
+		      </div>
+		      <div class="comment-time">
+		        ${comment.formattedTime}
+		      </div>
+		    </div>
+		  </c:forEach>
+		</div>
+
+		<c:if test="${user.privilege == 2 || user.privilege == 3}">
+			<form method="post" action="/ornibase/discuss/${discussDTO.discussId}/comment"
+				class="comment-form">
+				<textarea name="content" maxlength="100" placeholder="最多100字..."
+					class="comment-textarea"></textarea>
+				<button type="submit" class="comment-button">留言</button>
+			</form>
+		</c:if>
+		<c:if test="${user.privilege != 2 && user.privilege != 3}">
+			<p class="notice">只有權限 2 或 3 可以留言</p>
+		</c:if>
+	</fieldset>
 
 </div>

@@ -5,12 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.model.dto.DiscussDTO;
+import com.example.demo.model.entity.Discuss;
 
 public interface DiscussService {
 	
 	public DiscussDTO createDiscuss(DiscussDTO discussDTO);
 	public List<DiscussDTO>getAllDiscuss();
 	public Optional<DiscussDTO> getDiscussById(Integer discussId);
+	public Optional<Discuss> getDiscussEntityById(Integer discussId);
 	public List<DiscussDTO> getDiscussByUserId(Integer id);
 	public void updateDiscuss(Integer discussId, Integer userId, DiscussDTO discussDTO);
 	public void updateDiscuss(Integer discussId, String title, String description, String tag, String youtubeVideoId, Boolean isPublic, LocalDateTime createdTime, Integer userId, String creatorName);
@@ -23,4 +25,5 @@ public interface DiscussService {
 	List<DiscussDTO> getMyPrivateDiscuss(Integer userId);
 	// 取得收藏的公開討論串
 	List<DiscussDTO> getMyFavoritePublicDiscuss(Integer userId);
+	List<DiscussDTO> searchDiscusses(String keyword);
 }

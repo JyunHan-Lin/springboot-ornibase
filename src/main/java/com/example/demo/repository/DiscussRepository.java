@@ -17,7 +17,7 @@ public interface DiscussRepository extends JpaRepository<Discuss, Integer>{
 
 	List<Discuss> findByUser_UserId(Integer userId); // JPA 是用資料庫名稱建立方法
 	List<Discuss> findByIsPublicTrue();
-//	List<Discuss> findByTitle(String title); 搜尋功能待補###
-//	List<Discuss> findByUser_UserIdOrderByCreatedTimeDesc(Integer userId); 依照使用者建立時間排序待補###
+	// 搜尋
+    List<Discuss> findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(String titleKeyword, String descriptionKeyword);
 
 }

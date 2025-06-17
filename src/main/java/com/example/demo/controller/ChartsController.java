@@ -24,7 +24,9 @@ import com.example.demo.exception.DiscussException;
 import com.example.demo.model.dto.BehaviorDTO;
 import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.dto.UserCert;
+import com.example.demo.model.entity.Discuss;
 import com.example.demo.service.BehaviorService;
+import com.example.demo.service.CommentService;
 import com.example.demo.service.DiscussService;
 import com.example.demo.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,7 +43,8 @@ public class ChartsController {
 	@Autowired
 	private BehaviorService behaviorService;
 	
-
+	@Autowired
+	private CommentService commentService;
 	
 	// 建立後的頁面
 		@GetMapping("/{discussId}")
@@ -88,5 +91,43 @@ public class ChartsController {
 		    return "discuss/discuss";
 
 		}
+		
+	    @PostMapping("/{discussId}/comment")
+	    public String addComment(@PathVariable Integer discussId,
+	                             @RequestParam String content,
+	                             HttpSession session) {
+	    	UserCert userCert = (UserCert) session.getAttribute("userCert");
+
+	    	Discuss discuss = discussService.getDiscussEntityById(discussId)
+					  .orElseThrow(() -> new DiscussException("DiscussDTO not found"));
+	    	 Integer userId = userCert.getUserId();
+	         Integer privilegeLevel = 1;
+
+	         if (discuss.getIsPublic()) {
+	             if (userId.equals(discuss.getUser())) {
+	                 privilegeLevel = 3;
+	             } else if (discussService.hasUserFavorited(userId, discussId)) {
+	                 privilegeLevel = 2;
+	             }
+	         } else {
+	             if (userId.equals(discuss.getUser())) {
+	                 privilegeLevel = 3;
+	             } else {
+	                 throw new RuntimeException("無權限留言於該討論串");
+	             }
+	         }
+
+	         if (content == null || content.trim().isEmpty()) {
+	             throw new RuntimeException("留言內容不得為空");
+	         }
+
+	         if (content.length() > 100) {
+	             throw new RuntimeException("留言內容不得超過 100 字");
+	         }
+
+	         commentService.addComment(content.trim(), userCert.getUsername(), discuss);
+	         return "redirect:/ornibase/discuss/" + discussId;
+	     }
 }
+
 

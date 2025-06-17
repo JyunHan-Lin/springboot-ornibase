@@ -3,6 +3,7 @@ package com.example.demo.service.impl;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,6 +76,11 @@ public class DiscussServiceImpl implements DiscussService{
 					            });	
 	}
 	
+	@Override
+	public Optional<Discuss> getDiscussEntityById(Integer discussId) {
+	    return discussRepository.findById(discussId);
+	}
+
 	// 用使用者 ID 查詢該使用者的所有討論串 (只顯示使用者自己建立的討論串, 用在首頁清單上)
 	@Override
 	public List<DiscussDTO> getDiscussByUserId(Integer userId) {
@@ -174,7 +180,26 @@ public class DiscussServiceImpl implements DiscussService{
 								 .map(discussMapper::toDTO)
 								 .toList();
 	}
-	
+
+	@Override
+	public List<DiscussDTO> searchDiscusses(String keyword) {
+        if (keyword == null || keyword.isEmpty()) {
+            // 空關鍵字就回傳全部
+            List<Discuss> allDiscusses = discussRepository.findAll();
+            return allDiscusses.stream()
+                    .map(discussMapper::toDTO)
+                    .collect(Collectors.toList());
+        }
+
+        List<Discuss> discusses = discussRepository
+            .findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(keyword, keyword);
+
+        return discusses.stream()
+                .map(discussMapper::toDTO)
+                .collect(Collectors.toList());
+    }
 }
+	
+
 
 
