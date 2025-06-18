@@ -22,7 +22,7 @@
 
 	<div class="main-content">
 		<div class="latest-header">
-			<span class="latest">最新上架</span>
+			<span class="latest">公共書架</span>
 			<div class="search-container">
 				<form class="search-form" method="get" action="/ornibase/search">
 					<input type="text" name="keyword" placeholder="輸入關鍵字搜尋討論串..." class="search-input" />
@@ -42,6 +42,7 @@
 					      				<a href="/ornibase/discuss/${discussDTO.discussId}">
 					        	 			${discussDTO.title}
 					      				</a>
+					      				<span class="badge">${behaviorCountMap[discussDTO.discussId]}</span>
 					    			</div>
 					    		</div>
 						 	</c:forEach>

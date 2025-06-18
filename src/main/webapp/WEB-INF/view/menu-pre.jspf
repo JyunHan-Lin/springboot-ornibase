@@ -4,15 +4,18 @@
     
 <nav class="navbar fontstyle">
 	<div class="nav-container">
-		<div class="nav-logo-links">
+		
 			<div class="logo">
 				<a href="/preview"><img src="/images/logo.png" height="40"></a>
 			</div>
+			
+		<div class="nav-right">
 			<ul class="nav-list">
-				<li><a href="/ornibase/discuss/new" class="emphasis">建立筆記本</a></li> 
+				<li><a href="/ornibase/discuss/new" class="emphasis">建立筆記本</a></li>
 				<li><a href="/ornibase/discuss/list" class="emphasis">書架</a></li>
 			</ul>
 		</div>
+		
 		<div>
 			<ul class="nav-list">
 				<li class="nav-right"><a href="/login">註冊/登入</a></li>

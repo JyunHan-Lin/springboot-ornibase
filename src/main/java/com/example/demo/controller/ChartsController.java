@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.demo.exception.DiscussEditException;
 import com.example.demo.exception.DiscussException;
 import com.example.demo.model.dto.BehaviorDTO;
+import com.example.demo.model.dto.CommentDTO;
 import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.dto.UserCert;
 import com.example.demo.model.entity.Discuss;
@@ -85,9 +86,17 @@ public class ChartsController {
 		        behaviorList = behaviorService.getBehaviorByDiscussId(discussId);
 		    }
 		    
+		    // 轉回 Discuss entity，給 CommentService 用
+		    Discuss discuss = discussService.getDiscussEntityById(discussId)
+		                        .orElseThrow(() -> new RuntimeException("Discuss entity not found"));
+
+		    List<CommentDTO> commentList = commentService.getCommentDTOs(discuss);
+		    model.addAttribute("comments", commentList);
+		    model.addAttribute("behaviorList", behaviorList);
 		    model.addAttribute("discussDTO", discussDTO);
 		    model.addAttribute("privilegeLevel", privilegeLevel);
 		    model.addAttribute("creatorName", discussDTO.getCreatorName()); 
+		    model.addAttribute("behaviorDTO", new BehaviorDTO());
 		    return "discuss/discuss";
 
 		}
@@ -100,22 +109,6 @@ public class ChartsController {
 
 	    	Discuss discuss = discussService.getDiscussEntityById(discussId)
 					  .orElseThrow(() -> new DiscussException("DiscussDTO not found"));
-	    	 Integer userId = userCert.getUserId();
-	         Integer privilegeLevel = 1;
-
-	         if (discuss.getIsPublic()) {
-	             if (userId.equals(discuss.getUser())) {
-	                 privilegeLevel = 3;
-	             } else if (discussService.hasUserFavorited(userId, discussId)) {
-	                 privilegeLevel = 2;
-	             }
-	         } else {
-	             if (userId.equals(discuss.getUser())) {
-	                 privilegeLevel = 3;
-	             } else {
-	                 throw new RuntimeException("無權限留言於該討論串");
-	             }
-	         }
 
 	         if (content == null || content.trim().isEmpty()) {
 	             throw new RuntimeException("留言內容不得為空");
@@ -124,7 +117,6 @@ public class ChartsController {
 	         if (content.length() > 100) {
 	             throw new RuntimeException("留言內容不得超過 100 字");
 	         }
-
 	         commentService.addComment(content.trim(), userCert.getUsername(), discuss);
 	         return "redirect:/ornibase/discuss/" + discussId;
 	     }

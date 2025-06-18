@@ -1,23 +1,20 @@
 package com.example.demo.service.impl;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.exception.BehaviorException;
 import com.example.demo.exception.BehaviorNotFoundException;
 import com.example.demo.mapper.BehaviorMapper;
 import com.example.demo.model.dto.BehaviorDTO;
-import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.entity.Behavior;
 import com.example.demo.model.entity.Discuss;
 import com.example.demo.model.entity.User;
@@ -36,30 +33,36 @@ public class BehaviorServiceImpl implements BehaviorService{
 	private DiscussRepository discussRepository;
 	
 	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
 	private BehaviorMapper behaviorMapper;
 	
 	// 新增行為
 	@Override
     public void saveBehavior(Integer discussId, Integer userId, BehaviorDTO behaviorDTO) {
         Optional<Discuss> discussOpt = discussRepository.findById(discussId);
-        if (discussOpt.isPresent()) {
+        Optional<User> userOpt = userRepository.findById(userId);
+
+        if (discussOpt.isPresent() && userOpt.isPresent()) {
             Discuss discuss = discussOpt.get();
+            User user = userOpt.get();
 
-        Behavior behavior = new Behavior();
-        behavior.setDate(behaviorDTO.getDate());
-        behavior.setStartTime(behaviorDTO.getStartTime());
-        behavior.setEndTime(behaviorDTO.getEndTime());
-        behavior.setSubject(behaviorDTO.getSubject());
-        behavior.setAction(behaviorDTO.getAction());
-        behavior.setFood(behaviorDTO.getFood());
-
-        behavior.setTemperature(behaviorDTO.getTemperature());
-        behavior.setNote(behaviorDTO.getNote());
-
-        behavior.setDiscuss(discuss); // 關聯討論串
-        behavior.setUser(discuss.getUser()); // 連接user (只看得到自己建立的行為)
-        
-        behaviorRepository.save(behavior);
+	        Behavior behavior = new Behavior();
+	        behavior.setDate(behaviorDTO.getDate());
+	        behavior.setStartTime(behaviorDTO.getStartTime());
+	        behavior.setEndTime(behaviorDTO.getEndTime());
+	        behavior.setSubject(behaviorDTO.getSubject());
+	        behavior.setAction(behaviorDTO.getAction());
+	        behavior.setFood(behaviorDTO.getFood());
+	
+	        behavior.setTemperature(behaviorDTO.getTemperature());
+	        behavior.setNote(behaviorDTO.getNote());
+	
+	        behavior.setDiscuss(discuss); // 關聯討論串
+	        behavior.setUser(user);
+	        
+	        behaviorRepository.save(behavior);
         }
     }
     
@@ -94,38 +97,34 @@ public class BehaviorServiceImpl implements BehaviorService{
 	@Override
 	public void updateBehavior(Integer behaviorId, BehaviorDTO behaviorDTO) {
 		// 判斷該房號是否已存在?
-		Optional<Behavior> optBehavior = behaviorRepository.findById(behaviorId);
-		if (optBehavior.isEmpty()) {
-			throw new BehaviorNotFoundException("修改失敗: 行為" + behaviorDTO.getBehaviorId() + "不存在");
+		Behavior behavior = behaviorRepository.findById(behaviorId)
+				.orElseThrow(() -> new BehaviorNotFoundException("修改失敗: 行為不存在"));
+		// 權限驗證: 只能改自己建立的行為
+		if (!behavior.getUser().getUserId().equals(behaviorDTO.getUserId())) {
+			throw new BehaviorException("無權限刪除此行為");
 		}
-		Behavior original = optBehavior.get(); // 原本的 Discuss 實體
 
 	    // 更新可編輯欄位（不要動 user）
-	    original.setDate(behaviorDTO.getDate());
-	    original.setStartTime(behaviorDTO.getStartTime());
-	    original.setEndTime(behaviorDTO.getEndTime());
-	    original.setSubject(behaviorDTO.getSubject());
-	    original.setAction(behaviorDTO.getAction());
-	    original.setTemperature(behaviorDTO.getTemperature());	    
-	    original.setNote(behaviorDTO.getNote());
+		behavior.setDate(behaviorDTO.getDate());
+	    behavior.setStartTime(behaviorDTO.getStartTime());
+	    behavior.setEndTime(behaviorDTO.getEndTime());
+	    behavior.setSubject(behaviorDTO.getSubject());
+	    behavior.setAction(behaviorDTO.getAction());
+	    behavior.setFood(behaviorDTO.getFood());
+	    behavior.setTemperature(behaviorDTO.getTemperature());	    
+	    behavior.setNote(behaviorDTO.getNote());
 	    
-	    behaviorRepository.saveAndFlush(original);
+	    behaviorRepository.saveAndFlush(behavior);
 	}
 
 	@Override
-	public void updateBehavior(Integer behaviorId, LocalDate date, LocalTime startTime, LocalTime endTime,
-			String subject, String action, String food, Float temperature, String note, String creatorName) {
-		BehaviorDTO behaviorDTO = new BehaviorDTO(behaviorId, date, startTime, endTime, subject, action, food, temperature, note, null, null, creatorName);
-		updateBehavior(behaviorId, behaviorDTO);		
-	}
+	public void deleteBehavior(Integer behaviorId, Integer currentUserId) {
+	    Behavior behavior = behaviorRepository.findById(behaviorId)
+	            .orElseThrow(() -> new BehaviorNotFoundException("刪除失敗: 行為" + behaviorId + "不存在"));
 
-	@Override
-	public void deleteBehavior(Integer behaviorId) {
-		// 判斷該行為是否已存在?
-		Optional<Behavior> optBehavior = behaviorRepository.findById(behaviorId);
-		if (optBehavior.isEmpty()) {
-			throw new BehaviorNotFoundException("刪除失敗: 行為" + behaviorId + "不存在");
-		}
+        if (!behavior.getUser().getUserId().equals(currentUserId)) {
+            throw new RuntimeException("無權限刪除此行為");
+        }
 		behaviorRepository.deleteById(behaviorId);
 	}
 	
@@ -142,8 +141,11 @@ public class BehaviorServiceImpl implements BehaviorService{
 	        return row;
 	    }).toList();
 	}
-	
 
+	@Override
+	public int countByDiscussId(Integer discussId) {
+	    return behaviorRepository.countByDiscuss_DiscussId(discussId);
+	}
 
 }
 

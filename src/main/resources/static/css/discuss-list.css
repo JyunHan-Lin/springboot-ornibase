@@ -61,7 +61,7 @@
 }
 
 .video-card {
-  width: 17%;
+  width: 19.3%;
   background-color: #fdfdfd;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -94,8 +94,7 @@
 }
 
 .video-title a:hover {
-  color: #0077cc;
-  text-decoration: underline;
+  color: rgb(199, 61, 14);
 }
 
 .h2{
@@ -113,3 +112,18 @@
   font-weight: bold;
 }
 
+.badge {
+  background-color: #c0c0c0;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  vertical-align: middle;
+  flex-shrink: 0;
+}

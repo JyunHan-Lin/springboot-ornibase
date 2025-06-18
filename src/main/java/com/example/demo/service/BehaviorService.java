@@ -15,7 +15,8 @@ public interface BehaviorService {
 	public List<BehaviorDTO> getBehaviorByDiscussId(Integer discussId);
 	public Optional<BehaviorDTO> getBehaviorById(Integer behaviorId);
 	public void updateBehavior(Integer behaviorId, BehaviorDTO behaviorDTO);
-	public void updateBehavior(Integer behaviorId, LocalDate date, LocalTime startTime, LocalTime endTime, String subject, String action, String food, Float temperature, String note, String creatorName);
-	public void deleteBehavior(Integer behaviorId);
+	public void deleteBehavior(Integer behaviorId, Integer currentUserId);
 	List<Map<String, Object>> getTimelineData(LocalDate date);
+	public int countByDiscussId(Integer discussId);
+
 }

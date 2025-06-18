@@ -26,6 +26,8 @@ public interface BehaviorRepository extends JpaRepository<Behavior, Integer>{
 
 	List<Behavior> findByDate(LocalDate date);
 
+	void deleteByDiscuss_DiscussId(Integer discussId);
 
+	int countByDiscuss_DiscussId(Integer discussId);
 
 }

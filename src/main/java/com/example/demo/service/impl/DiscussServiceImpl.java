@@ -16,10 +16,14 @@ import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.entity.Discuss;
 import com.example.demo.model.entity.Favorite;
 import com.example.demo.model.entity.User;
+import com.example.demo.repository.BehaviorRepository;
+import com.example.demo.repository.CommentRepository;
 import com.example.demo.repository.DiscussRepository;
 import com.example.demo.repository.FavoriteRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.DiscussService;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class DiscussServiceImpl implements DiscussService{
@@ -32,6 +36,12 @@ public class DiscussServiceImpl implements DiscussService{
 	
 	@Autowired
 	private FavoriteRepository favoriteRepository;
+	
+	@Autowired
+	private CommentRepository commentRepository;
+	
+	@Autowired
+	private BehaviorRepository behaviorRepository;
 	
 	@Autowired
 	private DiscussMapper discussMapper;
@@ -123,6 +133,7 @@ public class DiscussServiceImpl implements DiscussService{
 	
 	// 刪除討論串
 	@Override
+	@Transactional
 	public void deleteDiscuss(Integer discussId, Integer userId, DiscussDTO discussDTO) {
 		// 判斷該討論串是否已存在?
 		Discuss original = discussRepository.findByDiscussIdWithUser(discussId)
@@ -132,7 +143,13 @@ public class DiscussServiceImpl implements DiscussService{
 		if (!userId.equals(original.getUser().getUserId())) {
 			throw new DiscussCreateException("修改失敗: " + userId + "不是建立者");
 		}
-		
+		// 先刪留言
+		commentRepository.deleteByDiscuss_DiscussId(discussId);
+		// 再刪行為
+		behaviorRepository.deleteByDiscuss_DiscussId(discussId);
+		// 再刪收藏
+		favoriteRepository.deleteByDiscuss_DiscussId(discussId);
+		// 最後刪discuss
 		discussRepository.deleteById(discussId);
 	}
 
@@ -192,7 +209,7 @@ public class DiscussServiceImpl implements DiscussService{
         }
 
         List<Discuss> discusses = discussRepository
-            .findByTitleContainingIgnoreCaseOrDescriptionContainingIgnoreCase(keyword, keyword);
+            .findByIsPublicTrueAndTitleContainingIgnoreCaseOrIsPublicTrueAndDescriptionContainingIgnoreCaseOrIsPublicTrueAndTagIgnoreCase(keyword, keyword, keyword);
 
         return discusses.stream()
                 .map(discussMapper::toDTO)

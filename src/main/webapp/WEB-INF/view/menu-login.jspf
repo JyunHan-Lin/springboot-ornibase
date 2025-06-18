@@ -4,20 +4,23 @@
     
 <nav class="navbar fontstyle">
 	<div class="nav-container">
-		<div class="nav-logo-links">
+		
 			<div class="logo">
 				<a href="/ornibase"><img src="/images/logo.png" height="40"></a>
 			</div>
+			
+		<div class="nav-right">
 			<ul class="nav-list">
 				<li><a href="/ornibase/discuss/new" class="emphasis">建立筆記本</a></li>
 				<li><a href="/ornibase/discuss/list" class="emphasis">書架</a></li>
 			</ul>
 		</div>
-		<% String userName = (String) session.getAttribute("userName");
-		   String firstLetter = "";
-		   if (userName != null && userName.length() > 0) {
+			<% String userName = (String) session.getAttribute("userName");
+		   	String firstLetter = "";
+		   	if (userName != null && userName.length() > 0) {
 			   firstLetter = userName.substring(0, 1).toUpperCase();
-		   } %>
+		   	} %>
+		   	
 		<div class="nav-user">
 				<div class="user-circle">
 				  <%= firstLetter %>

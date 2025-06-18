@@ -65,16 +65,23 @@ public class BehaviorController {
 	}
 
 	@PutMapping("/{discussId}/edit/{behaviorId}")
-	public String updateBehavior(@PathVariable Integer behaviorId, @PathVariable Integer discussId, @Valid BehaviorDTO behaviorDTO, DiscussDTO discussDTO, BindingResult bindingResult) {
+	public String updateBehavior(@PathVariable Integer behaviorId, 
+								 @PathVariable Integer discussId, 
+								 @Valid BehaviorDTO behaviorDTO, 
+								 BindingResult bindingResult, 
+								 HttpSession session) {
 		// 進行修改
+		UserCert userCert = (UserCert) session.getAttribute("userCert");
+		behaviorDTO.setUserId(userCert.getUserId());  // 為了驗證
 		behaviorService.updateBehavior(behaviorId, behaviorDTO);
 		return "redirect:/ornibase/discuss/behavior/" + discussId + "/list";
 	}
 	
 	// 刪除
 	@DeleteMapping("/{discussId}/delete/{behaviorId}")
-	public String deleteBehavior(@PathVariable Integer behaviorId, @PathVariable Integer discussId, BehaviorDTO behaviorDTO, DiscussDTO discussDTO) {
-		behaviorService.deleteBehavior(behaviorId);
+	public String deleteBehavior(@PathVariable Integer behaviorId, @PathVariable Integer discussId, BehaviorDTO behaviorDTO, DiscussDTO discussDTO, HttpSession session) {
+		UserCert userCert = (UserCert) session.getAttribute("userCert");
+		behaviorService.deleteBehavior(behaviorId, userCert.getUserId());
 		return "redirect:/ornibase/discuss/behavior/" + discussId + "/list"; 
 	}
 		

@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.dto.UserCert;
+import com.example.demo.service.BehaviorService;
 import com.example.demo.service.DiscussService;
 import com.example.demo.service.UserService;
 
@@ -23,19 +26,40 @@ public class HomeController {
 	@Autowired
 	private DiscussService discussService;
 	
+	@Autowired
+	private BehaviorService behaviorService;
+	
 	@GetMapping
 	public String mainPage(Model model) {
 		// 看得到大家建立的記錄本
-		model.addAttribute("discussList", discussService.getPublicDiscussList());
-		return "main";
+	    // 取得公開的討論串列表
+	    List<DiscussDTO> discussList = discussService.getPublicDiscussList();
+	    
+	    // 用 discussId 拿行為筆數
+	    Map<Integer, Integer> behaviorCountMap = new HashMap<>();
+	    for (DiscussDTO discuss : discussList) {
+	        int count = behaviorService.countByDiscussId(discuss.getDiscussId());
+	        behaviorCountMap.put(discuss.getDiscussId(), count);
+	    }
+	    
+	    model.addAttribute("discussList", discussList);
+	    model.addAttribute("behaviorCountMap", behaviorCountMap);
+	    return "main";
 	}
 	
     @GetMapping("/search")
     public String searchDiscusses(@RequestParam(required = false) String keyword, Model model) {
         List<DiscussDTO> discussList = discussService.searchDiscusses(keyword);
+        
+        Map<Integer, Integer> behaviorCountMap = new HashMap<>();
+        for (DiscussDTO discuss : discussList) {
+            int count = behaviorService.countByDiscussId(discuss.getDiscussId());
+            behaviorCountMap.put(discuss.getDiscussId(), count);
+        }
         model.addAttribute("discussList", discussList);
+        model.addAttribute("behaviorCountMap", behaviorCountMap);
         model.addAttribute("keyword", keyword);
-        return "redirect:/ornibase";  // JSP 頁面路徑，自己調整
+        return "main";  // JSP 頁面路徑，自己調整
     }
 	
 	// 登出

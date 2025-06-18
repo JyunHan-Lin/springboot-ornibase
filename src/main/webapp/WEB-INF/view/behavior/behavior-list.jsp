@@ -56,15 +56,15 @@
 								<td>${ behaviorDTO.note }</td>
 								<td>${ behaviorDTO.formattedCreatedTime }</td>
 								
-								<td>
-								<a href="/ornibase/discuss/behavior/${ behaviorDTO.discussId }/edit/${ behaviorDTO.behaviorId }" class="btn btn-danger">編輯</a>
-								</td>
-								<td>
-									<form method="post" action="/ornibase/discuss/behavior/${ behaviorDTO.discussId }/delete/${ behaviorDTO.behaviorId }">
-										<input type="hidden" name="_method" value="DELETE" />
-										<button type="submit" class="btn btn-danger">刪除</button>
-									</form>
-								</td>
+									<td>
+									<a href="/ornibase/discuss/behavior/${ behaviorDTO.discussId }/edit/${ behaviorDTO.behaviorId }" class="btn btn-danger">編輯</a>
+									</td>
+									<td>
+										<form method="post" action="/ornibase/discuss/behavior/${ behaviorDTO.discussId }/delete/${ behaviorDTO.behaviorId }">
+											<input type="hidden" name="_method" value="DELETE" />
+											<button type="submit" class="btn btn-danger">刪除</button>
+										</form>
+									</td>
 							</tr>
 						</c:forEach>
 					</tbody>

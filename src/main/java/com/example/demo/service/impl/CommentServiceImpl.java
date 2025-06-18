@@ -27,7 +27,7 @@ public class CommentServiceImpl implements CommentService {
 	
 	@Override
 	public List<Comment> getCommentsByDiscuss(Discuss discuss) {
-		return commentRepository.findByDiscussOrderByCreatedTimeDesc(discuss);
+		return commentRepository.findByDiscussOrderByCreatedTimeAsc(discuss);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class CommentServiceImpl implements CommentService {
 	public List<CommentDTO> getCommentDTOs(Discuss discuss) {
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
-	    return commentRepository.findByDiscussOrderByCreatedTimeDesc(discuss)
+	    return commentRepository.findByDiscussOrderByCreatedTimeAsc(discuss)
 						        .stream()
 						        .map(commentMapper::toDTO)
 						        .collect(Collectors.toList());

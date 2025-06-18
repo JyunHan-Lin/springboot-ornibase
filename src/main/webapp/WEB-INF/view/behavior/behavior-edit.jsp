@@ -26,21 +26,21 @@
 		      <span class="alert">* 必填欄位</span>
 		      <fieldset class="alert-section">
 			      <div class="form-row-inline">
-			        <label for="date">日期</label>
+			        <label for="date" required >日期</label>
 			        <input class="date" type="date" name="date" />
 			      </div>
 			      
 			      <div class="form-row-inline">
 			        <label>時間</label>
 			        <div class="time-group">
-				        <input type="time" name="startTime" id="startTime" />
+				        <input type="time" name="startTime" id="startTime" required />
 			    	    <span>～</span>
-			        	<input type="time" name="endTime" id="endTime" />
+			        	<input type="time" name="endTime" id="endTime" required />
 			        </div>
 			      </div>
 			      
 			      <div class="form-row">
-			        <select name="subject">
+			        <select name="subject" required >
 			          <option value="">請選擇對象</option>
 			          <option value="成鳥A">成鳥A</option>
 			          <option value="成鳥B">成鳥B</option>
@@ -53,11 +53,11 @@
 			        </select>
 			      </div>
 			      <div class="form-row">
-			        <select name="action">
+			        <select name="action" required >
 			          <option value="">請選擇行為</option>
 			          <option value="飛行">飛行</option>
-		   	          <option value="進食">餵食</option>
-			          <option value="進食">獨自進食</option>
+		   	          <option value="餵食">餵食</option>
+			          <option value="獨自進食">獨自進食</option>
 			          <option value="睡覺">睡覺</option>
 			          <option value="排遺">排遺</option>
 			          <option value="進巢">進巢</option>

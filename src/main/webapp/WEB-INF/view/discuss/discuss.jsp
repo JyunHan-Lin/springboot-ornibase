@@ -40,22 +40,24 @@
 				<div class="btn-group">
 				
 					<c:choose>
-					  <c:when test="${privilegeLevel == 3}">
-					    <!-- 建立者 -->
-					    <a href="/ornibase/discuss/update/${discussDTO.discussId}" class="btn btn-danger">編輯</a>
-					    <form method="post" action="/ornibase/discuss/delete/${discussDTO.discussId}">
-					      <input type="hidden" name="_method" value="DELETE" />
-					      <button type="submit" class="btn btn-danger">刪除</button>
-					    </form>
-					  </c:when>
-					  
-					  <c:when test="${privilegeLevel == 2}">
-					    <!-- 非建立者，但已收藏：可送出行為 -->
-					  </c:when>
-					  
-					  <c:otherwise>
+						<c:when test="${privilegeLevel == 3}">
+							<!-- 建立者 -->
+							<a href="/ornibase/discuss/update/${discussDTO.discussId}"
+								class="btn btn-danger">編輯</a>
+							<form method="post"
+								action="/ornibase/discuss/delete/${discussDTO.discussId}">
+								<input type="hidden" name="_method" value="DELETE" />
+								<button type="submit" class="btn btn-danger">刪除</button>
+							</form>
+						</c:when>
+
+						<c:when test="${privilegeLevel == 2}">
+							<!-- 非建立者，但已收藏：可送出行為 -->
+						</c:when>
+
+						<c:otherwise>
 					    <!-- 權限 1：只能閱覽 -->
-					    <p>若想紀錄行為，請先收藏此討論串。</p>
+					    <p>若想紀錄行為或是留言，請先收藏此討論串。</p>
 					    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}">
 					      <button type="submit" class="btn btn-danger">收藏</button>
 					    </form>
