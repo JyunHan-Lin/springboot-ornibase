@@ -53,11 +53,14 @@
 
 						<c:when test="${privilegeLevel == 2}">
 							<!-- 非建立者，但已收藏：可送出行為 -->
+						    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}/delete">
+						      <button type="submit" class="btn btn-danger">取消收藏</button>
+						    </form>
 						</c:when>
 
 						<c:otherwise>
 					    <!-- 權限 1：只能閱覽 -->
-					    <p>若想紀錄行為或是留言，請先收藏此討論串。</p>
+					    <p>若想記錄行為或留言，請先收藏</p>
 					    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}">
 					      <button type="submit" class="btn btn-danger">收藏</button>
 					    </form>

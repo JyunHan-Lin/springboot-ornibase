@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,7 +32,7 @@ public class HomeController {
 	private BehaviorService behaviorService;
 	
 	@GetMapping
-	public String mainPage(Model model) {
+	public String mainPage(Model model, HttpSession session) {
 		// 看得到大家建立的記錄本
 	    // 取得公開的討論串列表
 	    List<DiscussDTO> discussList = discussService.getPublicDiscussList();
@@ -41,9 +43,20 @@ public class HomeController {
 	        int count = behaviorService.countByDiscussId(discuss.getDiscussId());
 	        behaviorCountMap.put(discuss.getDiscussId(), count);
 	    }
-	    
+	    // 假設在 Controller
+	    // 取得目前登入使用者 ID
+	    Integer userId = (Integer) session.getAttribute("userId");
+	
+	    // 取得使用者收藏的討論串 ID 清單
+	    List<DiscussDTO> favoriteDiscusses = discussService.getMyFavoritePublicDiscuss(userId);
+	    Set<Integer> favoriteDiscussIds = favoriteDiscusses.stream()
+	                                         .map(DiscussDTO::getDiscussId)
+	                                         .collect(Collectors.toSet());
+	
+	 	// 傳給 JSP
 	    model.addAttribute("discussList", discussList);
 	    model.addAttribute("behaviorCountMap", behaviorCountMap);
+	    model.addAttribute("favoriteDiscussIds", favoriteDiscussIds);
 	    return "main";
 	}
 	

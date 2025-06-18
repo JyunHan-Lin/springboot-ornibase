@@ -79,6 +79,17 @@
   font-weight: bold;
   font-size: 18px;
   color: #555;
+  text-align: center;
+}
+
+.video-meta {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px 10px 10px;
+  font-size: 14px;
+  color: #333;
 }
 
 .video-description {
@@ -184,3 +195,32 @@
   vertical-align: middle;
   flex-shrink: 0;
 }
+
+.favorite-tag {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 4px;
+  border: 2px solid gray;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* 未收藏：灰色圈圈 */
+.not-favorited {
+  background-color: white;
+  border-color: gray;
+}
+
+/* 已收藏：紅色實心圈圈 */
+.favorited {
+  background-color: rgb(199, 61, 14);
+  border-color: rgb(205, 61, 14);
+}
+
+/* 自己建立的筆記（黑灰色） */
+.own-favorited {
+  background-color: #555;
+  border-color: #555;
+}
+

@@ -173,6 +173,12 @@ public class DiscussServiceImpl implements DiscussService{
     }
 
 	@Override
+	@Transactional
+	public void removeFavorite(Integer userId, Integer discussId) {
+	    favoriteRepository.deleteByUser_UserIdAndDiscuss_DiscussId(userId, discussId);
+	}
+
+	@Override
 	public List<DiscussDTO> getPublicDiscussList() {
 		return discussRepository.findByIsPublicTrue()
 								.stream()

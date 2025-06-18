@@ -2,6 +2,10 @@ package com.example.demo.controller;
 
 
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.model.dto.DiscussDTO;
 import com.example.demo.model.dto.UserCert;
+import com.example.demo.service.BehaviorService;
 import com.example.demo.service.DiscussService;
 
 import jakarta.servlet.http.HttpSession;
@@ -29,14 +34,32 @@ public class DiscussController {
 	@Autowired
 	private DiscussService discussService;
 	
+	@Autowired
+	private BehaviorService behaviorService;
+	
 	// 檢視筆記本
 	@GetMapping("/list")
 	public String myDiscussList(Model model, HttpSession session) {
-	    UserCert userCert = (UserCert) session.getAttribute("userCert");
-	    Integer userId = userCert.getUserId();
+	    Integer userId = ((UserCert) session.getAttribute("userCert")).getUserId();
+
+	    List<DiscussDTO> myDiscussList = discussService.getMyPrivateDiscuss(userId);
+	    List<DiscussDTO> favoriteDiscussList = discussService.getMyFavoritePublicDiscuss(userId);
+
+	    // 用 Map 儲存討論串ID對應的行為數
+	    Map<Integer, Integer> behaviorCountMap = new HashMap<>();
+	    for (DiscussDTO discuss : myDiscussList) {
+	        int count = behaviorService.countByDiscussId(discuss.getDiscussId());
+	        behaviorCountMap.put(discuss.getDiscussId(), count);
+	    }
+	    for (DiscussDTO discuss : favoriteDiscussList) {
+	        int count = behaviorService.countByDiscussId(discuss.getDiscussId());
+	        behaviorCountMap.put(discuss.getDiscussId(), count);
+	    }
 	    
 	    model.addAttribute("myDiscussList", discussService.getMyPrivateDiscuss(userId));
 	    model.addAttribute("favoriteDiscussList", discussService.getMyFavoritePublicDiscuss(userId));
+	    model.addAttribute("behaviorCountMap", behaviorCountMap);
+
 	    return "discuss/discuss-list";
 	}
 	
@@ -97,5 +120,13 @@ public class DiscussController {
 	    return "redirect:/ornibase/discuss/" + discussId;
 	}
 
-	
+	@PostMapping("/favorite/{discussId}/delete")
+	public String deleteFavorite(@PathVariable Integer discussId, HttpSession session) {
+	    UserCert userCert = (UserCert) session.getAttribute("userCert");
+	    if (userCert == null) {
+	        throw new RuntimeException("請先登入以收藏");
+	    }
+	    discussService.removeFavorite(userCert.getUserId(), discussId);
+	    return "redirect:/ornibase";
+	}
 }

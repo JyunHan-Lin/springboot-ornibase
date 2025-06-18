@@ -43,7 +43,8 @@
 					      				<a href="/ornibase/discuss/${discussDTO.discussId}">
 					        	 			${discussDTO.title}
 					      				</a>
-					      				<span class="badge">${behaviorCountMap[discussDTO.discussId]}</span>
+										<span class="emoji">📄</span>
+										<span class="count">${behaviorCountMap[discussDTO.discussId]}</span>
 					    			</div>
 					    		</div>
 						 	</c:forEach>

@@ -172,4 +172,23 @@ body {
 	display: block;
 }
 
+.favorite-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.favorite-tag.favorited {
+  color: red;
+}
+
+.favorite-tag.not-favorited {
+  color: gray;
+}
+.video-card {
+  position: relative; /* 確保標籤定位在左上角 */
+}
+
 

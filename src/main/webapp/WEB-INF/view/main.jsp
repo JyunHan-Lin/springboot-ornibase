@@ -37,12 +37,22 @@
 					 	<c:when test="${not empty discussList}">
 							<c:forEach var="discussDTO" items="${discussList}">
 								 <div class="video-card">
+									<span class="favorite-tag 
+												${favoriteDiscussIds.contains(discussDTO.discussId) 
+                 								? (discussDTO.userId == userCert.userId ? 'own-favorited' : 'favorited') 
+                 								: 'not-favorited'}" 
+                 								data-discussid="${discussDTO.discussId}"></span>
+							    	
 							    	<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
+					  				
 					  				<div class="video-title">
 					      				<a href="/ornibase/discuss/${discussDTO.discussId}">
 					        	 			${discussDTO.title}
 					      				</a>
-					      				<span class="badge">${behaviorCountMap[discussDTO.discussId]}</span>
+									<div class="video-meta">
+										<span class="emoji">📄</span>
+										<span class="count">${behaviorCountMap[discussDTO.discussId]}</span>
+									</div>	
 					    			</div>
 					    		</div>
 						 	</c:forEach>

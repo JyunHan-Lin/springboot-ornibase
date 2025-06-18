@@ -154,7 +154,7 @@ textarea {
   border-color: white;
   border-radius: 5px;	
   padding: 5px 5px 0 5px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 /* 讓留言板欄位用 flex 垂直排列，讓留言列表撐開空間 */

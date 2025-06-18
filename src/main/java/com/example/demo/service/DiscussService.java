@@ -26,4 +26,5 @@ public interface DiscussService {
 	// 取得收藏的公開討論串
 	List<DiscussDTO> getMyFavoritePublicDiscuss(Integer userId);
 	List<DiscussDTO> searchDiscusses(String keyword);
+	void removeFavorite(Integer userId, Integer discussId);
 }
