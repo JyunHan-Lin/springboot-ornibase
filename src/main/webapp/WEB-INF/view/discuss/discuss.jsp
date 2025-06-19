@@ -84,11 +84,12 @@
 			<div class="placeholder-box">
 				<!-- menu bar include -->
 				<%@ include file="/WEB-INF/view/charts/googlecharts-body.jspf"%>
-				<div class="charts">
-					
-				</div>
+				<!-- 圖表1：時間軸 -->
+				<h3>行為時間軸（可選日期）</h3>
+				<div id="timeline-chart" data-discuss-id="${discussDTO.discussId}" style="height: 300px;"></div>
 			</div>
-		</div>
+								
+			</div>
 		<!-- 右側區域：行為紀錄表單 -->
 		<!-- Behavior -->
 		<c:if test="${privilegeLevel >=2 }">

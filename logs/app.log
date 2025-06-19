@@ -10117,3 +10117,796 @@ com.example.demo.exception.PasswordInvalidException: 新密碼不可與舊密碼
 2025-06-19T15:58:34.782+08:00  INFO 3228 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-06-19T15:58:34.782+08:00  INFO 3228 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-06-19T15:58:34.783+08:00  INFO 3228 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:07:59.072+08:00  INFO 21888 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 21888 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:07:59.074+08:00  INFO 21888 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:07:59.906+08:00  INFO 21888 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:07:59.909+08:00  INFO 21888 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:07:59.955+08:00  INFO 21888 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:07:59.957+08:00  INFO 21888 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:07:59.959+08:00  INFO 21888 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:07:59.961+08:00  INFO 21888 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:07:59.962+08:00  INFO 21888 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:07:59.963+08:00  INFO 21888 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:07:59.975+08:00  INFO 21888 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:07:59.976+08:00  INFO 21888 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:08:00.024+08:00  INFO 21888 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:08:00.540+08:00  INFO 21888 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:08:00.555+08:00  INFO 21888 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:08:00.556+08:00  INFO 21888 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:08:00.802+08:00  INFO 21888 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:08:00.810+08:00  INFO 21888 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:08:00.810+08:00  INFO 21888 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1681 ms
+2025-06-19T19:08:00.993+08:00  INFO 21888 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:08:01.060+08:00  INFO 21888 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:08:01.135+08:00  INFO 21888 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:08:01.466+08:00  INFO 21888 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:08:01.502+08:00  INFO 21888 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:08:01.680+08:00  INFO 21888 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69c33ea2
+2025-06-19T19:08:01.682+08:00  INFO 21888 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:08:01.792+08:00  INFO 21888 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:08:02.834+08:00  INFO 21888 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:08:02.974+08:00  INFO 21888 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:08:03.324+08:00  INFO 21888 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:08:04.254+08:00  INFO 21888 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:08:04.704+08:00  INFO 21888 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:08:04.715+08:00  INFO 21888 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 6.12 seconds (process running for 7.059)
+2025-06-19T19:08:10.859+08:00  INFO 21888 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:08:10.860+08:00  INFO 21888 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:08:10.862+08:00  INFO 21888 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-19T19:10:10.503+08:00  INFO 21888 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:10:10.529+08:00  INFO 21888 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:10:10.541+08:00  INFO 21888 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:10:10.550+08:00  INFO 21888 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:10:10.555+08:00  INFO 21888 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:10:10.566+08:00  INFO 21888 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:10:12.813+08:00  INFO 33376 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 33376 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:10:12.815+08:00  INFO 33376 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:10:13.567+08:00  INFO 33376 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:10:13.568+08:00  INFO 33376 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:10:13.617+08:00  INFO 33376 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:10:13.618+08:00  INFO 33376 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:10:13.620+08:00  INFO 33376 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:10:13.622+08:00  INFO 33376 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:10:13.623+08:00  INFO 33376 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:10:13.625+08:00  INFO 33376 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:10:13.637+08:00  INFO 33376 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:10:13.638+08:00  INFO 33376 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:10:13.699+08:00  INFO 33376 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:10:14.225+08:00  INFO 33376 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:10:14.243+08:00  INFO 33376 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:10:14.243+08:00  INFO 33376 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:10:14.497+08:00  INFO 33376 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:10:14.505+08:00  INFO 33376 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:10:14.506+08:00  INFO 33376 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1630 ms
+2025-06-19T19:10:14.663+08:00  INFO 33376 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:10:14.721+08:00  INFO 33376 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:10:14.751+08:00  INFO 33376 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:10:15.003+08:00  INFO 33376 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:10:15.039+08:00  INFO 33376 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:10:15.207+08:00  INFO 33376 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a453f8d
+2025-06-19T19:10:15.209+08:00  INFO 33376 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:10:15.310+08:00  INFO 33376 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:10:16.353+08:00  INFO 33376 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:10:16.446+08:00  INFO 33376 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:10:16.681+08:00  INFO 33376 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:10:17.672+08:00  INFO 33376 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:10:18.128+08:00  INFO 33376 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:10:18.137+08:00  INFO 33376 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.847 seconds (process running for 6.552)
+2025-06-19T19:10:21.250+08:00  INFO 33376 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:10:21.252+08:00  INFO 33376 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:10:21.253+08:00  INFO 33376 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:11:33.059+08:00  INFO 33376 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:11:33.062+08:00  INFO 33376 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:11:33.071+08:00  INFO 33376 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:11:33.076+08:00  INFO 33376 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:11:33.078+08:00  INFO 33376 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:11:33.088+08:00  INFO 33376 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:11:35.310+08:00  INFO 20424 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 20424 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:11:35.312+08:00  INFO 20424 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:11:36.049+08:00  INFO 20424 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:11:36.050+08:00  INFO 20424 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:11:36.096+08:00  INFO 20424 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:11:36.098+08:00  INFO 20424 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:11:36.099+08:00  INFO 20424 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:11:36.102+08:00  INFO 20424 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:11:36.103+08:00  INFO 20424 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:11:36.104+08:00  INFO 20424 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:11:36.115+08:00  INFO 20424 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:11:36.116+08:00  INFO 20424 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:11:36.172+08:00  INFO 20424 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:11:36.666+08:00  INFO 20424 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:11:36.684+08:00  INFO 20424 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:11:36.685+08:00  INFO 20424 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:11:36.943+08:00  INFO 20424 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:11:36.951+08:00  INFO 20424 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:11:36.952+08:00  INFO 20424 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1585 ms
+2025-06-19T19:11:37.120+08:00  INFO 20424 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:11:37.173+08:00  INFO 20424 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:11:37.230+08:00  INFO 20424 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:11:37.502+08:00  INFO 20424 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:11:37.545+08:00  INFO 20424 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:11:37.719+08:00  INFO 20424 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a16d4dc
+2025-06-19T19:11:37.722+08:00  INFO 20424 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:11:37.816+08:00  INFO 20424 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:11:38.938+08:00  INFO 20424 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:11:39.067+08:00  INFO 20424 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:11:39.382+08:00  INFO 20424 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:11:40.356+08:00  INFO 20424 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:11:40.821+08:00  INFO 20424 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:11:40.829+08:00  INFO 20424 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 6.062 seconds (process running for 6.758)
+2025-06-19T19:11:41.017+08:00  INFO 20424 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:11:41.017+08:00  INFO 20424 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:11:41.019+08:00  INFO 20424 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-19T19:15:38.407+08:00  INFO 20424 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:15:38.410+08:00  INFO 20424 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:15:38.416+08:00  INFO 20424 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:15:38.421+08:00  INFO 20424 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:15:38.423+08:00  INFO 20424 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:15:38.430+08:00  INFO 20424 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:15:40.688+08:00  INFO 22572 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 22572 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:15:40.690+08:00  INFO 22572 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:15:41.517+08:00  INFO 22572 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:15:41.518+08:00  INFO 22572 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:15:41.564+08:00  INFO 22572 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:15:41.566+08:00  INFO 22572 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:15:41.568+08:00  INFO 22572 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:15:41.570+08:00  INFO 22572 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:15:41.572+08:00  INFO 22572 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:15:41.572+08:00  INFO 22572 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:15:41.583+08:00  INFO 22572 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:15:41.584+08:00  INFO 22572 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:15:41.636+08:00  INFO 22572 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:15:42.113+08:00  INFO 22572 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:15:42.128+08:00  INFO 22572 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:15:42.129+08:00  INFO 22572 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:15:42.394+08:00  INFO 22572 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:15:42.406+08:00  INFO 22572 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:15:42.407+08:00  INFO 22572 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1653 ms
+2025-06-19T19:15:42.568+08:00  INFO 22572 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:15:42.629+08:00  INFO 22572 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:15:42.660+08:00  INFO 22572 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:15:42.909+08:00  INFO 22572 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:15:42.940+08:00  INFO 22572 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:15:43.108+08:00  INFO 22572 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@78b9155e
+2025-06-19T19:15:43.110+08:00  INFO 22572 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:15:43.196+08:00  INFO 22572 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:15:44.239+08:00  INFO 22572 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:15:44.351+08:00  INFO 22572 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:15:44.668+08:00  INFO 22572 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:15:45.603+08:00  INFO 22572 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:15:46.052+08:00  INFO 22572 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:15:46.076+08:00  INFO 22572 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.989 seconds (process running for 6.696)
+2025-06-19T19:15:48.941+08:00  INFO 22572 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:15:48.941+08:00  INFO 22572 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:15:48.943+08:00  INFO 22572 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-19T19:16:01.207+08:00  WARN 22572 --- [springboot-ornibase] [http-nio-8084-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'date' for method parameter type LocalDate is present but converted to null]
+2025-06-19T19:16:04.597+08:00  WARN 22572 --- [springboot-ornibase] [http-nio-8084-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'date' for method parameter type LocalDate is present but converted to null]
+2025-06-19T19:16:09.381+08:00  WARN 22572 --- [springboot-ornibase] [http-nio-8084-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'date' for method parameter type LocalDate is present but converted to null]
+2025-06-19T19:19:46.461+08:00  INFO 22572 --- [springboot-ornibase] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:19:46.466+08:00  INFO 22572 --- [springboot-ornibase] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:19:46.475+08:00  INFO 22572 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:19:46.482+08:00  INFO 22572 --- [springboot-ornibase] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:19:46.485+08:00  INFO 22572 --- [springboot-ornibase] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:19:46.493+08:00  INFO 22572 --- [springboot-ornibase] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:19:48.494+08:00  INFO 25884 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 25884 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:19:48.496+08:00  INFO 25884 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:19:49.223+08:00  INFO 25884 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:19:49.225+08:00  INFO 25884 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:19:49.272+08:00  INFO 25884 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:19:49.274+08:00  INFO 25884 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:19:49.275+08:00  INFO 25884 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:19:49.277+08:00  INFO 25884 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:19:49.279+08:00  INFO 25884 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:19:49.279+08:00  INFO 25884 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:19:49.291+08:00  INFO 25884 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:19:49.292+08:00  INFO 25884 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:19:49.340+08:00  INFO 25884 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:19:49.818+08:00  INFO 25884 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:19:49.833+08:00  INFO 25884 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:19:49.833+08:00  INFO 25884 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:19:50.065+08:00  INFO 25884 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:19:50.074+08:00  INFO 25884 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:19:50.074+08:00  INFO 25884 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1529 ms
+2025-06-19T19:19:50.244+08:00  INFO 25884 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:19:50.298+08:00  INFO 25884 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:19:50.329+08:00  INFO 25884 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:19:50.572+08:00  INFO 25884 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:19:50.603+08:00  INFO 25884 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:19:50.763+08:00  INFO 25884 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59e0d521
+2025-06-19T19:19:50.765+08:00  INFO 25884 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:19:50.858+08:00  INFO 25884 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:19:51.903+08:00  INFO 25884 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:19:51.999+08:00  INFO 25884 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:19:52.297+08:00  INFO 25884 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:19:53.194+08:00  INFO 25884 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:19:53.631+08:00  INFO 25884 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:19:53.640+08:00  INFO 25884 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.671 seconds (process running for 6.355)
+2025-06-19T19:19:58.759+08:00  INFO 25884 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:19:58.760+08:00  INFO 25884 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:19:58.761+08:00  INFO 25884 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:20:11.830+08:00  WARN 25884 --- [springboot-ornibase] [http-nio-8084-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'date' for method parameter type LocalDate is present but converted to null]
+2025-06-19T19:21:41.479+08:00  INFO 25884 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:21:41.481+08:00  INFO 25884 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:21:41.488+08:00  INFO 25884 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:21:41.493+08:00  INFO 25884 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:21:41.495+08:00  INFO 25884 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:21:41.503+08:00  INFO 25884 --- [springboot-ornibase] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:21:43.477+08:00  INFO 28224 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 28224 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:21:43.479+08:00  INFO 28224 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:21:44.268+08:00  INFO 28224 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:21:44.270+08:00  INFO 28224 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:21:44.325+08:00  INFO 28224 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:21:44.327+08:00  INFO 28224 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:21:44.328+08:00  INFO 28224 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:21:44.330+08:00  INFO 28224 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:21:44.332+08:00  INFO 28224 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:21:44.333+08:00  INFO 28224 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:21:44.343+08:00  INFO 28224 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:21:44.344+08:00  INFO 28224 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:21:44.397+08:00  INFO 28224 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:21:44.872+08:00  INFO 28224 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:21:44.888+08:00  INFO 28224 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:21:44.889+08:00  INFO 28224 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:21:45.134+08:00  INFO 28224 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:21:45.144+08:00  INFO 28224 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:21:45.145+08:00  INFO 28224 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1613 ms
+2025-06-19T19:21:45.316+08:00  INFO 28224 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:21:45.380+08:00  INFO 28224 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:21:45.410+08:00  INFO 28224 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:21:45.653+08:00  INFO 28224 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:21:45.680+08:00  INFO 28224 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:21:45.843+08:00  INFO 28224 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21ea1d9d
+2025-06-19T19:21:45.845+08:00  INFO 28224 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:21:45.934+08:00  INFO 28224 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:21:47.010+08:00  INFO 28224 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:21:47.109+08:00  INFO 28224 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:21:47.373+08:00  INFO 28224 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:21:48.354+08:00  INFO 28224 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:21:48.797+08:00  INFO 28224 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:21:48.805+08:00  INFO 28224 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.856 seconds (process running for 6.538)
+2025-06-19T19:21:51.261+08:00  INFO 28224 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:21:51.261+08:00  INFO 28224 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:21:51.262+08:00  INFO 28224 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:24:27.199+08:00  INFO 28224 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:24:27.202+08:00  INFO 28224 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:24:27.210+08:00  INFO 28224 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:24:27.216+08:00  INFO 28224 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:24:27.218+08:00  INFO 28224 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:24:27.231+08:00  INFO 28224 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:24:29.202+08:00  INFO 23660 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 23660 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:24:29.203+08:00  INFO 23660 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:24:29.959+08:00  INFO 23660 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:24:29.961+08:00  INFO 23660 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:24:30.006+08:00  INFO 23660 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:24:30.008+08:00  INFO 23660 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:24:30.009+08:00  INFO 23660 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:24:30.012+08:00  INFO 23660 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:24:30.014+08:00  INFO 23660 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:24:30.014+08:00  INFO 23660 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:24:30.027+08:00  INFO 23660 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:24:30.028+08:00  INFO 23660 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:24:30.079+08:00  INFO 23660 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:24:30.558+08:00  INFO 23660 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:24:30.575+08:00  INFO 23660 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:24:30.576+08:00  INFO 23660 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:24:30.824+08:00  INFO 23660 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:24:30.835+08:00  INFO 23660 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:24:30.836+08:00  INFO 23660 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1581 ms
+2025-06-19T19:24:31.008+08:00  INFO 23660 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:24:31.069+08:00  INFO 23660 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:24:31.099+08:00  INFO 23660 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:24:31.362+08:00  INFO 23660 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:24:31.390+08:00  INFO 23660 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:24:31.556+08:00  INFO 23660 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13d984ee
+2025-06-19T19:24:31.558+08:00  INFO 23660 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:24:31.650+08:00  INFO 23660 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:24:32.766+08:00  INFO 23660 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:24:32.901+08:00  INFO 23660 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:24:33.186+08:00  INFO 23660 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:24:34.231+08:00  INFO 23660 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:24:34.670+08:00  INFO 23660 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:24:34.679+08:00  INFO 23660 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.975 seconds (process running for 6.685)
+2025-06-19T19:24:34.880+08:00  INFO 23660 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:24:34.881+08:00  INFO 23660 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:24:34.882+08:00  INFO 23660 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:24:50.972+08:00  WARN 23660 --- [springboot-ornibase] [http-nio-8084-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'date' for method parameter type LocalDate is present but converted to null]
+2025-06-19T19:34:15.879+08:00  INFO 23660 --- [springboot-ornibase] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:34:15.888+08:00  INFO 23660 --- [springboot-ornibase] [RMI TCP Connection(17)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:34:15.893+08:00  INFO 23660 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:34:15.901+08:00  INFO 23660 --- [springboot-ornibase] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:34:15.903+08:00  INFO 23660 --- [springboot-ornibase] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:34:15.911+08:00  INFO 23660 --- [springboot-ornibase] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:34:17.859+08:00  INFO 15308 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 15308 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:34:17.860+08:00  INFO 15308 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:34:18.580+08:00  INFO 15308 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:34:18.582+08:00  INFO 15308 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:34:18.628+08:00  INFO 15308 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:34:18.630+08:00  INFO 15308 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:34:18.632+08:00  INFO 15308 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:34:18.634+08:00  INFO 15308 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:34:18.635+08:00  INFO 15308 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:34:18.636+08:00  INFO 15308 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:34:18.647+08:00  INFO 15308 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:34:18.648+08:00  INFO 15308 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:34:18.702+08:00  INFO 15308 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:34:19.162+08:00  INFO 15308 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:34:19.186+08:00  INFO 15308 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:34:19.187+08:00  INFO 15308 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:34:19.411+08:00  INFO 15308 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:34:19.419+08:00  INFO 15308 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:34:19.419+08:00  INFO 15308 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1515 ms
+2025-06-19T19:34:19.569+08:00  INFO 15308 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:34:19.657+08:00  INFO 15308 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:34:19.688+08:00  INFO 15308 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:34:19.938+08:00  INFO 15308 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:34:19.968+08:00  INFO 15308 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:34:20.130+08:00  INFO 15308 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a453f8d
+2025-06-19T19:34:20.132+08:00  INFO 15308 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:34:20.242+08:00  INFO 15308 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:34:21.217+08:00  INFO 15308 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:34:21.327+08:00  INFO 15308 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:34:21.612+08:00  INFO 15308 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:34:22.505+08:00  INFO 15308 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:34:22.917+08:00  INFO 15308 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:34:22.925+08:00  INFO 15308 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.541 seconds (process running for 6.23)
+2025-06-19T19:34:28.841+08:00  INFO 15308 --- [springboot-ornibase] [http-nio-8084-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:34:28.841+08:00  INFO 15308 --- [springboot-ornibase] [http-nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:34:28.842+08:00  INFO 15308 --- [springboot-ornibase] [http-nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:34:40.680+08:00 ERROR 15308 --- [springboot-ornibase] [http-nio-8084-exec-2] o.a.c.c.C.[.[localhost].[/].[jsp]        : Servlet.service() for servlet [jsp] threw exception
+
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [14] in the generated java file: [C:\Users\user\AppData\Local\Temp\tomcat.8084.472817227947398054\work\Tomcat\localhost\ROOT\org\apache\jsp\WEB_002dINF\view\discuss\discuss_jsp.java]
+Only a type can be imported. sun.jvm.hotspot.oops.java_lang_Class resolves to a package
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:612) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:394) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:323) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:314) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1437) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at com.example.demo.filter.LoginFilter.doFilter(LoginFilter.java:26) ~[classes/:na]
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:91) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-06-19T19:34:40.687+08:00 ERROR 15308 --- [springboot-ornibase] [http-nio-8084-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [14] in the generated java file: [C:\Users\user\AppData\Local\Temp\tomcat.8084.472817227947398054\work\Tomcat\localhost\ROOT\org\apache\jsp\WEB_002dINF\view\discuss\discuss_jsp.java]
+Only a type can be imported. sun.jvm.hotspot.oops.java_lang_Class resolves to a package
+
+Stacktrace:] with root cause
+
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [14] in the generated java file: [C:\Users\user\AppData\Local\Temp\tomcat.8084.472817227947398054\work\Tomcat\localhost\ROOT\org\apache\jsp\WEB_002dINF\view\discuss\discuss_jsp.java]
+Only a type can be imported. sun.jvm.hotspot.oops.java_lang_Class resolves to a package
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:555) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:374) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:332) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:376) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:357) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:308) ~[tomcat-embed-jasper-10.1.41.jar:10.1.41]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:612) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:394) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:323) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.servlet.view.InternalResourceView.renderMergedOutputModel(InternalResourceView.java:171) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.view.AbstractView.render(AbstractView.java:314) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1437) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.7.jar:6.2.7]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at com.example.demo.filter.LoginFilter.doFilter(LoginFilter.java:26) ~[classes/:na]
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53) ~[tomcat-embed-core-10.1.41.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:91) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.7.jar:6.2.7]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.41.jar:10.1.41]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-06-19T19:36:44.612+08:00  INFO 15308 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:36:44.616+08:00  INFO 15308 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:36:44.623+08:00  INFO 15308 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:36:44.628+08:00  INFO 15308 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:36:44.630+08:00  INFO 15308 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:36:44.638+08:00  INFO 15308 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:36:46.727+08:00  INFO 27008 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 27008 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:36:46.729+08:00  INFO 27008 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:36:47.449+08:00  INFO 27008 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:36:47.450+08:00  INFO 27008 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:36:47.491+08:00  INFO 27008 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:36:47.493+08:00  INFO 27008 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:36:47.494+08:00  INFO 27008 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:36:47.496+08:00  INFO 27008 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:36:47.497+08:00  INFO 27008 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:36:47.498+08:00  INFO 27008 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:36:47.509+08:00  INFO 27008 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:36:47.510+08:00  INFO 27008 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:36:47.561+08:00  INFO 27008 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:36:48.030+08:00  INFO 27008 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:36:48.045+08:00  INFO 27008 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:36:48.046+08:00  INFO 27008 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:36:48.265+08:00  INFO 27008 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:36:48.271+08:00  INFO 27008 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:36:48.271+08:00  INFO 27008 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1490 ms
+2025-06-19T19:36:48.425+08:00  INFO 27008 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:36:48.473+08:00  INFO 27008 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:36:48.516+08:00  INFO 27008 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:36:48.771+08:00  INFO 27008 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:36:48.816+08:00  INFO 27008 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:36:48.981+08:00  INFO 27008 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4a453f8d
+2025-06-19T19:36:48.983+08:00  INFO 27008 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:36:49.068+08:00  INFO 27008 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:36:50.085+08:00  INFO 27008 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:36:50.184+08:00  INFO 27008 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:36:50.520+08:00  INFO 27008 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:36:51.517+08:00  INFO 27008 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:36:52.054+08:00  INFO 27008 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:36:52.063+08:00  INFO 27008 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.8 seconds (process running for 6.475)
+2025-06-19T19:36:52.284+08:00  INFO 27008 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:36:52.284+08:00  INFO 27008 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:36:52.285+08:00  INFO 27008 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:38:53.984+08:00  INFO 27008 --- [springboot-ornibase] [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:38:53.988+08:00  INFO 27008 --- [springboot-ornibase] [RMI TCP Connection(4)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:38:53.994+08:00  INFO 27008 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:38:54.004+08:00  INFO 27008 --- [springboot-ornibase] [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:38:54.006+08:00  INFO 27008 --- [springboot-ornibase] [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:38:54.016+08:00  INFO 27008 --- [springboot-ornibase] [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:38:55.813+08:00  INFO 2260 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 2260 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:38:55.816+08:00  INFO 2260 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:38:56.565+08:00  INFO 2260 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:38:56.566+08:00  INFO 2260 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:38:56.609+08:00  INFO 2260 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:38:56.610+08:00  INFO 2260 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:38:56.613+08:00  INFO 2260 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:38:56.614+08:00  INFO 2260 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:38:56.615+08:00  INFO 2260 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:38:56.616+08:00  INFO 2260 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:38:56.627+08:00  INFO 2260 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:38:56.628+08:00  INFO 2260 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:38:56.672+08:00  INFO 2260 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:38:57.129+08:00  INFO 2260 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:38:57.143+08:00  INFO 2260 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:38:57.143+08:00  INFO 2260 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:38:57.365+08:00  INFO 2260 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:38:57.372+08:00  INFO 2260 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:38:57.373+08:00  INFO 2260 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1507 ms
+2025-06-19T19:38:57.529+08:00  INFO 2260 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:38:57.577+08:00  INFO 2260 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:38:57.623+08:00  INFO 2260 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:38:57.875+08:00  INFO 2260 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:38:57.904+08:00  INFO 2260 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:38:58.065+08:00  INFO 2260 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a16d4dc
+2025-06-19T19:38:58.067+08:00  INFO 2260 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:38:58.166+08:00  INFO 2260 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:38:59.260+08:00  INFO 2260 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:38:59.367+08:00  INFO 2260 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:38:59.637+08:00  INFO 2260 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:39:00.634+08:00  INFO 2260 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:39:01.076+08:00  INFO 2260 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:39:01.084+08:00  INFO 2260 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.71 seconds (process running for 6.322)
+2025-06-19T19:39:02.365+08:00  INFO 2260 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:39:02.365+08:00  INFO 2260 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:39:02.367+08:00  INFO 2260 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-06-19T19:39:21.994+08:00  WARN 2260 --- [springboot-ornibase] [http-nio-8084-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'date' for method parameter type LocalDate is present but converted to null]
+2025-06-19T19:40:50.165+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2a16d4dc (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:40:51.803+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@65f7deaa (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:40:54.347+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@764db076 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:21.265+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@628da848 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:21.295+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@68d538a4 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:22.179+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7380ebc8 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:23.202+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7c40c218 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:28.843+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2a8deccb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:37.776+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1f76993e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:38.091+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@20f29b1e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2025-06-19T19:42:41.069+08:00  WARN 2260 --- [springboot-ornibase] [HikariPool-1:connection-adder] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Pool is empty, failed to create/setup connection (5a9a0d33-338c-41ea-8b04-f1b836b50a88)
+
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:165) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:55) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:837) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:420) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:238) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:180) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:139) ~[HikariCP-6.3.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368) ~[HikariCP-6.3.0.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205) ~[HikariCP-6.3.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:483) ~[HikariCP-6.3.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:747) ~[HikariCP-6.3.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:726) ~[HikariCP-6.3.0.jar:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[na:na]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[na:na]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:52) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:95) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:140) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:156) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:79) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:142) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:961) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	... 13 common frames omitted
+Caused by: java.net.ConnectException: Connection refused: getsockopt
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:682) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:592) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:751) ~[na:na]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:144) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:53) ~[mysql-connector-j-9.2.0.jar:9.2.0]
+	... 16 common frames omitted
+
+2025-06-19T19:43:10.170+08:00  INFO 2260 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:43:10.174+08:00  INFO 2260 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:43:10.186+08:00  INFO 2260 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:43:10.191+08:00  INFO 2260 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:43:10.195+08:00  INFO 2260 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:43:11.194+08:00  INFO 2260 --- [springboot-ornibase] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-06-19T19:50:18.451+08:00  INFO 5496 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Starting SpringbootOrnibaseApplication using Java 21.0.6 with PID 5496 (D:\Program Files\WorkBench\springboot-ornibase\target\classes started by user in D:\Program Files\WorkBench\springboot-ornibase)
+2025-06-19T19:50:18.453+08:00  INFO 5496 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-06-19T19:50:19.201+08:00  INFO 5496 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:50:19.203+08:00  INFO 5496 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-06-19T19:50:19.249+08:00  INFO 5496 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.BehaviorRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:50:19.251+08:00  INFO 5496 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CommentRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:50:19.253+08:00  INFO 5496 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.DiscussRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:50:19.255+08:00  INFO 5496 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.FavoriteRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:50:19.256+08:00  INFO 5496 --- [springboot-ornibase] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-06-19T19:50:19.257+08:00  INFO 5496 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 0 JDBC repository interfaces.
+2025-06-19T19:50:19.267+08:00  INFO 5496 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-06-19T19:50:19.268+08:00  INFO 5496 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-06-19T19:50:19.326+08:00  INFO 5496 --- [springboot-ornibase] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
+2025-06-19T19:50:19.770+08:00  INFO 5496 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2025-06-19T19:50:19.788+08:00  INFO 5496 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-06-19T19:50:19.788+08:00  INFO 5496 --- [springboot-ornibase] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-06-19T19:50:20.007+08:00  INFO 5496 --- [springboot-ornibase] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-06-19T19:50:20.014+08:00  INFO 5496 --- [springboot-ornibase] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-06-19T19:50:20.015+08:00  INFO 5496 --- [springboot-ornibase] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1513 ms
+2025-06-19T19:50:20.166+08:00  INFO 5496 --- [springboot-ornibase] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-06-19T19:50:20.218+08:00  INFO 5496 --- [springboot-ornibase] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-06-19T19:50:20.275+08:00  INFO 5496 --- [springboot-ornibase] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-06-19T19:50:20.517+08:00  INFO 5496 --- [springboot-ornibase] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-06-19T19:50:20.550+08:00  INFO 5496 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-06-19T19:50:20.704+08:00  INFO 5496 --- [springboot-ornibase] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3460e4ed
+2025-06-19T19:50:20.707+08:00  INFO 5496 --- [springboot-ornibase] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-06-19T19:50:20.794+08:00  INFO 5496 --- [springboot-ornibase] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-06-19T19:50:21.789+08:00  INFO 5496 --- [springboot-ornibase] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-06-19T19:50:21.926+08:00  INFO 5496 --- [springboot-ornibase] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:50:22.210+08:00  INFO 5496 --- [springboot-ornibase] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-06-19T19:50:23.240+08:00  INFO 5496 --- [springboot-ornibase] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-06-19T19:50:23.688+08:00  INFO 5496 --- [springboot-ornibase] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2025-06-19T19:50:23.695+08:00  INFO 5496 --- [springboot-ornibase] [main] c.e.demo.SpringbootOrnibaseApplication   : Started SpringbootOrnibaseApplication in 5.691 seconds (process running for 6.413)
+2025-06-19T19:50:24.774+08:00  INFO 5496 --- [springboot-ornibase] [http-nio-8084-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-06-19T19:50:24.775+08:00  INFO 5496 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-06-19T19:50:24.776+08:00  INFO 5496 --- [springboot-ornibase] [http-nio-8084-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-06-19T19:52:35.228+08:00  INFO 5496 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-19T19:52:35.232+08:00  INFO 5496 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-19T19:52:35.239+08:00  INFO 5496 --- [springboot-ornibase] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-19T19:52:35.246+08:00  INFO 5496 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-19T19:52:35.249+08:00  INFO 5496 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-19T19:52:35.259+08:00  INFO 5496 --- [springboot-ornibase] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

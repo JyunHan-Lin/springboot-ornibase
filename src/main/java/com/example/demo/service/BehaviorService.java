@@ -18,5 +18,5 @@ public interface BehaviorService {
 	public void deleteBehavior(Integer behaviorId, Integer currentUserId);
 	List<Map<String, Object>> getTimelineData(LocalDate date);
 	public int countByDiscussId(Integer discussId);
-
+	public List<BehaviorDTO> getBehaviorByDiscussIdAndDate(Integer discussId, LocalDate date);
 }

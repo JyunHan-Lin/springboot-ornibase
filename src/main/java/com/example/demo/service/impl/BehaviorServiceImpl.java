@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -146,6 +147,20 @@ public class BehaviorServiceImpl implements BehaviorService{
 	public int countByDiscussId(Integer discussId) {
 	    return behaviorRepository.countByDiscuss_DiscussId(discussId);
 	}
+
+	@Override
+	public List<BehaviorDTO> getBehaviorByDiscussIdAndDate(Integer discussId, LocalDate date) {
+	    List<Behavior> list = behaviorRepository.findByDiscuss_DiscussId(discussId)
+	    		   .stream()
+	               .filter(b -> b.getDate() != null && b.getDate().equals(date))
+	               .collect(Collectors.toList());
+	    return list
+	    		.stream()
+	    		.map(behaviorMapper::toDTO)
+	    		.collect(Collectors.toList());
+	}
+	
+	
 
 }
 

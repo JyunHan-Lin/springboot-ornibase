@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +12,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -91,6 +94,7 @@ public class ChartsController {
 		                        .orElseThrow(() -> new RuntimeException("Discuss entity not found"));
 
 		    List<CommentDTO> commentList = commentService.getCommentDTOs(discuss);
+		    model.addAttribute("today", LocalDate.now().toString());
 		    model.addAttribute("comments", commentList);
 		    model.addAttribute("behaviorList", behaviorList);
 		    model.addAttribute("discussDTO", discussDTO);
@@ -120,6 +124,16 @@ public class ChartsController {
 	         commentService.addComment(content.trim(), userCert.getUsername(), discuss);
 	         return "redirect:/ornibase/discuss/" + discussId;
 	     }
+	    
+	    
+	    // 圖表
+	    @GetMapping("/chart-timeline")
+	    @ResponseBody
+	    public List<BehaviorDTO> getTimelineData(@RequestParam Integer discussId) {
+	    	LocalDate today = LocalDate.now(); // 自動抓今天
+	    	return behaviorService.getBehaviorByDiscussIdAndDate(discussId, today);
+	    }
+
 }
 
 
