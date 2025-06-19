@@ -9,12 +9,13 @@
 		<link rel="stylesheet" href="/css/form.css">
 		<title>OrniBase</title>
 		<link rel="icon" type="image/png" href="/images/icon.png">
+		<script src="/js/member.js"></script>
 	</head>
 	<body class="fontstyle">
 		<!-- menu bar include -->
 		<%@ include file="/WEB-INF/view/menu-mini.jspf" %>
 		
-		<form method="POST" action="/ornibase/memeber">
+		<form method="POST" action="/ornibase/member">
  			<fieldset class="discussion-form">
  				<legend class="h2">會員資料變更</legend>
  				

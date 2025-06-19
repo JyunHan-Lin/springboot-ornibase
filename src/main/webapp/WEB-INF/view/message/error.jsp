@@ -7,20 +7,21 @@
 		<title>OrniBase</title>
 		<link rel="icon" type="image/png" href="/images/icon.png">
 		<link rel="stylesheet" href="/css/basic.css">
-		<link rel="stylesheet" href="/css/message.css">
+		<link rel="stylesheet" href="/css/common.css">
+		<link rel="stylesheet" href="/css/user.css">
 	</head>
 	<body class="view fontstyle">
 		<!-- menu bar include -->
 		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
-		<div class="blur-overlay">
-			<!-- body content -->
-			<div style="padding: 15px">
-				<fieldset class="user">
-					${ message }
-					<%=exception %><p>
-					<a href="/ornibase">回到首頁</a>
-				</fieldset>	
-			</div>		
-		</div>
+									
+		<div class="container">			
+		  <div class="content-wrapper">
+	 			<fieldset class="index-message">
+			 			${ message }
+						<%=exception %><p>
+						<a href="/ornibase">回到首頁</a>
+		 		</fieldset>
+	 		</div>
+	 	</div>
 	</body>
 </html>

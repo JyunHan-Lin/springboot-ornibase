@@ -2,6 +2,7 @@ package com.example.demo.service.impl;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -221,6 +222,16 @@ public class DiscussServiceImpl implements DiscussService{
                 .map(discussMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
+	@Override
+	public Map<Integer, Integer> getFavoriteCountMap() {
+		List<Object[]> results = favoriteRepository.countFavoritesGroupByDiscussId();
+		return results.stream()
+				      .collect(Collectors.toMap(
+				    		  row -> (Integer) row[0],
+				    		  row -> ((Long) row[1]).intValue()	// JPA 查回來的格式就是Long
+				    		  ));
+	}
 }
 	
 

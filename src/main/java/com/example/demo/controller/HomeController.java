@@ -52,8 +52,14 @@ public class HomeController {
 	    Set<Integer> favoriteDiscussIds = favoriteDiscusses.stream()
 	                                         .map(DiscussDTO::getDiscussId)
 	                                         .collect(Collectors.toSet());
-	
+	    
+	    UserCert userCert = (UserCert) session.getAttribute("userCert");
+
+	    Map<Integer, Integer> favoriteCountMap = discussService.getFavoriteCountMap();
+	    model.addAttribute("favoriteCountMap", favoriteCountMap);
+
 	 	// 傳給 JSP
+	    model.addAttribute("userCert", userCert); 
 	    model.addAttribute("discussList", discussList);
 	    model.addAttribute("behaviorCountMap", behaviorCountMap);
 	    model.addAttribute("favoriteDiscussIds", favoriteDiscussIds);
@@ -61,7 +67,7 @@ public class HomeController {
 	}
 	
     @GetMapping("/search")
-    public String searchDiscusses(@RequestParam(required = false) String keyword, Model model) {
+    public String searchDiscusses(@RequestParam(required = false) String keyword, Model model, HttpSession session) {
         List<DiscussDTO> discussList = discussService.searchDiscusses(keyword);
         
         Map<Integer, Integer> behaviorCountMap = new HashMap<>();
@@ -69,8 +75,19 @@ public class HomeController {
             int count = behaviorService.countByDiscussId(discuss.getDiscussId());
             behaviorCountMap.put(discuss.getDiscussId(), count);
         }
+        // 顯示收藏人數
+        Integer userId = (Integer) session.getAttribute("userId");
+        List<DiscussDTO> favoriteDiscusses = discussService.getMyFavoritePublicDiscuss(userId);
+        Set<Integer> favoriteDiscussIds = favoriteDiscusses.stream()
+                                         .map(DiscussDTO::getDiscussId)
+                                         .collect(Collectors.toSet());
+
+        Map<Integer, Integer> favoriteCountMap = discussService.getFavoriteCountMap();
+        
         model.addAttribute("discussList", discussList);
         model.addAttribute("behaviorCountMap", behaviorCountMap);
+        model.addAttribute("favoriteCountMap", favoriteCountMap);
+        model.addAttribute("favoriteDiscussIds", favoriteDiscussIds);
         model.addAttribute("keyword", keyword);
         return "main";  // JSP 頁面路徑，自己調整
     }

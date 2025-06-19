@@ -24,6 +24,15 @@
 	text-align: center;
 }
 
+.index-message{
+	background: rgb(128, 128, 128);  /* 黑色 50% 透明 */
+	width:300px;
+	padding: 10px;
+	border-radius: 10px;
+	text-align: center;
+	margin-top: 50px;
+}
+
 .user{
 	background:black;
 	color: white;

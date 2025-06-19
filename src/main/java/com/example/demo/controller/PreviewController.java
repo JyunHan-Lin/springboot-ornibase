@@ -42,6 +42,9 @@ public class PreviewController {
 	        behaviorCountMap.put(discuss.getDiscussId(), count);
 	    }
 	    
+	    Map<Integer, Integer> favoriteCountMap = discussService.getFavoriteCountMap();
+	    model.addAttribute("favoriteCountMap", favoriteCountMap);
+	    
 	    model.addAttribute("discussList", discussList);
 	    model.addAttribute("behaviorCountMap", behaviorCountMap);
 	    return "preview";
@@ -56,6 +59,10 @@ public class PreviewController {
             int count = behaviorService.countByDiscussId(discuss.getDiscussId());
             behaviorCountMap.put(discuss.getDiscussId(), count);
         }
+        
+	    Map<Integer, Integer> favoriteCountMap = discussService.getFavoriteCountMap();
+	    model.addAttribute("favoriteCountMap", favoriteCountMap);
+	    
         model.addAttribute("discussList", discussList);
         model.addAttribute("behaviorCountMap", behaviorCountMap);
         model.addAttribute("keyword", keyword);

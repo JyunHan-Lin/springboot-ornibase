@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import com.example.demo.model.dto.DiscussDTO;
@@ -27,4 +28,5 @@ public interface DiscussService {
 	List<DiscussDTO> getMyFavoritePublicDiscuss(Integer userId);
 	List<DiscussDTO> searchDiscusses(String keyword);
 	void removeFavorite(Integer userId, Integer discussId);
+	Map<Integer, Integer> getFavoriteCountMap();
 }

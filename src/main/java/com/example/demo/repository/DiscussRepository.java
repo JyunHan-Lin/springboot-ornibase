@@ -19,6 +19,7 @@ public interface DiscussRepository extends JpaRepository<Discuss, Integer>{
 	List<Discuss> findByIsPublicTrue();
 	// 搜尋
 	List<Discuss> findByIsPublicTrueAndTitleContainingIgnoreCaseOrIsPublicTrueAndDescriptionContainingIgnoreCaseOrIsPublicTrueAndTagIgnoreCase(
-		    String titleKeyword, String descriptionKeyword, String tagKeyword);
+    
+	String titleKeyword, String descriptionKeyword, String tagKeyword);
 
 }

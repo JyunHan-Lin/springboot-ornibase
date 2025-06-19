@@ -27,24 +27,29 @@
 					<span class="latest">個人書架</span>
 			  	</div>
 		  			<div class="video-list">
-				 	<c:choose>			  	
-					 	<c:when test="${not empty myDiscussList}">
-							<c:forEach var="discussDTO" items="${myDiscussList}">
-								 <div class="video-card">
-							    	<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
-					  				<div class="video-title">
-					      				<a href="/ornibase/discuss/${discussDTO.discussId}">
-					        	 			${discussDTO.title}
-					      				</a>
-					      				<span class="badge">${behaviorCountMap[discussDTO.discussId]}</span>
-					    			</div>
-					    		</div>
-						 	</c:forEach>
-					 	</c:when>
-					 	<c:otherwise>
-							<p style="color: gray;">目前尚無筆記本</p>
-					 	</c:otherwise>
-			    	</c:choose>
+					 	<c:choose>			  	
+						 	<c:when test="${not empty myDiscussList}">
+								<c:forEach var="discussDTO" items="${myDiscussList}">
+									 <a href="/ornibase/discuss/${discussDTO.discussId}" class="video-card">
+							    		<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
+					  				
+						  				<span class="video-title-row">					  				
+							  				<span class="video-title">
+							        	 			${discussDTO.title}
+							    			</span>
+							      				
+											<span class="video-meta">
+												<span class="emoji">📄</span>
+												<span class="count">${behaviorCountMap[discussDTO.discussId]}</span>
+											</span>	
+						  				</span>
+			      					</a>
+							 	</c:forEach>
+						 	</c:when>
+						 	<c:otherwise>
+								<p style="color: gray;">目前尚無筆記本</p>
+						 	</c:otherwise>
+				    	</c:choose>
 			 	</div>
 			 	
 			  	<div class="latest-header">
@@ -54,17 +59,27 @@
 				 	<c:choose>			  	
 					 	<c:when test="${not empty favoriteDiscussList}">
 							<c:forEach var="discussDTO" items="${favoriteDiscussList}">
-								 <div class="video-card">
-							    	<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
-					  				<div class="video-title">
-					      				<a href="/ornibase/discuss/${discussDTO.discussId}">
-					        	 			${discussDTO.title}
-					      				</a>
-					      				<span class="emoji">📄</span>
-										<span class="count">${behaviorCountMap[discussDTO.discussId]}</span>
-					      				
-					    			</div>
-					    		</div>
+								 <a href="/ornibase/discuss/${discussDTO.discussId}" class="video-card">
+						    		<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
+				  				
+					  				<span class="video-title-row">
+										<span class="emoji">
+											<img src="/images/user.png" width="12px" height="12px">
+										</span>
+					  					<span class="favorite-count">
+											${favoriteCountMap[discussDTO.discussId]}
+					  					</span>
+					  				
+						  				<span class="video-title">
+						        	 			${discussDTO.title}
+						    			</span>
+						      				
+										<span class="video-meta">
+											<span class="emoji">📄</span>
+											<span class="count">${behaviorCountMap[discussDTO.discussId]}</span>
+										</span>	
+					  				</span>
+		      					</a>
 						 	</c:forEach>
 					 	</c:when>
 					 	<c:otherwise>

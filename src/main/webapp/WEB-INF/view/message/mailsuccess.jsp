@@ -7,19 +7,23 @@
 		<title>OrniBase</title>
 		<link rel="icon" type="image/png" href="/images/icon.png">
 		<link rel="stylesheet" href="/css/basic.css">
-		<link rel="stylesheet" href="/css/message.css">
+		<link rel="stylesheet" href="/css/common.css">
+		<link rel="stylesheet" href="/css/user.css">
 	</head>
 	<body class="view fontstyle">
 		<!-- menu bar include -->
 		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
-		<div class="blur-overlay">
-			<fieldset class="user">
-				<!-- content -->
-				<div>
-					<h2 class="h2">註冊成功!</h2>	
-					<a href="/login">點我登入</a>
-				</div>
-			</fieldset>
-		</div>
+									
+		<div class="container">			
+		  <div class="content-wrapper-message">
+	 			<fieldset class="index">
+					<!-- content -->
+					<div>
+						<h2 class="h2">註冊成功!</h2>	
+						<a href="/register">點我登入</a>
+					</div>
+		 		</fieldset>
+	 		</div>
+	 	</div>
 	</body>
 </html>

@@ -15,7 +15,7 @@
 		<link rel="stylesheet" href="/css/charts.css">
 		<!-- 從 Google 的 CDN 載入 Google Charts 套件, 引入 Google Charts-->
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		
+		<script src="/js/discuss-delete.js"></script>
 	</head>
 <body class="fontstyle">
 	<!-- menu bar include -->
@@ -47,7 +47,7 @@
 							<form method="post"
 								action="/ornibase/discuss/delete/${discussDTO.discussId}">
 								<input type="hidden" name="_method" value="DELETE" />
-								<button type="submit" class="btn btn-danger">刪除</button>
+								<button type="submit" class="btn btn-danger" onclick="return confirmDelete();">刪除</button>
 							</form>
 						</c:when>
 

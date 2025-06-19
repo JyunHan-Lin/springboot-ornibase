@@ -11,6 +11,10 @@
 		<link rel="stylesheet" href="/css/main.css">
 		<title>OrniBase</title>
 		<link rel="icon" type="image/png" href="/images/icon.png">
+		<script>
+    		window.notLoggedIn = ${empty userCert};
+  		</script>
+		<script src="/js/preview.js"></script>
 	</head>
 	<body class="fontstyle">
 	
@@ -37,16 +41,35 @@
 				 	<c:choose>			  	
 					 	<c:when test="${not empty discussList}">
 							<c:forEach var="discussDTO" items="${discussList}">
-								 <div class="video-card">
-							    	<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
-					  				<div class="video-title">
-					      				<a href="/ornibase/discuss/${discussDTO.discussId}">
-					        	 			${discussDTO.title}
-					      				</a>
-										<span class="emoji">📄</span>
-										<span class="count">${behaviorCountMap[discussDTO.discussId]}</span>
-					    			</div>
-					    		</div>
+								 <a href="/ornibase/discuss/${discussDTO.discussId}" class="video-card">
+								 	<c:if test="${discussDTO.userId != userCert.userId}">
+										<span class="favorite-tag 
+													${favoriteDiscussIds.contains(discussDTO.discussId) 
+	                 								? 'favorited' 
+	                 								: 'not-favorited'}" 
+	                 								data-discussid="${discussDTO.discussId}"></span>
+								 	</c:if>
+						    	
+						    		<img src="https://img.youtube.com/vi/${discussDTO.youtubeVideoId}/mqdefault.jpg" alt="YouTube封面" />
+				  				
+					  				<span class="video-title-row">
+										<span class="emoji">
+											<img src="/images/user.png" width="12px" height="12px">									
+										</span>
+					  					<span class="favorite-count">
+											${favoriteCountMap[discussDTO.discussId]}
+					  					</span>
+					  				
+						  				<span class="video-title">
+						        	 			${discussDTO.title}
+						    			</span>
+						      				
+										<span class="video-meta">
+											<span class="emoji">📄</span>
+											<span class="count">${behaviorCountMap[discussDTO.discussId]}</span>
+										</span>	
+					  				</span>
+		      					</a>
 						 	</c:forEach>
 					 	</c:when>
 					 	<c:otherwise>

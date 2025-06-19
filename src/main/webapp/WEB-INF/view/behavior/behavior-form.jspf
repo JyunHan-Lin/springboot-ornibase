@@ -91,9 +91,9 @@
         <button type="submit">送出</button>
         <a href="/ornibase/discuss/behavior/${discussDTO.discussId}/list">
         	查看紀錄清單
-     	    <c:if test="${not empty behaviorList}">
-    			<span class="badge">${fn:length(behaviorList)}</span>
-  			</c:if>
+   	    <c:if test="${not empty behaviorList}">
+			<span class="badge">${fn:length(behaviorList)}</span>
+		</c:if>
   		</a>
       </div>
     </sp:form>

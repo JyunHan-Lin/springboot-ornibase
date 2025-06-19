@@ -67,6 +67,19 @@
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.video-card:hover {
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  color: rgb(199, 61, 14);
+}
+
+.video-card:hover .video-title{
+  color: rgb(199, 61, 14);
 }
 
 .video-card img {
@@ -74,10 +87,35 @@
   border-radius: 5px;
 }
 
+.video-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+}
+
 .video-title {
+  flex-grow: 1;
   font-weight: bold;
   font-size: 18px;
   color: #555;
+  text-align: center;
+}
+
+.favorite-count {
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  white-space: nowrap;
+}
+
+.video-meta {
+  white-space: nowrap;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #333;
 }
 
 .video-description {

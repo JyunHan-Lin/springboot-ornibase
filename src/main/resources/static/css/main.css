@@ -68,6 +68,19 @@
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   text-align: center;
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.video-card:hover {
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  color: rgb(199, 61, 14);
+}
+
+.video-card:hover .video-title{
+  color: rgb(199, 61, 14);
 }
 
 .video-card img {
@@ -75,20 +88,34 @@
   border-radius: 5px;
 }
 
+.video-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  gap: 10px;
+}
+
 .video-title {
+  flex-grow: 1;
   font-weight: bold;
   font-size: 18px;
   color: #555;
   text-align: center;
 }
 
+.favorite-count {
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  white-space: nowrap;
+}
+
 .video-meta {
+  white-space: nowrap;
+  font-size: 14px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px 10px 10px;
-  font-size: 14px;
   color: #333;
 }
 
@@ -96,17 +123,6 @@
   font-size: 14px;
   color: #555;
   margin-top: 5px;
-}
-
-.video-title a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.video-title a:hover {
-  color: rgb(199, 61, 14);
 }
 
 .h2{
@@ -204,6 +220,7 @@
   margin: 4px;
   border: 2px solid gray;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: default;
 }
 
 /* 未收藏：灰色圈圈 */
@@ -215,12 +232,7 @@
 /* 已收藏：紅色實心圈圈 */
 .favorited {
   background-color: rgb(199, 61, 14);
-  border-color: rgb(205, 61, 14);
+  border-color: gray;
 }
 
-/* 自己建立的筆記（黑灰色） */
-.own-favorited {
-  background-color: #555;
-  border-color: #555;
-}
 
