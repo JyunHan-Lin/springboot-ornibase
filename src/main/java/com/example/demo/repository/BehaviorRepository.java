@@ -30,4 +30,5 @@ public interface BehaviorRepository extends JpaRepository<Behavior, Integer>{
 
 	int countByDiscuss_DiscussId(Integer discussId);
 
+	List<Behavior> findByDiscuss_DiscussIdAndDateAfter(Integer discussId, LocalDate date);
 }

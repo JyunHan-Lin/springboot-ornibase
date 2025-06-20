@@ -159,6 +159,21 @@ public class BehaviorServiceImpl implements BehaviorService{
 	    		.map(behaviorMapper::toDTO)
 	    		.collect(Collectors.toList());
 	}
+
+	@Override
+	public Map<String, Long> getFoodCountInLastMonth(Integer discussId) {
+	    LocalDate oneMonthAgo = LocalDate.now().minusMonths(1);
+
+	    List<Behavior> recentBehaviors = behaviorRepository
+	        .findByDiscuss_DiscussIdAndDateAfter(discussId, oneMonthAgo);
+
+	    return recentBehaviors.stream()
+	        .filter(b -> b.getFood() != null && !b.getFood().isBlank())
+	        .collect(Collectors.groupingBy(
+	            Behavior::getFood,
+	            Collectors.counting()
+	        ));
+	}
 	
 	
 

@@ -31,13 +31,14 @@ public class CommentServiceImpl implements CommentService {
 	}
 
 	@Override
-	public void addComment(String content, String userName, Discuss discuss) {
+	public CommentDTO addComment(String content, String userName, Discuss discuss) {
 		Comment comment = new Comment();
 		comment.setContent(content);
 		comment.setUserName(userName);
 		comment.setCreatedTime(LocalDateTime.now());
 		comment.setDiscuss(discuss);
-		commentRepository.save(comment);
+		Comment saved = commentRepository.save(comment);
+		return commentMapper.toDTO(saved); 
 	}
 
 	@Override

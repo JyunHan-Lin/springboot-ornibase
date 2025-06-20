@@ -9,6 +9,6 @@ import com.example.demo.model.entity.Discuss;
 public interface CommentService {
 
 	public List<Comment> getCommentsByDiscuss(Discuss discuss);
-	public void addComment(String content, String userName, Discuss discuss);
+	public CommentDTO addComment(String content, String userName, Discuss discuss);
 	public List<CommentDTO> getCommentDTOs(Discuss discuss);
 }

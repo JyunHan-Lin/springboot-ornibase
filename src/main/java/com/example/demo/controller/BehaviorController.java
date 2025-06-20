@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.exception.BehaviorNotFoundException;
 import com.example.demo.exception.DiscussException;
@@ -35,11 +38,17 @@ public class BehaviorController {
 	
 	// 新增行為
 	@PostMapping("/{discussId}")
-	public String save(@PathVariable Integer discussId, BehaviorDTO behaviorDTO, HttpSession session) {
-	    Integer userId = (Integer) session.getAttribute("userId");
+	@ResponseBody
+	public Map<String, Object> addBehavior(@PathVariable Integer discussId, BehaviorDTO behaviorDTO, HttpSession session) {
+		Integer userId = (Integer) session.getAttribute("userId");
 		behaviorService.saveBehavior(discussId, userId, behaviorDTO);
-		return "redirect:/ornibase/discuss/" + discussId;
+		
+		Map<String, Object> result = new HashMap<>();
+		result.put("status", "success");
+		result.put("message", "行為已送出");
+		return result;
 	}
+
 	
 	// 顯示行為清單
 	@GetMapping("/{discussId}/list")
@@ -85,5 +94,5 @@ public class BehaviorController {
 		return "redirect:/ornibase/discuss/behavior/" + discussId + "/list"; 
 	}
 		
-	
+
 }

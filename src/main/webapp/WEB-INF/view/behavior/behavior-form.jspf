@@ -10,7 +10,7 @@
   <!-- 行為紀錄區 -->
   <fieldset class="form-box">
     <h2 class="h2">行為紀錄</h2>
-    <sp:form method="post" modelAttribute="behaviorDTO" action="/ornibase/discuss/behavior/${discussDTO.discussId}">
+    <sp:form id="behaviorForm" method="post" modelAttribute="behaviorDTO" action="/ornibase/discuss/behavior/${discussDTO.discussId}">
       
       <span class="alert">* 必填欄位</span>
       <fieldset class="alert-section">
@@ -125,7 +125,7 @@
 		<!-- 留言輸入區 -->
 		<c:if test="${privilegeLevel >= 2}">
 			<div class="comment-form-wrapper">
-				<form method="post"
+				<form id="commentForm" method="post"
 					action="/ornibase/discuss/${discussDTO.discussId}/comment">
 					<div class="form-row-com">
 						<textarea name="content" placeholder="輸入留言內容（最多100字）"

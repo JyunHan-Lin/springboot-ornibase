@@ -19,4 +19,5 @@ public interface BehaviorService {
 	List<Map<String, Object>> getTimelineData(LocalDate date);
 	public int countByDiscussId(Integer discussId);
 	public List<BehaviorDTO> getBehaviorByDiscussIdAndDate(Integer discussId, LocalDate date);
+	public Map<String, Long> getFoodCountInLastMonth(Integer discussId);
 }

@@ -104,27 +104,6 @@ public class ChartsController {
 		    return "discuss/discuss";
 
 		}
-		
-	    @PostMapping("/{discussId}/comment")
-	    public String addComment(@PathVariable Integer discussId,
-	                             @RequestParam String content,
-	                             HttpSession session) {
-	    	UserCert userCert = (UserCert) session.getAttribute("userCert");
-
-	    	Discuss discuss = discussService.getDiscussEntityById(discussId)
-					  .orElseThrow(() -> new DiscussException("DiscussDTO not found"));
-
-	         if (content == null || content.trim().isEmpty()) {
-	             throw new RuntimeException("留言內容不得為空");
-	         }
-
-	         if (content.length() > 100) {
-	             throw new RuntimeException("留言內容不得超過 100 字");
-	         }
-	         commentService.addComment(content.trim(), userCert.getUsername(), discuss);
-	         return "redirect:/ornibase/discuss/" + discussId;
-	     }
-	    
 	    
 	    // 圖表
 	    @GetMapping("/chart-timeline")
@@ -133,6 +112,38 @@ public class ChartsController {
 	    	LocalDate today = LocalDate.now(); // 自動抓今天
 	    	return behaviorService.getBehaviorByDiscussIdAndDate(discussId, today);
 	    }
+
+	    @PostMapping("/{discussId}/comment")
+	    @ResponseBody
+	    public Map<String, Object> addComment(@PathVariable Integer discussId,
+	                                              @RequestParam String content,
+	                                              HttpSession session) {
+	        UserCert userCert = (UserCert) session.getAttribute("userCert");
+
+	        Discuss discuss = discussService.getDiscussEntityById(discussId)
+	                .orElseThrow(() -> new DiscussException("DiscussDTO not found"));
+
+	        if (content == null || content.trim().isEmpty()) {
+	            throw new RuntimeException("留言內容不得為空");
+	        }
+
+	        if (content.length() > 100) {
+	            throw new RuntimeException("留言內容不得超過 100 字");
+	        }
+
+	        CommentDTO  comment = commentService.addComment(content.trim(), userCert.getUsername(), discuss);
+
+	        Map<String, Object> result = new HashMap<>();
+	        result.put("comment", comment);
+	        return result;
+	    }
+	    
+	    @GetMapping("/chart-food-count")
+	    @ResponseBody
+	    public Map<String, Long> getFoodCountChartData(@RequestParam Integer discussId) {
+	        return behaviorService.getFoodCountInLastMonth(discussId);
+	    }
+
 
 }
 

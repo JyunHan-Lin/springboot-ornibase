@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!-- Spring Form 表單標籤、c: forEach, if | fn: function -->
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
     
 <!DOCTYPE html>
 <html>
@@ -15,6 +17,8 @@
 		<link rel="stylesheet" href="/css/charts.css">
 		<!-- 從 Google 的 CDN 載入 Google Charts 套件, 引入 Google Charts-->
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script src="/js/charts.js"></script>
+		<script src="/js/ajax.js"></script>
 		<script src="/js/discuss-delete.js"></script>
 	</head>
 <body class="fontstyle">
@@ -82,11 +86,17 @@
 
 			<!-- 圖表區 -->
 			<div class="placeholder-box">
-				<!-- menu bar include -->
-				<%@ include file="/WEB-INF/view/charts/googlecharts-body.jspf"%>
-				<!-- 圖表1：時間軸 -->
-				<h3>行為時間軸（可選日期）</h3>
-				<div id="timeline-chart" data-discuss-id="${discussDTO.discussId}" style="height: 300px;"></div>
+				<div class="charts">
+					<div class="chart-group">
+						<!-- 圖表1：時間軸 -->
+						<div class="chart-text" style="margin-top: 15px; margin-bottom: 20px">當日行為時間軸</div>
+						<div id="timeline-chart" data-discuss-id="${discussDTO.discussId}" style="width: 970px; height: 220px"></div>
+					</div>
+					<div class="chart-group">
+						<div class="chart-text">最近一個月食物統計</div>
+						<div id="food-chart" data-discuss-id="${discussDTO.discussId}" style="width: 500px; height: 200px"></div>
+					</div>	
+				</div>
 			</div>
 								
 			</div>
