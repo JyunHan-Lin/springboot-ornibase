@@ -14,7 +14,7 @@ import com.example.demo.service.CertService;
 import com.example.demo.util.HashUtil;
 
 @Service
-public class CertSystemImpl implements CertService{
+public class CertServiceImpl implements CertService{
 	
 	@Autowired
 	private UserRepository userRepository;
