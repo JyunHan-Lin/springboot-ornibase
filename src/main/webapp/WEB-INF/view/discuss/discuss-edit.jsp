@@ -20,14 +20,14 @@
 		<sp:form class="fontstyle" method="post" modelAttribute="discussDTO" action="/ornibase/discuss/update/${ discussDTO.discussId }" >
         <input type="hidden" name="_method" value="PUT" />
 			<fieldset class="discussion-form">
-				<legend class="h2">編輯筆記本</legend>
+				<legend class="h2">編輯筆記</legend>
 				<div class="alert alert-note">* 表示必填欄位</div><p>
 				<label>標題<span class="alert">*</span>
 				</label>
 				<sp:input type="text" path="title" placeholder="請輸入標題"
 					required="required" />
 		
-				<label>描述<span class="alert">*</span></label>
+				<label>影片描述<span class="alert">*</span></label>
 				<sp:input type="text" path="description" placeholder="請描述內容"
 					required="required" />
 		
@@ -37,6 +37,8 @@
 					<option value="燕">燕</option>
 					<option value="雀">雀</option>
 					<option value="鵲">鵲</option>
+					<option value="鸛">鸛</option>
+					<option value="鳩鴿">鳩鴿</option>
 					<option value="海鷗">海鷗</option>
 					<option value="蜂鳥">蜂鳥</option>
 				</select> <label>Youtube連結<span class="alert">*</span></label>

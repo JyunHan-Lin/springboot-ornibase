@@ -15,12 +15,12 @@
 		<%@ include file="/WEB-INF/view/menu-pre.jspf" %>	
 									
 		<div class="container">			
-		  <div class="content-wrapper-message">
-	 			<fieldset class="index">
+		  <div class="content-wrapper">
+	 			<fieldset class="index-message">
 					<!-- content -->
 					<div>
 						<h2 class="h2">註冊成功!</h2>	
-						<a href="/register">點我登入</a>
+						<a href="/login">點我登入</a>
 					</div>
 		 		</fieldset>
 	 		</div>

@@ -31,7 +31,7 @@
 							--%>
 							<div class="button-group">
 								<button type="reset">重置</button>
-								<button type="submit">傳送</button>
+								<button type="submit">註冊</button>
 							</div>
 							<a href="/login">回登入頁</a>
 						</form>

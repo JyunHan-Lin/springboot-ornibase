@@ -11,8 +11,8 @@
 			
 		<div class="nav-right">
 			<ul class="nav-list">
-				<li><a href="/ornibase/discuss/new" class="emphasis">建立筆記本</a></li>
-				<li><a href="/ornibase/discuss/list" class="emphasis">書架</a></li>
+				<li><a href="/ornibase/discuss/new" class="emphasis">建立筆記</a></li>
+				<li><a href="/ornibase/discuss/list" class="emphasis">個人書架</a></li>
 			</ul>
 		</div>
 			<% String userName = (String) session.getAttribute("userName");

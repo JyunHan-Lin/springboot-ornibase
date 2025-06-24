@@ -16,6 +16,16 @@
 	z-index: 2;
 }
 
+.content-wrapper-message {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 60px;
+	gap: 20px;
+	z-index: 2;
+}
+
 .index{
 	background: rgb(128, 128, 128);  /* 黑色 50% 透明 */
 	width:300px;

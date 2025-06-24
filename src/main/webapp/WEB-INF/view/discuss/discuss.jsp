@@ -94,7 +94,7 @@
 					</div>
 					<div class="chart-group">
 						<div class="chart-text">最近一個月食物統計</div>
-						<div id="food-chart" data-discuss-id="${discussDTO.discussId}" style="width: 500px; height: 200px"></div>
+						<div id="food-chart" data-discuss-id="${discussDTO.discussId}" style="width: 490px; height: 200px"></div>
 					</div>	
 				</div>
 			</div>

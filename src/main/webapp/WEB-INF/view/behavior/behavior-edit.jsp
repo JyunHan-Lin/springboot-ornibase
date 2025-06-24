@@ -42,8 +42,8 @@
 			      <div class="form-row">
 			        <select name="subject" required >
 			          <option value="">請選擇對象</option>
-			          <option value="成鳥A">成鳥A</option>
-			          <option value="成鳥B">成鳥B</option>
+			          <option value="母鳥">母鳥</option>
+			          <option value="公鳥">公鳥</option>
 			          <option value="幼鳥A">幼鳥A</option>
 			          <option value="幼鳥B">幼鳥B</option>
 			          <option value="幼鳥C">幼鳥C</option>
