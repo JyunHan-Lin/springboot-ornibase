@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.demo.exception.BehaviorException;
 import com.example.demo.exception.BehaviorNotFoundException;
 import com.example.demo.exception.DiscussException;
 import com.example.demo.model.dto.BehaviorDTO;
@@ -78,21 +79,37 @@ public class BehaviorController {
 								 @PathVariable Integer discussId, 
 								 @Valid BehaviorDTO behaviorDTO, 
 								 BindingResult bindingResult, 
+								 Model model,
 								 HttpSession session) {
-		// 進行修改
-		UserCert userCert = (UserCert) session.getAttribute("userCert");
-		behaviorDTO.setUserId(userCert.getUserId());  // 為了驗證
-		behaviorService.updateBehavior(behaviorId, behaviorDTO);
-		return "redirect:/ornibase/discuss/behavior/" + discussId + "/list";
+		try {
+			// 進行修改
+			UserCert userCert = (UserCert) session.getAttribute("userCert");
+			behaviorDTO.setUserId(userCert.getUserId());  // 為了驗證
+			behaviorService.updateBehavior(behaviorId, behaviorDTO);
+			return "redirect:/ornibase/discuss/behavior/" + discussId + "/list";
+			
+		} catch (BehaviorException e) {
+			model.addAttribute("message", e.getMessage());
+			return "/message/error";
+		}
 	}
 	
 	// 刪除
 	@DeleteMapping("/{discussId}/delete/{behaviorId}")
-	public String deleteBehavior(@PathVariable Integer behaviorId, @PathVariable Integer discussId, BehaviorDTO behaviorDTO, DiscussDTO discussDTO, HttpSession session) {
-		UserCert userCert = (UserCert) session.getAttribute("userCert");
-		behaviorService.deleteBehavior(behaviorId, userCert.getUserId());
-		return "redirect:/ornibase/discuss/behavior/" + discussId + "/list"; 
+	public String deleteBehavior(@PathVariable Integer behaviorId,
+								 @PathVariable Integer discussId, 
+								 BehaviorDTO behaviorDTO, 
+								 DiscussDTO discussDTO,
+								 Model model,
+								 HttpSession session) {
+		try {
+			UserCert userCert = (UserCert) session.getAttribute("userCert");
+			behaviorService.deleteBehavior(behaviorId, userCert.getUserId());
+			return "redirect:/ornibase/discuss/behavior/" + discussId + "/list"; 			
+		} catch (BehaviorException e) {
+			model.addAttribute("message", e.getMessage());
+			return "/message/error";
+		}
 	}
 		
-
 }

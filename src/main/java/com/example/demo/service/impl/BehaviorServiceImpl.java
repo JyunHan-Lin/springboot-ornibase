@@ -102,7 +102,7 @@ public class BehaviorServiceImpl implements BehaviorService{
 				.orElseThrow(() -> new BehaviorNotFoundException("修改失敗: 行為不存在"));
 		// 權限驗證: 只能改自己建立的行為
 		if (!behavior.getUser().getUserId().equals(behaviorDTO.getUserId())) {
-			throw new BehaviorException("無權限刪除此行為");
+			throw new BehaviorException("不可編輯其他使用者記錄的行為");
 		}
 
 	    // 更新可編輯欄位（不要動 user）
@@ -124,7 +124,7 @@ public class BehaviorServiceImpl implements BehaviorService{
 	            .orElseThrow(() -> new BehaviorNotFoundException("刪除失敗: 行為" + behaviorId + "不存在"));
 
         if (!behavior.getUser().getUserId().equals(currentUserId)) {
-            throw new RuntimeException("無權限刪除此行為");
+            throw new RuntimeException("不可刪除其他使用者記錄的行為");
         }
 		behaviorRepository.deleteById(behaviorId);
 	}

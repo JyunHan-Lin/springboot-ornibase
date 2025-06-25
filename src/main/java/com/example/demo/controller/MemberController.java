@@ -44,11 +44,11 @@ public class MemberController {
 //        System.out.println(confirmPassword);	測試用
 
         if (result) {
-            redirectAttributes.addFlashAttribute("successMessage", "密碼變更成功！");
+            redirectAttributes.addFlashAttribute("resultMessage", "密碼變更成功！");
+            return "/message/result";
         } else {
-            redirectAttributes.addFlashAttribute("errorMessage", "密碼變更失敗，請確認原密碼與新密碼是否符合。");
+            redirectAttributes.addFlashAttribute("Message", "密碼變更失敗，請確認原密碼與新密碼是否符合。");
+            return "/message/error";
         }
-
-        return "redirect:/ornibase/member";
     }
 }
