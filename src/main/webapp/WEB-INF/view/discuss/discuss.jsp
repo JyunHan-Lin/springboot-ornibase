@@ -63,12 +63,12 @@
 						</c:when>
 
 						<c:otherwise>
-					    <!-- 權限 1：只能閱覽 -->
-					    <p>若想記錄行為或留言，請先收藏</p>
-					    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}">
-					      <button type="submit" class="btn btn-danger">收藏</button>
-					    </form>
-					  </c:otherwise>
+						    <!-- 權限 1：只能閱覽 -->
+						    <p>若想記錄行為或留言，請先收藏</p>
+						    <form method="post" action="/ornibase/discuss/favorite/${discussDTO.discussId}">
+						      <button type="submit" class="btn btn-danger">收藏</button>
+						    </form>
+					  	</c:otherwise>
 					</c:choose>
 				</div>
 
