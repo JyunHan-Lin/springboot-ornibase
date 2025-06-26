@@ -5,11 +5,12 @@
 .image-area {
   display: block;
   background-color: gray;
-  background-image: 
-  	repeating-linear-gradient(45deg, black, black 1px, transparent 1px, transparent 2px),
-  	repeating-linear-gradient(-45deg, black, black 1px, transparent 1px, transparent 2px);
+  background-image: url('/images/bald-eaglecut.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
   width: 100vw;
-  height: 200px;
+  height: 500px;
 }
 
 .tag-area {
@@ -60,7 +61,7 @@
 }
 
 .video-card {
-  width: 19.3%;
+  width: 24.3%;
   background-color: #fdfdfd;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -73,7 +74,7 @@
 }
 
 .video-card:hover {
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgb(30, 30, 30);
   color: rgb(199, 61, 14);
 }
 

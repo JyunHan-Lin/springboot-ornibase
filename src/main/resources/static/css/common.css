@@ -15,8 +15,7 @@ body {
 	left: 0;
 	right: 0;
 	z-index: 1000;
-	background: linear-gradient(to right, white, rgb(199, 61, 14));
-	/* 漸層背景 */
+	background: rgb(199, 61, 14);
 	padding: 10px 0;
 	font-weight: bold;
 }
@@ -68,7 +67,6 @@ body {
 	transition: 0.3s;
 }
 
-/* 底線效果 */
 .nav-list li a::after {
 	color: red;
 	content: "";
