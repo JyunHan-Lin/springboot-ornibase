@@ -15,7 +15,7 @@ body {
 	left: 0;
 	right: 0;
 	z-index: 1000;
-	background: rgb(199, 61, 14);
+	background: rgb(88, 91, 102);
 	padding: 10px 0;
 	font-weight: bold;
 }
@@ -68,14 +68,14 @@ body {
 }
 
 .nav-list li a::after {
-	color: red;
+	color: rgb(88, 91, 102);
 	content: "";
 	position: absolute;
 	bottom: 0;
 	left: 50%;
 	width: 0;
 	height: 1px;
-	background-color: rgb(199, 61, 14);
+	background-color: rgb(88, 91, 102);
 	transition: width 0.3s, left 0.3s;
 }
 
@@ -85,7 +85,7 @@ body {
 }
 
 .emphasis:hover {
-	color: rgb(199, 61, 14);
+	color: rgb(88, 91, 102);
 }
 .nav-right {
 	margin-left: auto;
@@ -96,13 +96,13 @@ body {
 	border: 2px solid white;
 	border-radius: 20px; /* 橢圓效果 */
 	padding: 6px 16px;
-	color: rgb(199, 61, 14);
+	color: rgb(88, 91, 102);
 	transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-right a:hover {
 	background-color: white;
-	color: rgb(199, 61, 14);
+	color: rgb(88, 91, 102);
 	text-shadow: none !important; /* 阻止繼承的陰影 */
 }
 
@@ -122,7 +122,7 @@ body {
   width: 40px;
   height: 40px;
   background-color: white; /* 圓圈顏色，你可以調 */
-  color: rgb(199, 61, 14);
+  color: rgb(88, 91, 102);
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
@@ -133,7 +133,7 @@ body {
 }
 
 .user-circle:hover {
-  background-color: rgb(199, 61, 14);
+  background-color: rgb(88, 91, 102);
   color: white;
 }
 
@@ -142,7 +142,7 @@ body {
 	position: absolute;
 	right: 0;
 	top: 100%;
-	background: rgb(199, 61, 14);
+	background: rgb(88, 91, 102);
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -163,7 +163,7 @@ body {
 
 .user-menu li a:hover {
 	background-color: white;
-	color: rgb(199, 61, 14);
+	color: rgb(88, 91, 102);
 }
 
 .nav-user:hover .user-menu {
@@ -179,11 +179,11 @@ body {
 }
 
 .favorite-tag.favorited {
-  color: red;
+  color: rgb(67, 69, 78);
 }
 
 .favorite-tag.not-favorited {
-  color: gray;
+  color: rgb(67, 69, 78);
 }
 .video-card {
   position: relative; /* 確保標籤定位在左上角 */

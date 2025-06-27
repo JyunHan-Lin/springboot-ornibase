@@ -48,7 +48,7 @@ a {
 }
 
 a:hover {
-  color: rgb(199, 61, 14);
+  color: rgb(88, 91, 102);
   text-decoration: underline; /* 滑過時加底線 */
 }
 

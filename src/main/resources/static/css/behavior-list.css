@@ -34,21 +34,21 @@
 
 /* 編輯、刪除按鈕 */
 .btn-danger {
- background-color: #e74c3c;
+ background-color: rgb(67, 69, 78);
  color: white;
  margin-left: 5px;
 }
 
 /* 表頭背景色 + 字體顏色 */
 table.dataTable thead th {
-  background-color: rgb(199, 61, 14);
+  background-color: rgb(88, 91, 102);
   color: white;
   text-align: center;
 }
 
 /* 列 hover 顏色 */
 table.dataTable tbody tr:hover {
-  background-color: #fdd;  /* 淡紅色，或改成你想要的色碼 */
+  background-color: rgb(142, 146, 157);  /* 淡紅色，或改成你想要的色碼 */
 }
 
 /* 偶數列底色 */
@@ -67,7 +67,7 @@ table.dataTable tbody tr:nth-child(even) {
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-  background: #c73d0e;
+  background: rgb(67, 69, 78);
   color: white !important;
 }
 

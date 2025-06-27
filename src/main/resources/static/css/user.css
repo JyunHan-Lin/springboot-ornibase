@@ -1,10 +1,10 @@
 .container{
 	height: 100vh;
   	margin: 60px auto 0 auto;
-    background-color: gray;
-  	background-image: 
-    	repeating-linear-gradient(45deg, gray, black 1px, transparent 1px, transparent 2px),
-    	repeating-linear-gradient(-45deg, gray, black 1px, transparent 1px, transparent 2px);
+	background-color: white;
+	background-image: 
+		repeating-linear-gradient(45deg, #F0F0F0, #f0f0f0 1px, transparent 1px, transparent 2px),
+		repeating-linear-gradient(-45deg, #F0F0F0, #f0f0f0 1px, transparent 1px, transparent 2px);
 }
 
 .content-wrapper {
@@ -27,7 +27,7 @@
 }
 
 .index{
-	background: rgb(128, 128, 128);  /* 黑色 50% 透明 */
+	background: rgb(200, 200, 200);  /* 黑色 50% 透明 */
 	width:300px;
 	padding: 10px;
 	border-radius: 10px;
@@ -44,7 +44,7 @@
 }
 
 .user{
-	background:black;
+	background:gray;
 	color: white;
 	width: 300px;               /* 控制表單寬度 */
   	margin: 1px auto;          /* 垂直 50px、水平置中 */
@@ -64,19 +64,16 @@ form.user button {
 }
 
 .h1, .h2{
-	color:white;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 文字陰影 */
+	color:black;
 }
 
 .h1{
 	font-size: 50px;
-	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-top: 80px;
     margin-bottom: 10px;
 }
 
 .h2{
-	color:white;
 	font-size:25px;
 }
 
@@ -107,10 +104,10 @@ form.user button {
 }
 
 a {
-  color: #f6f6f6;
+  color: black;
   text-decoration: none; /* 取消底線 */
 }
 
 a:hover {
-  color: rgb(199, 61, 14);
+  color: white;
 }

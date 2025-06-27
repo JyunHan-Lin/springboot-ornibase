@@ -37,7 +37,7 @@
 }
 
 .tag-label {
-  background-color: red;
+  background-color: rgb(67, 69, 78);
   color: white;
   padding: 4px 12px;
   border-radius: 20px;
@@ -62,7 +62,7 @@
 }
 
 .btn-danger {
-  background-color: #e74c3c;
+  background-color: rgb(67, 69, 78);
   color: white;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .createtime {
-  color: red;
+  color: rgb(88, 91, 102);
   font-size: 14px;
 }
 

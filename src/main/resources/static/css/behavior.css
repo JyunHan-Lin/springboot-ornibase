@@ -116,7 +116,7 @@ textarea {
   font-weight: bold;
   font-size: 14px;
   border-radius: 5px;
-  background-color: rgb(199, 61, 14);
+  background-color: rgb(88, 91, 102);
   color: white;
   border: none;
   text-decoration: none;
@@ -130,8 +130,8 @@ textarea {
 .button-group button:hover,
 .button-group a:hover {
   background-color: white;
-  color: rgb(199, 61, 14);
-  border: 1px solid rgb(199, 61, 14);
+  color: rgb(88, 91, 102);
+  border: 1px solid rgb(88, 91, 102);
 }
 
 .alert {
@@ -197,7 +197,7 @@ textarea {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: rgb(238, 72, 17);
+    background: rgb(88, 91, 102);
     color: white;
     text-align: center;
     line-height: 30px;
@@ -213,7 +213,7 @@ textarea {
 }
 
 .comment-user {
-    color: rgb(199, 61, 14);
+    color: rgb(88, 91, 102);
 	font-weight: bold;
 	font-size: 12px;
 	margin: 0;
@@ -253,7 +253,7 @@ textarea {
 
 .badge {
   position: absolute;
-  background-color: #e74c3c;
+  background-color: rgb(88, 91, 102);
   color: white;
   border-radius: 50%;
   padding: 2px;

@@ -75,11 +75,11 @@
 
 .video-card:hover {
   transform: scale(1.01);
-  color: rgb(199, 61, 14);
+  color: rgb(88, 91, 102);
 }
 
 .video-card:hover .video-title{
-  color: rgb(199, 61, 14);
+  color: rgb(88, 91, 102);
 }
 
 .video-card img {
@@ -167,8 +167,8 @@
 
 /* 按鈕樣式 */
 .search-button {
-  background-color: rgb(199, 61, 14);
-  border: 1px solid rgb(199, 61, 14);
+  background-color: rgb(88, 91, 102);
+  border: 1px solid rgb(88, 91, 102);
   color: white;
   padding: 8px 20px;
   font-size: 14px;
@@ -181,13 +181,13 @@
 /* 按鈕 hover 效果 */
 .search-button:hover {
   background-color: white;
-  color: rgb(199, 61, 14);
-  border: 1px solid rgb(199, 61, 14);
+  color: rgb(88, 91, 102);
+  border: 1px solid rgb(88, 91, 102);
 }
 
 .latest {
   display: inline-block; /* 確保可以正確形成橢圓形 */
-  background-color: rgb(199, 61, 14);
+  background-color: rgb(88, 91, 102);
   color: white;
   padding: 10px 10px; 
   border-radius: 10px;
