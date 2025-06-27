@@ -1,6 +1,10 @@
+.space {
+ margin-top: 70px;  	
+}
+
 .behavior-form {
  width: 1500px;
- margin: 90px auto; /* 水平置中，並往下推一點 */
+ margin: 10px auto; /* 水平置中，並往下推一點 */
  padding: 20px;
  border: 2px solid #ccc;
  position: relative;

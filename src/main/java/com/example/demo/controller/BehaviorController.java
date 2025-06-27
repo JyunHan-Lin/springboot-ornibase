@@ -64,7 +64,7 @@ public class BehaviorController {
 	    return "behavior/behavior-list";
 	}
 	
-	// 編輯討論串(標題、描述、網址: 點選到裡面再編輯) 
+	// 編輯行為(標題、描述、網址: 點選到裡面再編輯) 
 	@GetMapping("/{discussId}/edit/{behaviorId}")
 	public String showEditBehavior(@PathVariable Integer behaviorId, @PathVariable Integer discussId,  Model model) {
 	    BehaviorDTO behaviorDTO = behaviorService.getBehaviorById(behaviorId)

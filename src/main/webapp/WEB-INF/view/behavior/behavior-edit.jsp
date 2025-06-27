@@ -24,77 +24,79 @@
 		    <sp:form method="post" modelAttribute="behaviorDTO" action="/ornibase/discuss/behavior/${behaviorDTO.discussId}/edit/${behaviorDTO.behaviorId}">
             <input type="hidden" name="_method" value="PUT" />  
 		      <span class="alert">* 必填欄位</span>
+
 		      <fieldset class="alert-section">
+
 			      <div class="form-row-inline">
-			        <label for="date" required >日期</label>
-			        <input class="date" type="date" name="date" />
+			        <label for="date">日期</label>
+			        <sp:input path="date" class="date" required="required"/>
 			      </div>
 			      
 			      <div class="form-row-inline">
 			        <label>時間</label>
 			        <div class="time-group">
-				        <input type="time" name="startTime" id="startTime" required />
+				        <sp:input path="startTime" type="time" id="startTime" required="required" />
 			    	    <span>～</span>
-			        	<input type="time" name="endTime" id="endTime" required />
+			        	<sp:input path="endTime" type="time" id="endTime" required="required" />
 			        </div>
 			      </div>
 			      
 			      <div class="form-row">
-			        <select name="subject" required >
-			          <option value="">請選擇對象</option>
-			          <option value="母鳥">母鳥</option>
-			          <option value="公鳥">公鳥</option>
-			          <option value="幼鳥A">幼鳥A</option>
-			          <option value="幼鳥B">幼鳥B</option>
-			          <option value="幼鳥C">幼鳥C</option>
-	                  <option value="幼鳥D">幼鳥D</option>
-	                  <option value="幼鳥E">幼鳥E</option>
-			          <option value="鄰居">鄰居</option>
-			        </select>
+			        <sp:select path="subject" required="required" >
+			          <sp:option value="" label="請選擇對象" />
+			          <sp:option value="母鳥" />
+			          <sp:option value="公鳥" />
+			          <sp:option value="幼鳥A" />
+			          <sp:option value="幼鳥B" />
+			          <sp:option value="幼鳥C" />
+	                  <sp:option value="幼鳥D" />
+	                  <sp:option value="幼鳥E" />
+			          <sp:option value="鄰居" />
+			        </sp:select>
 			      </div>
 			      <div class="form-row">
-			        <select name="action" required >
-			          <option value="">請選擇行為</option>
-			          <option value="飛行">飛行</option>
-		   	          <option value="餵食">餵食</option>
-			          <option value="獨自進食">獨自進食</option>
-			          <option value="睡覺">睡覺</option>
-			          <option value="排遺">排遺</option>
-			          <option value="進巢">進巢</option>
-			          <option value="出巢">出巢</option>
-			          <option value="送餐">送餐</option>
-			          <option value="開傘">開傘</option>
-			          <option value="警戒">警戒</option>
-			          <option value="其他">其他</option>
-			        </select>
+			        <sp:select path="action" required="required" >
+			          <sp:option value="" lable="請選擇行為" />
+			          <sp:option value="飛行" />
+		   	          <sp:option value="餵食" />
+			          <sp:option value="獨自進食" />
+			          <sp:option value="睡覺" />
+			          <sp:option value="排遺" />
+			          <sp:option value="進巢" />
+			          <sp:option value="出巢" />
+			          <sp:option value="送餐" />
+			          <sp:option value="開傘" />
+			          <sp:option value="警戒" />
+			          <sp:option value="其他" />
+			        </sp:select>
 			      </div>
 		      </fieldset>
 		
 		      <br>
 		      <fieldset class="normal-section">
 			      <div class="form-row">
-			        <select name="food">
-			          <option value="">請選擇食物</option>
-			          <option value="哺乳類">哺乳類</option>
-			          <option value="鳥類">鳥類</option>
-			          <option value="魚類">魚類</option>
-			          <option value="爬蟲類">爬蟲類</option>
-			          <option value="兩生類">兩生類</option>
-			          <option value="昆蟲">昆蟲</option>
-			          <option value="節肢動物">節肢動物</option>
-			          <option value="軟體動物">軟體動物</option>
-			          <option value="果實">果實</option>
-			          <option value="種子">種子</option>
-			        </select>
+			        <sp:select path="food">
+			          <sp:option value="" label="請選擇食物" />
+			          <sp:option value="哺乳類" />
+			          <sp:option value="鳥類" />
+			          <sp:option value="魚類" />
+			          <sp:option value="爬蟲類" />
+			          <sp:option value="兩生類" />
+			          <sp:option value="昆蟲" />
+			          <sp:option value="節肢動物" />
+			          <sp:option value="軟體動物" />
+			          <sp:option value="果實" />
+			          <sp:option value="種子" />
+			        </sp:select>
 			      </div>
 			      
 			      <div class="form-row">
-			        <input type="text" name="temperature" placeholder="輸入溫度(℃)" />
+			        <sp:input type="text" path="temperature" placeholder="輸入溫度(℃)" />
 			      </div>
 			      
 			      <div class="form-row">
 			        <label>備註</label>
-			        <textarea name="note" maxlength="100" placeholder="限100字內"></textarea>
+			        <sp:textarea path="note" maxlength="100" placeholder="限100字內" />
 			      </div>
 		      </fieldset>
 		      

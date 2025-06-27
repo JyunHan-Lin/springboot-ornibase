@@ -23,7 +23,8 @@
 	<body class="fontstyle">
 		<!-- menu bar include -->
 		<%@ include file="/WEB-INF/view/menu-mini.jspf" %>	
-		<div>
+		<div class="space">
+			<button onclick="history.back()" class="btn btn-danger">回上一頁</button>
 			<fieldset  class="behavior-form">
 				<legend class="title">行為紀錄</legend>
 				<table>

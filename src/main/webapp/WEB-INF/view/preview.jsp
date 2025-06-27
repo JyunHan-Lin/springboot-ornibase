@@ -29,7 +29,7 @@
 			<span class="latest">公共書架</span>
 			<div class="search-container">
 			  <form class="search-form" method="get" action="/preview/search">
-			    <input type="text" name="keyword" placeholder="輸入關鍵字搜尋討論串..." class="search-input"/>
+			    <input type="text" name="keyword" placeholder="輸入關鍵字搜尋筆記..." class="search-input"/>
 			    <button type="submit" class="search-button">搜尋</button>
 			  </form>
 			</div>
