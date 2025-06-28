@@ -24,7 +24,7 @@
 		  <!-- 列表 -->
 		  <div class="video-list-container">
 			  	<div class="latest-header">
-					<span class="latest">個人書架</span>
+					<span class="latest">建立的群組</span>
 			  	</div>
 		  			<div class="video-list">
 					 	<c:choose>			  	
@@ -47,13 +47,13 @@
 							 	</c:forEach>
 						 	</c:when>
 						 	<c:otherwise>
-								<p style="color: gray;">目前尚無筆記本</p>
+								<p style="color: gray;">目前尚無群組</p>
 						 	</c:otherwise>
 				    	</c:choose>
 			 	</div>
 			 	
 			  	<div class="latest-header">
-					<span class="latest">收藏書架</span>
+					<span class="latest">追蹤名單</span>
 			  	</div>
 				<div class="video-list">
 				 	<c:choose>			  	

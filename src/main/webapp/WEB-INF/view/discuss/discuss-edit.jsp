@@ -20,7 +20,7 @@
 		<sp:form method="post" modelAttribute="discussDTO" action="/ornibase/discuss/update/${discussDTO.discussId}" >
         <input type="hidden" name="_method" value="PUT" />
 			<fieldset class="discussion-form">
-				<legend class="h2">編輯筆記</legend>
+				<legend class="h2">編輯群組</legend>
 				<div class="alert alert-note">* 所有欄位皆須填寫</div><p>
 				<label>標題
 				</label>

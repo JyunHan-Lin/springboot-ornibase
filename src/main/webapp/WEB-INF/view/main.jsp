@@ -22,7 +22,7 @@
 
 	<div class="main-content">
 		<div class="latest-header">
-			<span class="latest">公共書架</span>
+			<span class="latest">公開群組</span>
 			<div class="search-container">
 				<form class="search-form" method="get" action="/ornibase/search">
 					<input type="text" name="keyword" placeholder="輸入關鍵字搜尋筆記..." class="search-input" />
@@ -68,7 +68,7 @@
 						 	</c:forEach>
 					 	</c:when>
 					 	<c:otherwise>
-							<p style="color: gray;">目前尚無筆記本，請先建立一個。</p>
+							<p style="color: gray;">目前尚無群組，請先建立一個。</p>
 					 	</c:otherwise>
 			    	</c:choose>
 			 	</div>

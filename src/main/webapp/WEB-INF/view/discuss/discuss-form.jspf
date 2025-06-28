@@ -6,7 +6,7 @@
 <sp:form class="fontstyle" method="post" modelAttribute="discussDTO"
 	action="/ornibase/discuss/new">
 	<fieldset class="discussion-form">
-		<legend class="h2">建立筆記</legend>
+		<legend class="h2">建立群組</legend>
 		<div class="alert alert-note">* 所有欄位皆須填寫</div><p>
 		<label>標題</label>
 		<sp:input type="text" path="title" placeholder="請輸入標題"

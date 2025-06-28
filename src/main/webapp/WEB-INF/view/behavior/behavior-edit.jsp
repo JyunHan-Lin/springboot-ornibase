@@ -20,7 +20,7 @@
 		<div class="edit-wrapper">
 		  <!-- 行為紀錄區 -->
 		  <fieldset class="form-box">
-		    <h2 class="h2">行為紀錄編輯</h2>
+		    <h2 class="h2">編輯行為紀錄</h2>
 		    <sp:form method="post" modelAttribute="behaviorDTO" action="/ornibase/discuss/behavior/${behaviorDTO.discussId}/edit/${behaviorDTO.behaviorId}">
             <input type="hidden" name="_method" value="PUT" />  
 		      <span class="alert">* 必填欄位</span>

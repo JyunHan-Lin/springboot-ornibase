@@ -9,7 +9,7 @@
 
   <!-- 行為紀錄區 -->
   <fieldset class="form-box">
-    <h2 class="h2">行為紀錄</h2>
+    <h2 class="h2">記錄行為</h2>
     <sp:form id="behaviorForm" method="post" modelAttribute="behaviorDTO" action="/ornibase/discuss/behavior/${discussDTO.discussId}">
       
       <span class="alert">* 必填欄位</span>
